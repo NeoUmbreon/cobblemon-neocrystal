@@ -1,0 +1,10 @@
+{
+    "resourceIdentifier": "cobblemon:gentleman",
+    "presets": [
+        "cobblemon:default"
+    ],
+    "interaction": {
+        "type": "dialogue",
+        "dialogue": "cobblemon:battlefrontier_tutors_interaction"
+    }
+}

@@ -1,0 +1,50 @@
+t.stock.0.id = 'aircutter';
+t.stock.0.price = 48;
+
+t.stock.1.id = 'bugbite';
+t.stock.1.price = 32;
+
+t.stock.2.id = 'dive';
+t.stock.2.price = 40;
+
+t.stock.3.id = 'firepunch';
+t.stock.3.price = 64;
+
+t.stock.4.id = 'furycutter';
+t.stock.4.price = 32;
+
+t.stock.5.id = 'icepunch';
+t.stock.5.price = 64;
+
+t.stock.6.id = 'icywind';
+t.stock.6.price = 48;
+
+t.stock.7.id = 'knockoff';
+t.stock.7.price = 40;
+
+t.stock.8.id = 'ominouswind';
+t.stock.8.price = 48;
+
+t.stock.9.id = 'suckerpunch';
+t.stock.9.price = 40;
+
+t.stock.10.id = 'thunderpunch';
+t.stock.10.price = 64;
+
+t.stock.11.id = 'trick';
+t.stock.11.price = 48;
+
+t.stock.12.id = 'vacuumwave';
+t.stock.12.price = 48;
+
+t.stock.13.id = 'zenheadbutt';
+t.stock.13.price = 64;
+
+'fetch cobblemon names and descriptions';
+for_each(t.elem, t.stock, {
+    t.move = q.get_move_from_id(t.elem.id);
+    t.elem.name = t.move.display_name;
+    t.elem.desc = t.move.description;
+});
+
+return t.stock;

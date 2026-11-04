@@ -1,0 +1,21 @@
+q.npc.class == 'cobblemon:battlefrontier_tutor1' ? {
+    v.msgs.greeting = 'If you\'ve become a bit of a fanatic about battles, I\'m the guy who can teach your Pokémon all kinds of moves.';
+    v.msgs.no_moves = 'Oh, how unlucky! There\'s no move I can teach that Pokémon!';
+    v.msgs.no_bp = 'Oh, what an unhappy thing! You don\'t have enough BP!';
+    v.msgs.exclaim = '. Wow!';
+    v.msgs.farewell = 'Well then! Until next time!';
+};
+q.npc.class == 'cobblemon:battlefrontier_tutor2' ? {
+    v.msgs.greeting = 'If you\'ve poured your whole life into Pokémon battles, I\'m the guy who can teach your Pokémon all kinds of moves.';
+    v.msgs.no_moves = 'Oh no! There\'s no move I can teach that Pokémon!';
+    v.msgs.no_bp = 'Oh no! You don\'t have enough BP!';
+    v.msgs.exclaim = '. Great!';
+    v.msgs.farewell = 'Well then! See you next time!';
+};
+q.npc.class == 'cobblemon:battlefrontier_tutor3' ? {
+    v.msgs.greeting = 'If you\'ve poured your heart and soul into Pokémon battles, I\'m the guy who can teach your Pokémon all kinds of moves.';
+    v.msgs.no_moves = 'Oh... There\'s no move I can teach that Pokémon!';
+    v.msgs.no_bp = 'How sad... You don\'t have enough BP!';
+    v.msgs.exclaim = '!';
+    v.msgs.farewell = 'Until next time! Come back whenever you\'ve got Battle Points to spend!';
+};

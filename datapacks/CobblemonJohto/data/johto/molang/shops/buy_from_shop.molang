@@ -1,7 +1,7 @@
 q.player.username == 0 ? return 0;
 
 'required params';
-t.type = c.arg_1; 'tm or item; informs this script what commands to run';
+t.type = c.arg_1; 'informs this script what commands to run';
 t.id = c.arg_2; 'id of thing to give';
 t.currency = c.arg_3;
 t.price = c.arg_4;
@@ -9,7 +9,7 @@ t.price = c.arg_4;
 t.type == 0 || t.id == 0 || t.currency == 0 || t.price == 0 ? { q.print('Error in shopkeeper dialogue'); return 0 };
 
 'optional params';
-t.amount = math.max(1, c.arg_5);
+t.amount = t.type == 'tutor' ? 1 : math.max(1, c.arg_5);
 
 'check + deduct money';
 'note: the score check is unreliable if this is run from /runmolangscript (some timing issue?), but works from a molang env';
@@ -22,7 +22,9 @@ q.run_command('execute as ' + q.player.username + ' if score @s ' + t.currency +
 'success';
 q.player.remove_tag('CanBuy');
 q.run_command('scoreboard players remove ' + q.player.username + ' ' + t.currency + ' ' + t.cost);
-q.run_command('execute as ' + q.player.username + ' run function johto:sound/playlocalsfx {sfx:"transaction"}');
+
+'play sfx';
+c.arg_6 != true ? q.run_command('execute as ' + q.player.username + ' run function johto:sound/playlocalsfx {sfx:"transaction"}');
 
 t.type == 'item' ? {
     q.run_command('give ' + q.player.username + ' ' + t.id + ' ' + t.amount);
@@ -39,6 +41,11 @@ t.type == 'item' ? {
 };
 t.type == 'tm' ? {
     q.run_command('givetm ' + t.id + ' ' + q.player.username + ' ' + t.amount);
+
+    return 1;
+};
+t.type == 'tutor' ? {
+    c.arg_5.teach_move(t.id);
 
     return 1;
 };

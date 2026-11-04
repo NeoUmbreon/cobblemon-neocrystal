@@ -1,0 +1,12 @@
+t.pokemon = c.arg_1;
+t.move_id = c.arg_2;
+
+t.pokemon.has_learned(t.move_id) ? return true;
+
+loop(4, {
+    t.move = t.pokemon.moveset.[t.i];
+    t.move.name == t.move_id ? { t.has_learned = true; break };
+    t.i = t.i + 1;
+});
+
+return t.has_learned;

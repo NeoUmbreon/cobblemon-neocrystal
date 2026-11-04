@@ -1,0 +1,26 @@
+'return list of available tutor moves';
+c.arg_1 == 0 || c.arg_2 == 0 ? return 0;
+t.pokemon = c.arg_1;
+t.moves = c.arg_2;
+
+'this sucks';
+t.tutor_learnset = t.pokemon.tutor_learnset;
+t.i = 0;
+t.learnable.0 = 0;
+t.limit = 300;
+loop(t.limit, {
+    t.tutor_learnset.[t.i] == 0 ? break : { t.move = t.tutor_learnset.[t.i] };
+    q.set_variable(t.learnable, t.move.name, 1);
+    t.i = t.i + 1;
+});
+
+'filter by learnable & not already learned';
+t.filtered = q.array;
+t.i = 0;
+loop(q.length(t.moves), {
+    t.move = t.moves.[t.i];
+    !q.run_script('pkmn_has_learned', t.pokemon, t.move.id) && q.get_variable(t.learnable, t.move.id) ? q.append(t.filtered, t.move);
+    t.i = t.i + 1;
+});
+
+return t.filtered;
