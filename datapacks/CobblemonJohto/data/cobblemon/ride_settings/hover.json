@@ -1,10 +1,10 @@
 {
-    "infiniteStamina": "false",
-    "canJump": "false",
-    "stamReplenishTimeSeconds": "2.0",
-    "speedExpr": "q.get_ride_stats('SPEED', 'AIR', 1.0, 1.0)",
-    "accelerationExpr": "q.get_ride_stats('ACCELERATION', 'AIR', 1.0, 1.0)",
-    "staminaExpr": "q.get_ride_stats('STAMINA', 'AIR', 0.0, 0.0)",
-    "jumpExpr": "q.get_ride_stats('JUMP', 'AIR', 0.0, 0.0)",
-    "handlingExpr": "q.get_ride_stats('SKILL', 'AIR', 0.0, 0.0)"
+  "infiniteStamina": "false",
+  "canJump": "true",
+  "stamReplenishTimeSeconds": "2.0",
+  "speedExpr": "q.get_ride_stats('SPEED', 'AIR', 20.0, 1.0)",
+  "accelerationExpr": "q.get_ride_stats('ACCELERATION', 'AIR', 1.0, 6.0)",
+  "staminaExpr": "q.entity.has_aspect('unlock-ride-stats') ? q.get_ride_stats('STAMINA', 'AIR', 60.0, 0.0) : q.get_ride_stats('STAMINA', 'AIR', 0.0, 0.0)",
+  "jumpExpr": "q.entity.has_aspect('unlock-ride-stats') ? q.get_ride_stats('JUMP', 'AIR', 32.0, 2.0) : q.get_ride_stats('JUMP', 'AIR', 0.01, 0.0)",
+  "handlingExpr": "q.get_ride_stats('SKILL', 'AIR', 270.0, 45.0)"
 }

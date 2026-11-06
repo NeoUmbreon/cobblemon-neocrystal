@@ -1,5 +1,5 @@
 {
-    "glideSpeed": "0.1",
-    "speed": "1.0",
-    "canStrafe": "false"
+  "glideSpeed": "q.entity.has_aspect('unlock-ride-stats') ? 0.1 : 1",
+  "speed": "1.0",
+  "canStrafe": "false"
 }

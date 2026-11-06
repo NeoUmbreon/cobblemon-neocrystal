@@ -1,13 +1,13 @@
 {
-    "infiniteStamina": "false",
-    "gravity": "1",
-    "deccelRate": "0.005",
-    "minSpeedFactor": "0.50",
-    "handlingYawExpr": "q.get_ride_stats('SKILL', 'AIR', 50.0, 25.0)",
-    "handlingExpr": "q.get_ride_stats('SKILL', 'AIR', 120.0, 15.0)",
-    "speedExpr": "q.get_ride_stats('SPEED', 'AIR', 0.0, 0.0)",
-    "accelerationExpr": "q.get_ride_stats('ACCELERATION', 'AIR', 2.0, 8.0)",
-    "jumpExpr": "q.get_ride_stats('JUMP', 'AIR', 0.0, 0.0)",
-    "staminaExpr": "q.get_ride_stats('STAMINA', 'AIR', 1000.0, 1000.0)",
-    "maxDownwardForceSeconds": "7.0"
+  "infiniteStamina": "false",
+  "gravity": "0",
+  "deccelRate": "q.entity.has_aspect('unlock-ride-stats') ? 0.005 : 1",
+  "minSpeedFactor": "q.entity.has_aspect('unlock-ride-stats') ? 0.50 : 0",
+  "handlingYawExpr": "q.get_ride_stats('SKILL', 'AIR', 50.0, 25.0)",
+  "handlingExpr": "q.get_ride_stats('SKILL', 'AIR', 120.0, 15.0)",
+  "speedExpr": "q.get_ride_stats('SPEED', 'AIR', 24.0, 4.0)",
+  "accelerationExpr": "q.get_ride_stats('ACCELERATION', 'AIR', 2.0, 8.0)",
+  "jumpExpr": "q.get_ride_stats('JUMP', 'AIR', 2.0, 1.0)",
+  "staminaExpr": "q.entity.has_aspect('unlock-ride-stats') ? q.get_ride_stats('STAMINA', 'AIR', 120.0, 4.0) : q.get_ride_stats('STAMINA', 'AIR', 0.0, 0.0)",
+  "maxDownwardForceSeconds": "7.0"
 }

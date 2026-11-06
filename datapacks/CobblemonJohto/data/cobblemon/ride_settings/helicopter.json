@@ -1,6 +1,6 @@
 {
-    "gravity": "1.0",
-    "horizontalAcceleration": "0.1",
-    "verticalVelocity": "0.0",
-    "speed": "1.0"
+  "gravity": "1.0",
+  "horizontalAcceleration": "0.1",
+  "verticalVelocity": "q.entity.has_aspect('unlock-ride-stats') ? 1.0 : 0.0",
+  "speed": "1.0"
 }
