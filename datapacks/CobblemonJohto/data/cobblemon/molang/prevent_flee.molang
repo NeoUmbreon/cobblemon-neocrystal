@@ -1,6 +1,14 @@
 q.is_blank(q.player.data.battle) ? return 0;
 q.set_query('battle', q.player.data.battle);
 
+'keep player within radius';
+q.player.distance_to_pos(q.battle.x, q.battle.y, q.battle.z) > q.battle.max_battle_distance ? {
+    q.player.teleport(q.battle.x, q.battle.y, q.battle.z);
+    q.run_command('tellraw ' + q.player.username + ' {"text":"No! There\'s no running from a Trainer battle!","italic":true,"color":"gray"}');
+};
+
+q.player.main_held_item.item.is_of('blaze_rod') ? return 0;
+
 'perimeter particles';
 t.radius = q.battle.max_battle_distance;
 t.angle = 0;
@@ -17,8 +25,3 @@ loop(t.steps, {
     t.angle = t.angle + t.step_amount;
 });
 
-
-q.player.distance_to_pos(q.battle.x, q.battle.y, q.battle.z) > q.battle.max_battle_distance ? {
-    q.player.teleport(q.battle.x, q.battle.y, q.battle.z);
-    q.run_command('tellraw ' + q.player.username + ' {"text":"No! There\'s no running from a Trainer battle!","italic":true,"color":"gray"}');
-};
