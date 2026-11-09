@@ -2,7 +2,7 @@
     "c.npc.set_chatting();",
     "q.player.add_tag('RocketPW2');",
     "q.run_command('scoreboard players set ' + q.player.username + ' BattleEnd 1');",
-    "q.run_command('tellraw ' + q.player.username + ' {\"text\":\"You got $720 for winning!\",\"italic\":true,\"color\":\"gray\"}');",
+    "q.player.tell('&7&oYou got $720 for winning!');",
     "q.run_command('scoreboard players add ' + q.player.username + ' Money 720');"
         ],
   "speakers": {

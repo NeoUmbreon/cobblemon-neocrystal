@@ -2,7 +2,7 @@
     "initializationAction": [
         "c.npc.set_chatting();",
         "q.run_command('scoreboard players set ' + q.player.username + ' BattleEnd 1');",
-        "q.run_command('tellraw ' + q.player.username + ' {\"text\":\"You got $3,040 for winning!\",\"italic\":true,\"color\":\"gray\"}');",
+        "q.player.tell('&7&oYou got $3,040 for winning!');",
         "q.run_command('scoreboard players add ' + q.player.username + ' Money 3040');"
     ],
     "speakers": {

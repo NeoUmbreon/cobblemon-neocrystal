@@ -3,7 +3,7 @@
     "q.player.add_tag('Dialogue68');",
     "q.run_command('scoreboard players set ' + q.player.username + ' BattleEnd 1');",
     "q.run_command('scoreboard players set ' + q.player.username + ' DialogueMusic 5');",
-    "q.run_command('tellraw ' + q.player.username + ' {\"text\":\"You got $2,176 for winning!\",\"italic\":true,\"color\":\"gray\"}');",
+    "q.player.tell('&7&oYou got $2,176 for winning!');",
     "q.run_command('scoreboard players add ' + q.player.username + ' Money 2176');"
         ],
   "speakers": {

@@ -4,7 +4,7 @@
         "q.run_script('johto:clear_gym','fuchsia');",
         "q.run_command('scoreboard players set ' + q.player.username + ' BattleEnd 2');",
         "q.player.add_tag('Janine');",
-        "q.run_command('tellraw ' + q.player.username + ' {\"text\":\"You got $6,000 for winning!\",\"italic\":true,\"color\":\"gray\"}');",
+        "q.player.tell('&7&oYou got $6,000 for winning!');",
         "q.run_command('scoreboard players add ' + q.player.username + ' Money 6000');"
     ],
     "speakers": {

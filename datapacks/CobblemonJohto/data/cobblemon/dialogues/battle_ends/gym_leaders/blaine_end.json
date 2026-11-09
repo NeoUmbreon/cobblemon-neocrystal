@@ -4,7 +4,7 @@
         "q.run_script('johto:clear_gym','cinnabar');",
         "q.run_command('scoreboard players set ' + q.player.username + ' BattleEnd 2');",
         "q.player.add_tag('Blaine');",
-        "q.run_command('tellraw ' + q.player.username + ' {\"text\":\"You got $7,080 for winning!\",\"italic\":true,\"color\":\"gray\"}');",
+        "q.player.tell('&7&oYou got $7,080 for winning!');",
         "q.run_command('scoreboard players add ' + q.player.username + ' Money 7080');"
     ],
     "speakers": {
