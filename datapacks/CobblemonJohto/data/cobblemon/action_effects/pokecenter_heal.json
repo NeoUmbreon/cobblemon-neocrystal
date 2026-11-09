@@ -21,10 +21,7 @@
       "ifFalse": [
         {
           "type": "molang",
-          "expressions": [
-            "q.run_command('execute as '+q.player.username+' run function johto:sound/playlocalsfx {sfx:\"pokemonhealed\"}');",
-            "q.player.party.heal;"
-          ]
+          "expressions": "q.run_command('execute as '+q.player.username+' run function johto:sound/playlocalsfx {sfx:\"pokemonhealed\"}');"
         }
       ]
     },
@@ -34,7 +31,10 @@
     },
     {
       "type": "molang",
-      "expressions": "q.npc.run_dialogue(q.player, v.callback_dialogue);"
+      "expressions": [
+        "q.npc.run_dialogue(q.player, v.callback_dialogue);",
+        "q.player.party.heal;"
+      ]
     }
   ]
 }
