@@ -97,7 +97,10 @@ t.stock.15.required_badges = 1;
 
 'get badge count';
 t.badges = 0;
-for_each(t.leader, q.array('Falkner','Bugsy','Whitney','Morty','Chuck','Jasmine','Pryce','Clair'), {
+t.leaders = q.array('Falkner','Bugsy','Whitney','Morty','Chuck','Jasmine','Pryce','Clair');
+!q.player.world.server.data.challenge_mode_disabled ? { t.leaders[0] = 'Li' };
+
+for_each(t.leader, t.leaders, {
     q.player.has_tag(t.leader) ? { t.badges = t.badges + 1 };
 });
 
