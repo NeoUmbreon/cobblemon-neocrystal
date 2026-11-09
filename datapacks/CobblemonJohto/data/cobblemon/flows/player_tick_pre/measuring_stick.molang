@@ -1,0 +1,20 @@
+!c.player.main_held_item.item.is_of('blaze_rod') ? {
+    c.player.data.link != 0 ? {
+        c.player.data.link = 0;
+        c.player.tell(' ', true);
+        return 0;
+    };
+};
+c.player.data.link == 0 ? return 0;
+
+t.distance = c.player.distance_to_pos(c.player.data.link.x, c.player.data.link.y, c.player.data.link.z);
+t.thousandths = math.round(1000 * t.distance);
+t.int_part = math.floor(t.thousandths / 1000);
+t.frac_part = math.mod(t.thousandths, 1000);
+
+t.d1 = math.floor(t.frac_part / 100);
+t.d2 = math.floor(math.mod(t.frac_part, 100) / 10);
+t.d3 = math.mod(t.frac_part, 10);
+
+t.str = c.player.data.link.trainer + ': ' + t.int_part + '.' + t.d1 + t.d2 + t.d3 + 'm';
+c.player.tell(t.str, true);

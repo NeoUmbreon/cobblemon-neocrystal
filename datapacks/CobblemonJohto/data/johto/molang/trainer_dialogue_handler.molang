@@ -1,5 +1,11 @@
 t.class = q.get_variable(q.split_string(q.npc.class,'cobblemon:'), '1');
-q.player.main_held_item.item.is_of('blaze_rod') ? return q.player.tell(t.class);
+q.player.main_held_item.item.is_of('blaze_rod') ? {
+    q.player.data.link.trainer = t.class;
+    q.player.data.link.x = q.npc.x;
+    q.player.data.link.y = q.npc.y;
+    q.player.data.link.z = q.npc.z;
+    return 0;
+};
 
 q.player.in_battle || q.player.has_tag('Whiteout') ? return 0;
 
