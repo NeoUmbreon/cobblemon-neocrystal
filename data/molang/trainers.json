@@ -3,11 +3,15 @@
   "acetraineralton": {},
   "acetrainerblake": {},
   "acetrainerbrian": {},
-  "acetrainercody": {},
+  "acetrainercody": {
+    "no_rematch": true
+  },
   "acetrainercybil": {},
   "acetrainerfemma": {},
   "acetrainerfgwen": {},
-  "acetrainerfran": {},
+  "acetrainerfran": {
+    "no_rematch": true
+  },
   "acetrainerfrench": {},
   "acetrainergaven": {},
   "acetrainerirene": {},
@@ -26,11 +30,17 @@
   "acetrainerkevin": {},
   "acetrainerkobe": {},
   "acetrainerlois": {},
-  "acetrainerlola": {},
+  "acetrainerlola": {
+    "no_rematch": true
+  },
   "acetrainermegan": {},
-  "acetrainermike": {},
+  "acetrainermike": {
+    "no_rematch": true
+  },
   "acetrainermnick": {},
-  "acetrainerpaulo": {},
+  "acetrainerpaulo": {
+    "no_rematch": true
+  },
   "acetrainerpiper": {},
   "acetrainerquinn": {},
   "acetrainerreena": {},
@@ -42,15 +52,22 @@
     "doubles_id": "doubleteamzacandjen"
   },
   "azalea_silver": {
+    "no_rematch": true,
     "requirements": "q.player.has_tag('Dialogue16')"
   },
   "beautycallie": {},
-  "beautyjulia": {},
+  "beautyjulia": {
+    "no_rematch": true
+  },
   "beautykassandra": {},
   "beautyolivia": {},
-  "beautysamantha": {},
+  "beautysamantha": {
+    "no_rematch": true
+  },
   "beautyvalerie": {},
-  "beautyvictoria": {},
+  "beautyvictoria": {
+    "no_rematch": true
+  },
   "bikeraiden": {},
   "bikercharles": {},
   "bikerdale": {},
@@ -66,7 +83,9 @@
   "bikerteddy": {},
   "bikertheron": {},
   "bikerzeke": {},
-  "birdkeeperabe": {},
+  "birdkeeperabe": {
+    "no_rematch": true
+  },
   "birdkeeperbert": {},
   "birdkeeperbob": {},
   "birdkeeperboris": {},
@@ -83,7 +102,9 @@
   "birdkeeperkinsley": {},
   "birdkeeperperry": {},
   "birdkeeperpeter": {},
-  "birdkeeperrod": {},
+  "birdkeeperrod": {
+    "no_rematch": true
+  },
   "birdkeeperroy": {},
   "birdkeepertheo": {},
   "birdkeepertoby": {},
@@ -91,57 +112,83 @@
   "blackbeltander": {},
   "blackbeltkenji": {},
   "blackbeltkiyo": {},
-  "blackbeltlao": {},
-  "blackbeltlung": {},
+  "blackbeltlao": {
+    "no_rematch": true
+  },
+  "blackbeltlung": {
+    "no_rematch": true
+  },
   "blackbeltmanford": {},
-  "blackbeltnob": {},
-  "blackbeltyoshi": {},
+  "blackbeltnob": {
+    "no_rematch": true
+  },
+  "blackbeltyoshi": {
+    "no_rematch": true
+  },
   "blaine": {
-    "no_autobattle": true
+    "no_autobattle": true,
+    "no_rematch": true
   },
   "blaine_rematch": {
     "no_autobattle": true
   },
   "blue": {
-    "no_autobattle": true
+    "no_autobattle": true,
+    "no_rematch": true
   },
   "blue_rematch": {
     "no_autobattle": true
   },
-  "boarderbrad": {},
+  "boarderbrad": {
+    "no_rematch": true
+  },
   "boarderbryce": {},
-  "boarderdouglas": {},
-  "boarderronald": {},
+  "boarderdouglas": {
+    "no_rematch": true
+  },
+  "boarderronald": {
+    "no_rematch": true
+  },
   "boardershaun": {},
   "brock": {
-    "no_autobattle": true
+    "no_autobattle": true,
+    "no_rematch": true
   },
   "brock_rematch": {
     "no_autobattle": true
   },
   "bruno": {
-    "no_autobattle": true
+    "no_autobattle": true,
+    "no_rematch": true
   },
   "bruno_rematch": {
-    "no_autobattle": true
+    "no_autobattle": true,
+    "no_rematch": true
   },
   "bugcatcherabner": {},
-  "bugcatcheral": {},
+  "bugcatcheral": {
+    "no_rematch": true
+  },
   "bugcatcherarnie": {},
-  "bugcatcherbenny": {},
+  "bugcatcherbenny": {
+    "no_rematch": true
+  },
   "bugcatcherdane": {},
   "bugcatcherdion": {},
   "bugcatcherdon": {},
   "bugcatcherdoug": {},
   "bugcatchered": {},
   "bugcatcherellis": {},
-  "bugcatcherjosh": {},
+  "bugcatcherjosh": {
+    "no_rematch": true
+  },
   "bugcatcherrob": {},
   "bugcatcherstacey": {},
   "bugcatcherwade": {},
   "bugcatcherwayne": {},
   "bugsy": {
-    "no_autobattle": true
+    "no_autobattle": true,
+    "no_rematch": true
   },
   "bugsy_rematch": {
     "no_autobattle": true
@@ -151,13 +198,17 @@
   "burglarlewis": {},
   "burglarorson": {},
   "burglarsimon": {},
-  "burnedtower_silver": {},
+  "burnedtower_silver": {
+    "no_rematch": true
+  },
   "camperclark": {},
   "camperdean": {},
   "campereliott": {},
   "campergrant": {},
   "camperivan": {},
-  "camperjerry": {},
+  "camperjerry": {
+    "no_rematch": true
+  },
   "camperlloyd": {},
   "camperpedro": {},
   "camperquentin": {},
@@ -169,28 +220,33 @@
   "campertodd": {},
   "campervirgil": {},
   "cherrygrove_silver": {
+    "no_rematch": true,
     "requirements": "q.player.has_tag('Dialogue5')"
   },
   "chuck": {
-    "no_autobattle": true
+    "no_autobattle": true,
+    "no_rematch": true
   },
   "chuck_rematch": {
     "no_autobattle": true
   },
   "clair": {
-    "no_autobattle": true
+    "no_autobattle": true,
+    "no_rematch": true
   },
   "clair_rematch": {
     "no_autobattle": true
   },
   "erika": {
-    "no_autobattle": true
+    "no_autobattle": true,
+    "no_rematch": true
   },
   "erika_rematch": {
     "no_autobattle": true
   },
   "falkner": {
-    "no_autobattle": true
+    "no_autobattle": true,
+    "no_rematch": true
   },
   "falkner_rematch": {
     "no_autobattle": true
@@ -206,8 +262,12 @@
   "fishermanbarney": {},
   "fishermanedgar": {},
   "fishermangideon": {},
-  "fishermanhenry": {},
-  "fishermanjustin": {},
+  "fishermanhenry": {
+    "no_autobattle": true
+  },
+  "fishermanjustin": {
+    "no_autobattle": true
+  },
   "fishermankyle": {},
   "fishermankyler": {},
   "fishermanliam": {},
@@ -222,11 +282,17 @@
   "fishermanwilton": {},
   "gentlemanalfred": {},
   "gentlemanandrew": {},
-  "gentlemangregory": {},
+  "gentlemangregory": {
+    "no_rematch": true
+  },
   "gentlemanmilton": {},
   "gentlemanpreston": {},
-  "goldenrod_silver": {},
-  "guitaristvincent": {},
+  "goldenrod_silver": {
+    "no_rematch": true
+  },
+  "guitaristvincent": {
+    "no_rematch": true
+  },
   "hikeranthony": {},
   "hikerbailey": {},
   "hikerbenjamin": {},
@@ -235,7 +301,9 @@
   "hikerdaniel": {},
   "hikerdevin": {},
   "hikerdwight": {},
-  "hikeredwin": {},
+  "hikeredwin": {
+    "no_rematch": true
+  },
   "hikereoin": {},
   "hikererik": {},
   "hikerjim": {},
@@ -248,25 +316,31 @@
   "hikerrussel": {},
   "hikertimothy": {},
   "janine": {
-    "no_autobattle": true
+    "no_autobattle": true,
+    "no_rematch": true
   },
   "janine_rematch": {
     "no_autobattle": true
   },
   "jasmine": {
-    "no_autobattle": true
+    "no_autobattle": true,
+    "no_rematch": true
   },
   "jasmine_rematch": {
     "no_autobattle": true
   },
   "jugglerfritz": {},
-  "jugglerhorton": {},
+  "jugglerhorton": {
+    "no_rematch": true
+  },
   "jugglerirwin": {},
   "karen": {
-    "no_autobattle": true
+    "no_autobattle": true,
+    "no_rematch": true
   },
   "karen_rematch": {
-    "no_autobattle": true
+    "no_autobattle": true,
+    "no_rematch": true
   },
   "kimonokuni": {},
   "kimonomiki": {},
@@ -274,56 +348,86 @@
   "kimonosayo": {},
   "kimonozuki": {},
   "koga": {
-    "no_autobattle": true
+    "no_autobattle": true,
+    "no_rematch": true
   },
   "koga_rematch": {
-    "no_autobattle": true
+    "no_autobattle": true,
+    "no_rematch": true
   },
   "lance": {
-    "no_autobattle": true
+    "no_autobattle": true,
+    "no_rematch": true
   },
   "lance_rematch": {
-    "no_autobattle": true
+    "no_autobattle": true,
+    "no_rematch": true
   },
-  "lasscarrie": {},
-  "lasscathy": {},
+  "lasscarrie": {
+    "no_rematch": true
+  },
+  "lasscathy": {
+    "no_rematch": true
+  },
   "lassconnie": {},
   "lassdana": {},
   "lassellen": {},
   "lasskrise": {},
   "lasslaura": {},
-  "lassmichelle": {},
+  "lassmichelle": {
+    "no_rematch": true
+  },
   "lassshannon": {},
-  "mediumdarcy": {},
-  "mediumedith": {},
-  "mediumgeorgina": {},
-  "mediumgrace": {},
-  "mediummartha": {},
-  "mediumrebecca": {},
+  "mediumdarcy": {
+    "no_rematch": true
+  },
+  "mediumedith": {
+    "no_rematch": true
+  },
+  "mediumgeorgina": {
+    "no_rematch": true
+  },
+  "mediumgrace": {
+    "no_rematch": true
+  },
+  "mediummartha": {
+    "no_rematch": true
+  },
+  "mediumrebecca": {
+    "no_rematch": true
+  },
   "misty": {
-    "no_autobattle": true
+    "no_autobattle": true,
+    "no_rematch": true
   },
   "misty_rematch": {
     "no_autobattle": true
   },
   "morty": {
-    "no_autobattle": true
+    "no_autobattle": true,
+    "no_rematch": true
   },
   "morty_rematch": {
     "no_autobattle": true
   },
-  "mtmoon_silver": {},
+  "mtmoon_silver": {
+    "no_rematch": true
+  },
   "ninjaalice": {
-    "no_autobattle": true
+    "no_autobattle": true,
+    "no_rematch": true
   },
   "ninjabarry": {
-    "no_autobattle": true
+    "no_autobattle": true,
+    "no_rematch": true
   },
   "ninjacindy": {
-    "no_autobattle": true
+    "no_autobattle": true,
+    "no_rematch": true
   },
   "ninjalinda": {
-    "no_autobattle": true
+    "no_autobattle": true,
+    "no_rematch": true
   },
   "picknickeradrian": {},
   "picknickerbrooke": {},
@@ -336,11 +440,15 @@
   "picknickerheidi": {},
   "picknickerhope": {},
   "picknickerkim": {},
-  "picknickerliz": {},
+  "picknickerliz": {
+    "no_autobattle": true
+  },
   "picknickerpiper": {},
   "picknickerselina": {},
   "picknickersharon": {},
-  "picknickertanya": {},
+  "picknickertanya": {
+    "no_rematch": true
+  },
   "picknickertiffany": {},
   "pokefanalex": {},
   "pokefanallan": {},
@@ -375,17 +483,22 @@
     "requirements": "q.npc.world.is_time_of_day('night') && !q.npc.world.is_time_of_day('twilight')"
   },
   "pryce": {
-    "no_autobattle": true
+    "no_autobattle": true,
+    "no_rematch": true
   },
   "pryce_rematch": {
     "no_autobattle": true
   },
   "psychiceli": {},
   "psychicfidel": {},
-  "psychicfranklin": {},
+  "psychicfranklin": {
+    "no_rematch": true
+  },
   "psychicgreg": {},
   "psychicherman": {},
-  "psychicjared": {},
+  "psychicjared": {
+    "no_rematch": true
+  },
   "psychicmark": {},
   "psychicnathan": {},
   "psychicnelson": {},
@@ -394,49 +507,130 @@
   "red": {
     "no_autobattle": true
   },
-  "rocketarcher": {},
-  "rocketariana": {},
-  "rocketariana2": {},
-  "rocketgrunt1": {},
-  "rocketgrunt10": {},
-  "rocketgrunt11": {},
-  "rocketgrunt12": {},
-  "rocketgrunt13": {},
-  "rocketgrunt14": {},
-  "rocketgrunt15": {},
-  "rocketgrunt16": {},
-  "rocketgrunt17": {},
-  "rocketgrunt18": {},
-  "rocketgrunt19": {},
-  "rocketgrunt2": {},
-  "rocketgrunt20": {},
-  "rocketgrunt21": {},
-  "rocketgrunt22": {},
-  "rocketgrunt23": {},
-  "rocketgrunt24": {},
-  "rocketgrunt25": {},
-  "rocketgrunt26": {},
-  "rocketgrunt27": {},
-  "rocketgrunt28": {},
-  "rocketgrunt29": {},
-  "rocketgrunt3": {},
-  "rocketgrunt30": {},
-  "rocketgrunt31": {},
-  "rocketgrunt32": {},
-  "rocketgrunt33": {},
-  "rocketgrunt34": {},
-  "rocketgrunt4": {},
-  "rocketgrunt5": {},
-  "rocketgrunt6": {},
-  "rocketgrunt7": {},
-  "rocketgrunt8": {},
-  "rocketgrunt9": {},
-  "rocketproton1": {
-    "no_autobattle": true
+  "rocketarcher": {
+    "no_rematch": true
   },
-  "rocketproton2": {},
+  "rocketariana": {
+    "no_rematch": true
+  },
+  "rocketariana2": {
+    "no_rematch": true
+  },
+  "rocketgrunt1": {
+    "challenge_distance": 6.5,
+    "no_rematch": true
+  },
+  "rocketgrunt10": {
+    "no_rematch": true
+  },
+  "rocketgrunt11": {
+    "no_rematch": true
+  },
+  "rocketgrunt12": {
+    "no_rematch": true
+  },
+  "rocketgrunt13": {
+    "no_rematch": true
+  },
+  "rocketgrunt14": {
+    "no_rematch": true
+  },
+  "rocketgrunt15": {
+    "no_rematch": true
+  },
+  "rocketgrunt16": {
+    "no_rematch": true
+  },
+  "rocketgrunt17": {
+    "no_rematch": true
+  },
+  "rocketgrunt18": {
+    "no_rematch": true
+  },
+  "rocketgrunt19": {
+    "no_rematch": true
+  },
+  "rocketgrunt2": {
+    "challenge_distance": 8.75,
+    "no_rematch": true
+  },
+  "rocketgrunt20": {
+    "no_rematch": true
+  },
+  "rocketgrunt21": {
+    "no_rematch": true
+  },
+  "rocketgrunt22": {
+    "no_rematch": true
+  },
+  "rocketgrunt23": {
+    "no_rematch": true
+  },
+  "rocketgrunt24": {
+    "no_rematch": true
+  },
+  "rocketgrunt25": {
+    "no_rematch": true
+  },
+  "rocketgrunt26": {
+    "no_rematch": true
+  },
+  "rocketgrunt27": {
+    "no_rematch": true
+  },
+  "rocketgrunt28": {
+    "no_rematch": true
+  },
+  "rocketgrunt29": {
+    "no_rematch": true
+  },
+  "rocketgrunt3": {
+    "challenge_distance": 9.5,
+    "no_rematch": true
+  },
+  "rocketgrunt30": {
+    "no_rematch": true
+  },
+  "rocketgrunt31": {
+    "no_rematch": true
+  },
+  "rocketgrunt32": {
+    "no_rematch": true
+  },
+  "rocketgrunt33": {
+    "no_rematch": true
+  },
+  "rocketgrunt34": {
+    "no_rematch": true
+  },
+  "rocketgrunt4": {
+    "no_rematch": true
+  },
+  "rocketgrunt5": {
+    "no_rematch": true
+  },
+  "rocketgrunt6": {
+    "no_rematch": true
+  },
+  "rocketgrunt7": {
+    "no_rematch": true
+  },
+  "rocketgrunt8": {
+    "no_rematch": true
+  },
+  "rocketgrunt9": {
+    "no_rematch": true
+  },
+  "rocketproton1": {
+    "no_autobattle": true,
+    "no_rematch": true
+  },
+  "rocketproton2": {
+    "no_rematch": true
+  },
   "sabrina": {
-    "no_autobattle": true
+    "no_autobattle": true,
+    "no_rematch": true
   },
   "sabrina_rematch": {
     "no_autobattle": true
@@ -447,19 +641,24 @@
   "sagejin": {},
   "sagekoji": {},
   "sageli": {
-    "no_autobattle": true
+    "no_autobattle": true,
+    "no_rematch": true
   },
   "sagemasa": {},
   "sageneal": {},
   "sagenico": {},
   "sagetroy": {},
-  "sailoreddie": {},
+  "sailoreddie": {
+    "no_rematch": true
+  },
   "sailoreugene": {},
   "sailorharry": {},
   "sailorhuey": {},
   "sailorjeff": {},
   "sailorkent": {},
-  "sailorparker": {},
+  "sailorparker": {
+    "no_rematch": true
+  },
   "sailorroberto": {},
   "sailorstanly": {},
   "sailorterrell": {},
@@ -478,40 +677,61 @@
   "schoolkidtorin": {},
   "schoolkidtravis": {},
   "scientistbraydon": {},
-  "scientistdaniel": {},
+  "scientistdaniel": {
+    "no_rematch": true
+  },
   "scientistivan": {},
   "scientistjed": {},
-  "scientistlinden": {},
-  "scientistlowell": {},
+  "scientistlinden": {
+    "no_rematch": true
+  },
+  "scientistlowell": {
+    "no_rematch": true
+  },
   "scientistmitch": {},
   "scientistross": {},
   "scientistted": {},
   "skiercady": {},
-  "skierclarissa": {},
-  "skierroxanne": {},
-  "supernerdcary": {},
+  "skierclarissa": {
+    "no_rematch": true
+  },
+  "skierroxanne": {
+    "no_rematch": true
+  },
+  "supernerdcary": {
+    "no_rematch": true
+  },
   "supernerderic": {},
   "supernerdhugh": {},
   "supernerdmarkus": {},
-  "supernerdmerie": {},
+  "supernerdmerie": {
+    "no_rematch": true
+  },
   "supernerdpat": {},
   "supernerdsam": {},
   "supernerdteru": {},
   "supernerdtyrone": {},
-  "supernerdwaldo": {},
+  "supernerdwaldo": {
+    "no_rematch": true
+  },
   "surge": {
-    "no_autobattle": true
+    "no_autobattle": true,
+    "no_rematch": true
   },
   "surge_rematch": {
     "no_autobattle": true
   },
   "swimmerberke": {},
-  "swimmerbriana": {},
+  "swimmerbriana": {
+    "no_rematch": true
+  },
   "swimmercharlie": {},
   "swimmerchelan": {},
   "swimmerdebbie": {},
   "swimmerdenise": {},
-  "swimmerdiana": {},
+  "swimmerdiana": {
+    "no_rematch": true
+  },
   "swimmerduane": {},
   "swimmerelaine": {},
   "swimmerelmo": {},
@@ -520,7 +740,9 @@
   "swimmergeorge": {},
   "swimmerharold": {},
   "swimmerjerome": {},
-  "swimmerjoy": {},
+  "swimmerjoy": {
+    "no_rematch": true
+  },
   "swimmerkara": {},
   "swimmerkaylee": {},
   "swimmerkendra": {},
@@ -543,7 +765,8 @@
   "teachercolette": {},
   "teacherhillary": {},
   "twinamy": {
-    "doubles_id": "twinsamyandmimi"
+    "doubles_id": "twinsamyandmimi",
+    "no_rematch": true
   },
   "twinclea": {
     "doubles_id": "twinscleaandgil"
@@ -558,7 +781,8 @@
     "doubles_id": "twinscleaandgil"
   },
   "twinjo": {
-    "doubles_id": "twinsjoandzoe"
+    "doubles_id": "twinsjoandzoe",
+    "no_rematch": true
   },
   "twinkay": {
     "doubles_id": "twinskayandtia"
@@ -567,7 +791,8 @@
     "doubles_id": "twinsmegandpeg"
   },
   "twinmimi": {
-    "doubles_id": "twinsamyandmimi"
+    "doubles_id": "twinsamyandmimi",
+    "no_rematch": true
   },
   "twinpeg": {
     "doubles_id": "twinsmegandpeg"
@@ -582,20 +807,26 @@
     "doubles_id": "twinstoriandtil"
   },
   "twinzoe": {
-    "doubles_id": "twinsjoandzoe"
+    "doubles_id": "twinsjoandzoe",
+    "no_rematch": true
   },
-  "victoryroad_silver": {},
+  "victoryroad_silver": {
+    "no_rematch": true
+  },
   "whitney": {
-    "no_autobattle": true
+    "no_autobattle": true,
+    "no_rematch": true
   },
   "whitney_rematch": {
     "no_autobattle": true
   },
   "will": {
-    "no_autobattle": true
+    "no_autobattle": true,
+    "no_rematch": true
   },
   "will_rematch": {
-    "no_autobattle": true
+    "no_autobattle": true,
+    "no_rematch": true
   },
   "youngcoupleduff": {
     "doubles_id": "youngcoupleduffandeda"
