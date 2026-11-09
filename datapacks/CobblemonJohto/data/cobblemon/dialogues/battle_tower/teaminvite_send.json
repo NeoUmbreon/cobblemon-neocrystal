@@ -31,7 +31,7 @@
                             "q.length(v.player.data.temp.players) + q.length(v.player.data.temp.npcs) >= 2 ? { return q.player.tell(v.player.username + '\\'s team is full!'); q.dialogue.close; };",
 
                             "q.run_command('execute as ' + v.player.username + ' at @s run playsound entity.experience_orb.pickup');",
-                            "q.run_command('tellraw ' + v.player.username + ' \"' + q.player.username + ' invited you to their multi team!\"');",
+                            "v.player.tell(q.player.username + ' invited you to their multi team!');",
                             "q.append(q.player.data.temp.invited, v.player);",
                             "v.player.data.temp.interacted_player == q.player ? { v.player.active_dialogue.input('cancelinvite') };",
                             

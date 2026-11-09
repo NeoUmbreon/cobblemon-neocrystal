@@ -41,11 +41,11 @@ for_each(t.pokemon, q.player.party.pokemon, {
 
 'Return pass/fail, tellraw if fail';
 t.fail == 0 ? return 1 : {
-    t.message.0 = ' {"text":"Issues:","color":"gray","bold":true}';
-    t.fail.required_pokemon != 0 ? { t.i = t.i + 1; t.message.[t.i] = ' {"text":"' + t.i + ') Format ' + t.format + ' requires exactly ' + t.fail.required_pokemon + ' Pokémon","color":"gray","italic":true}'; };
-    t.fail.banned_species != 0 ? { t.i = t.i + 1; t.message.[t.i] = ' {"text":"' + t.i + ') Banned Pokémon found: ' + t.found + '","color":"gray","italic":true}'; };
-    t.fail.duplicate_species != 0 ? { t.i = t.i + 1; t.message.[t.i] = ' {"text":"' + t.i + ') Duplicate Pokémon species are not allowed","color":"gray","italic":true}'; };
-    t.fail.duplicate_items != 0 ? { t.i = t.i + 1; t.message.[t.i] = ' {"text":"' + t.i + ') Duplicate held items are not allowed","color":"gray","italic":true}'; };
+    t.message.0 = '&7&lIssues';
+    t.fail.required_pokemon != 0 ? { t.i = t.i + 1; t.message.[t.i] = '&7&o' + t.i + ') Format ' + t.format + ' requires exactly ' + t.fail.required_pokemon + ' Pokémon' };
+    t.fail.banned_species != 0 ? { t.i = t.i + 1; t.message.[t.i] = '&7&o' + t.i + ') Banned Pokémon found: ' + t.found };
+    t.fail.duplicate_species != 0 ? { t.i = t.i + 1; t.message.[t.i] = '&7&o' + t.i + ') Duplicate Pokémon species are not allowed' };
+    t.fail.duplicate_items != 0 ? { t.i = t.i + 1; t.message.[t.i] = '&7&o' + t.i + ') Duplicate held items are not allowed' };
 
     return t.message;
 };

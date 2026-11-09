@@ -14,5 +14,5 @@ for_each(t.pokemon, v.player.party.pokemon, {
 q.length(t.stored_levels) == 0 ? return 0 : {
     v.player.data.temp.stored_ids = t.stored_ids;
     v.player.data.temp.stored_levels = t.stored_levels;
-    q.run_command('tellraw ' + v.player.username + ' {"text":"Your party has been capped to level 50. Their original levels will be restored upon leaving the Battle Tower.","color":"gray","italic":true}');
+    v.player.tell('&7&oYour party has been capped to level 50. Their original levels will be restored upon leaving the Battle Tower.');
 };

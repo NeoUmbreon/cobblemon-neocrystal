@@ -1,5 +1,6 @@
 c.trade_participant_1.has_tag('BattleTower') || c.trade_participant_2.has_tag('BattleTower') ? {
-    q.run_command('tellraw ' + c.trade_participant_1.username + ' {"text":"You can\'t trade Pokémon while in the Battle Tower!","color":"gray","italic":true}');
-    q.run_command('tellraw ' + c.trade_participant_2.username + ' {"text":"You can\'t trade Pokémon while in the Battle Tower!","color":"gray","italic":true}');
+    t.str = '&7&oYou can\'t trade Pokémon while in the Battle Tower!';
+    c.trade_participant_1.tell(t.str);
+    c.trade_participant_2.tell(t.str);
     q.cancel;
 };

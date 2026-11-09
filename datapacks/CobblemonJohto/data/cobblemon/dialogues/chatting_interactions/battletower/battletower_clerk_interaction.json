@@ -727,7 +727,7 @@
             "id": "invalidparty1",
             "speaker": "npc",
             "escapeAction": [
-                "for_each(t.str, v.validated, { q.run_command('tellraw ' + q.player.username + t.str); });",
+                "for_each(t.str, v.validated, { q.player.tell(t.str); });",
                 "q.dialogue.close;"
             ],
             "lines": [
@@ -749,7 +749,7 @@
             "id": "invalidparty2",
             "speaker": "npc",
             "escapeAction": [
-                "for_each(t.str, v.validated, { q.run_command('tellraw ' + q.player.username + t.str); });",
+                "for_each(t.str, v.validated, { q.player.tell(t.str); });",
                 "q.dialogue.close;"
             ],
             "lines": [
@@ -771,7 +771,7 @@
             "id": "invalidparty3",
             "speaker": "npc",
             "escapeAction": [
-                "for_each(t.str, v.validated, { q.run_command('tellraw ' + q.player.username + t.str); });",
+                "for_each(t.str, v.validated, { q.player.tell(t.str); });",
                 "q.dialogue.close;"
             ],
             "lines": [
@@ -785,7 +785,7 @@
                         "text": "Close",
                         "value": "close",
                         "action": [
-                            "for_each(t.str, v.validated, { q.run_command('tellraw ' + q.player.username + t.str); });",
+                            "for_each(t.str, v.validated, { q.player.tell(t.str); });",
                             "q.dialogue.close;"
                         ]
                     }
