@@ -1,0 +1,10 @@
+{
+    "resourceIdentifier": "cobblemon:oldman",
+    "presets": [
+        "cobblemon:default"
+    ],
+    "interaction": {
+        "type": "dialogue",
+        "dialogue": "cobblemon:blackthorn_startermovetutor_interaction"
+    }
+}
