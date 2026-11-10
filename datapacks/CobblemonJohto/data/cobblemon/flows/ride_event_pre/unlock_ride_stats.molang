@@ -1,0 +1,2 @@
+c.pokemon.remove_aspects('unlock-ride-stats');
+c.player == c.pokemon.owner && c.player.has_tag('Red') ? c.pokemon.add_aspects('unlock-ride-stats');
