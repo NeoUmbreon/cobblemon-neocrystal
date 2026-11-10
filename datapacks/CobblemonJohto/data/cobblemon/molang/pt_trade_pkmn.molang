@@ -9,6 +9,8 @@ t.found = 0;
 
 t.party_pokemon != 0 ? {
     t.level = ' level='+t.party_pokemon.level;
+    t.item = q.to_string(t.party_pokemon.held_item.item);
+    t.item != 'minecraft:air' ? q.run_command('execute as ' + q.player.username + ' run give @s ' + t.item);
     q.player.party.remove_by_id(t.party_pokemon.id);
     q.player.party.add_by_properties(t.given + t.level + ' shiny=no');
     q.run_command('execute as ' + q.player.username + ' run function johto:sound/playlocalsfx {sfx:"pokemontraded"}');
