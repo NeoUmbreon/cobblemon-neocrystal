@@ -1,0 +1,10 @@
+{
+    "resourceIdentifier": "cobblemon:baldman",
+    "presets": [
+        "cobblemon:default"
+    ],
+    "interaction": {
+        "type": "dialogue",
+        "dialogue": "cobblemon:ilexforest_headbutttutor_interaction"
+    }
+}

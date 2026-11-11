@@ -1,0 +1,10 @@
+{
+    "resourceIdentifier": "cobblemon:oldlady",
+    "presets": [
+        "cobblemon:default"
+    ],
+    "interaction": {
+        "type": "dialogue",
+        "dialogue": "cobblemon:blackthorn_dracometeortutor_interaction"
+    }
+}

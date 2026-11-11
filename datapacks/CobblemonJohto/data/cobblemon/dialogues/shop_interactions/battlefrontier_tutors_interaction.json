@@ -1,0 +1,372 @@
+{
+    "initializationAction": [
+        "v.stock = q.run_script('johto:get_stock');",
+        "q.run_script('johto:battlefrontier_tutors_dialogue');",
+        "q.run_command('team join battletower ' + q.player.username);",
+        "v.page_length = 3;"
+    ],
+    "escapeAction": [
+        "q.run_command('team join default ' + q.player.username);",
+        "q.dialogue.close;"
+    ],
+    "speakers": {
+        "npc": {
+            "name": {
+                "type": "expression",
+                "expression": "q.npc.name"
+            },
+            "face": "q.npc.face"
+        },
+        "none": {
+            "name": " "
+        }
+    },
+    "pages": [
+        {
+            "id": "greeting1",
+            "speaker": "npc",
+            "lines": [
+                {
+                    "type": "expression",
+                    "expression": "v.msgs.greeting"
+                }
+            ],
+            "input": {
+                "type": "option",
+                "vertical": false,
+                "options": [
+                    {
+                        "text": "Next",
+                        "value": "next",
+                        "action": "q.dialogue.next_page;"
+                    }
+                ]
+            }
+        },
+        {
+            "id": "greeting2",
+            "speaker": "npc",
+            "lines": [
+                "May I teach your Pokémon moves in exchange for BP?"
+            ],
+            "input": {
+                "type": "option",
+                "vertical": false,
+                "options": [
+                    {
+                        "text": "Yes",
+                        "value": "yes",
+                        "action": [
+                            "v.max_party_index = v.page_length * math.ceil(q.player.party.count / v.page_length);",
+                            "q.dialogue.next_page;"
+                        ]
+                    },
+                    {
+                        "text": "No",
+                        "value": "no",
+                        "action": "q.dialogue.set_page('leave');"
+                    }
+                ]
+            }
+        },
+        {
+            "id": "partylist",
+            "speaker": "npc",
+            "lines": [
+                "Which Pokémon should I teach a move to?"
+            ],
+            "input": {
+                "type": "option",
+                "vertical": true,
+                "options": [
+                    {
+                        "value": "page_forward",
+                        "text": {
+                            "type": "expression",
+                            "expression": "'Page ' + (v.party_index / v.page_length + 1) + ' / ' + (v.max_party_index / v.page_length) + ' >>';"
+                        },
+                        "isVisible": "q.player.party.count > v.page_length + 1;",
+                        "action": [
+                            "v.party_index = v.party_index + v.page_length; v.party_index >= v.max_party_index ? { v.party_index = 0 };",
+                            "q.dialogue.set_page('partylist');"
+                        ]
+                    },
+                    {
+                        "value": "sel0",
+                        "text": {
+                            "type": "expression",
+                            "expression": "t.poke = q.player.party.pokemon.[v.party_index + 0]; t.poke.species.name == 0 ? return '' : return t.poke.species.name;"
+                        },
+                        "isVisible": "q.player.party.count > 0;",
+                        "isSelectable": "q.player.party.pokemon.[v.party_index + 0] != 0;",
+                        "action": [
+                            "q.set_query('pokemon', q.player.party.pokemon.[v.party_index + 0]);",
+                            "v.move_list = q.run_script('tutorable_moves', q.pokemon, v.stock);",
+                            "v.max_move_index = v.page_length * math.ceil(q.length(v.move_list) / v.page_length);",
+                            "q.dialogue.set_page(v.max_move_index > 0 ? 'movelist' : 'nomoves');"
+                        ]
+                    },
+                    {
+                        "value": "sel1",
+                        "text": {
+                            "type": "expression",
+                            "expression": "t.poke = q.player.party.pokemon.[v.party_index + 1]; t.poke.species.name == 0 ? return '' : return t.poke.species.name;"
+                        },
+                        "isVisible": "q.player.party.count > 1;",
+                        "isSelectable": "q.player.party.pokemon.[v.party_index + 1] != 0;",
+                        "action": [
+                            "q.set_query('pokemon', q.player.party.pokemon.[v.party_index + 1]);",
+                            "v.move_list = q.run_script('tutorable_moves', q.pokemon, v.stock);",
+                            "v.max_move_index = v.page_length * math.ceil(q.length(v.move_list) / v.page_length);",
+                            "q.dialogue.set_page(v.max_move_index > 0 ? 'movelist' : 'nomoves');"
+                        ]
+                    },
+                    {
+                        "value": "sel2",
+                        "text": {
+                            "type": "expression",
+                            "expression": "t.poke = q.player.party.pokemon.[v.party_index + 2]; t.poke.species.name == 0 ? return '' : return t.poke.species.name;"
+                        },
+                        "isVisible": "q.player.party.count > 2;",
+                        "isSelectable": "q.player.party.pokemon.[v.party_index + 2] != 0;",
+                        "action": [
+                            "q.set_query('pokemon', q.player.party.pokemon.[v.party_index + 2]);",
+                            "v.move_list = q.run_script('tutorable_moves', q.pokemon, v.stock);",
+                            "v.max_move_index = v.page_length * math.ceil(q.length(v.move_list) / v.page_length);",
+                            "q.dialogue.set_page(v.max_move_index > 0 ? 'movelist' : 'nomoves');"
+                        ]
+                    },
+                    {
+                        "value": "selend",
+                        "text": {
+                            "type": "expression",
+                            "expression": "t.poke = q.player.party.pokemon.[v.page_length]; t.poke.species.name == 0 ? return '' : return t.poke.species.name;"
+                        },
+                        "isVisible": "q.player.party.count - 1 == v.page_length;",
+                        "action": [
+                            "q.set_query('pokemon', q.player.party.pokemon.[v.page_length]);",
+                            "v.move_list = q.run_script('tutorable_moves', q.pokemon, v.stock);",
+                            "v.max_move_index = v.page_length * math.ceil(q.length(v.move_list) / v.page_length);",
+                            "q.dialogue.set_page(v.max_move_index > 0 ? 'movelist' : 'nomoves');"
+                        ]
+                    },
+                    {
+                        "text": "Exit",
+                        "value": "exit",
+                        "action": "q.dialogue.set_page('leave');"
+                    }
+                ]
+            }
+        },
+        {
+            "id": "movelist",
+            "speaker": "npc",
+            "lines": [
+                {
+                    "type": "expression",
+                    "expression": "'Which move should I teach ' + q.pokemon.species.name + '?'"
+                }
+            ],
+            "input": {
+                "type": "option",
+                "vertical": true,
+                "options": [
+                    {
+                        "value": "page_forward",
+                        "text": {
+                            "type": "expression",
+                            "expression": "'Page ' + (v.move_index / v.page_length + 1) + ' / ' + (v.max_move_index / v.page_length) + ' >>';"
+                        },
+                        "isVisible": "q.length(v.move_list) > v.page_length + 1;",
+                        "action": [
+                            "v.move_index = v.move_index + v.page_length; v.move_index >= v.max_move_index ? { v.move_index = 0 };",
+                            "q.dialogue.set_page('movelist');"
+                        ]
+                    },
+                    {
+                        "value": "sel0",
+                        "text": {
+                            "type": "expression",
+                            "expression": "t.elem = v.move_list.[v.move_index + 0]; t.elem.name == 0 ? return '' : { return t.elem.name + ': ' + t.elem.price + 'BP' };"
+                        },
+                        "isVisible": "q.length(v.move_list) > 0;",
+                        "isSelectable": "v.move_list.[v.move_index + 0] != 0;",
+                        "action": [
+                            "q.set_query('elem', v.move_list.[v.move_index + 0]);",
+                            "q.dialogue.set_page('confirmation');"
+                        ]
+                    },
+                    {
+                        "value": "sel1",
+                        "text": {
+                            "type": "expression",
+                            "expression": "t.elem = v.move_list.[v.move_index + 1]; t.elem.name == 0 ? return '' : { return t.elem.name + ': ' + t.elem.price + 'BP' };"
+                        },
+                        "isVisible": "q.length(v.move_list) > 1;",
+                        "isSelectable": "v.move_list.[v.move_index + 1] != 0;",
+                        "action": [
+                            "q.set_query('elem', v.move_list.[v.move_index + 1]);",
+                            "q.dialogue.set_page('confirmation');"
+                        ]
+                    },
+                    {
+                        "value": "sel2",
+                        "text": {
+                            "type": "expression",
+                            "expression": "t.elem = v.move_list.[v.move_index + 2]; t.elem.name == 0 ? return '' : { return t.elem.name + ': ' + t.elem.price + 'BP' };"
+                        },
+                        "isVisible": "q.length(v.move_list) > 2;",
+                        "isSelectable": "v.move_list.[v.move_index + 2] != 0;",
+                        "action": [
+                            "q.set_query('elem', v.move_list.[v.move_index + 2]);",
+                            "q.dialogue.set_page('confirmation');"
+                        ]
+                    },
+                    {
+                        "value": "selend",
+                        "text": {
+                            "type": "expression",
+                            "expression": "t.elem = v.move_list.[v.page_length]; t.elem.name == 0 ? return '' : { return t.elem.name + ': ' + t.elem.price + 'BP' };"
+                        },
+                        "isVisible": "q.length(v.move_list) - 1 == v.page_length;",
+                        "action": [
+                            "q.set_query('elem', v.move_list.[v.page_length]);",
+                            "q.dialogue.set_page('confirmation');"
+                        ]
+                    },
+                    {
+                        "text": "Back",
+                        "value": "back",
+                        "action": [
+                            "v.move_index = 0;",
+                            "q.dialogue.set_page('partylist');"
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "id": "confirmation",
+            "speaker": "none",
+            "lines": [
+                {
+                    "type": "expression",
+                    "expression": "q.elem.name + ': ' + q.elem.desc"
+                }
+            ],
+            "input": {
+                "type": "option",
+                "vertical": true,
+                "options": [
+                    {
+                        "text": {
+                            "type": "expression",
+                            "expression": "'Teach ' + q.pokemon.species.name + ': ' + q.elem.price + ' BP'"
+                        },
+                        "value": "teach",
+                        "action": [
+                            "v.success = q.run_script('johto:buy_from_shop','tutor',q.elem.id,'BattlePoints',q.elem.price,q.pokemon,true);",
+                            "v.success ? q.run_command('execute as ' + q.player.username + ' run function johto:sound/playlocalsfx {sfx:\"levelup\"}');",
+                            "q.dialogue.set_page(v.success ? 'buysuccess' : 'buyfail');"
+                        ]
+                    },
+                    {
+                        "text": "Back",
+                        "value": "back",
+                        "action": "q.dialogue.set_page('movelist');"
+                    }
+                ]
+            }
+        },
+        {
+            "id": "buysuccess",
+            "speaker": "npc",
+            "lines": [
+                {
+                    "type": "expression",
+                    "expression": "q.pokemon.species.name + ' learned how to use ' + q.elem.name + v.msgs.exclaim"
+                }
+            ],
+            "input": {
+                "type": "option",
+                "vertical": false,
+                "options": [
+                    {
+                        "text": "Back",
+                        "value": "back",
+                        "action": [
+                            "v.move_index = 0;",
+                            "q.dialogue.set_page('partylist');"
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "id": "nomoves",
+            "speaker": "npc",
+            "lines": [
+                {
+                    "type": "expression",
+                    "expression": "v.msgs.no_moves"
+                }
+            ],
+            "input": {
+                "type": "option",
+                "vertical": false,
+                "options": [
+                    {
+                        "text": "Back",
+                        "value": "back",
+                        "action": "q.dialogue.set_page('partylist');"
+                    }
+                ]
+            }
+        },
+        {
+            "id": "buyfail",
+            "speaker": "npc",
+            "lines": [
+                {
+                    "type": "expression",
+                    "expression": "v.msgs.no_bp"
+                }
+            ],
+            "input": {
+                "type": "option",
+                "vertical": false,
+                "options": [
+                    {
+                        "text": "Back",
+                        "value": "back",
+                        "action": "q.dialogue.set_page('movelist');"
+                    }
+                ]
+            }
+        },
+        {
+            "id": "leave",
+            "speaker": "npc",
+            "lines": [
+                {
+                    "type": "expression",
+                    "expression": "v.msgs.farewell"
+                }
+            ],
+            "input": {
+                "type": "option",
+                "vertical": false,
+                "options": [
+                    {
+                        "text": "Close",
+                        "value": "close",
+                        "action": [
+                            "q.run_command('team join default ' + q.player.username);",
+                            "q.dialogue.close;"
+                        ]
+                    }
+                ]
+            }
+        }
+    ]
+}

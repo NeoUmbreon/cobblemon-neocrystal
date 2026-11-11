@@ -1,0 +1,459 @@
+{
+    "initializationAction": [
+        "q.player.data.met_wilma ? q.dialogue.set_page('greetingmet');",
+        "q.player.data.met_wilma = true; q.player.save_data;",
+        "v.page_length = 3;"
+    ],
+    "speakers": {
+        "npc": {
+            "name": " ",
+            "face": "q.npc.face"
+        },
+        "none": {
+            "name": " "
+        }
+    },
+    "pages": [
+        {
+            "id": "greeting",
+            "speaker": "npc",
+            "lines": [
+                "Hohoho...",
+                "They call me Grandma Wilma."
+            ],
+            "input": {
+                "type": "option",
+                "vertical": false,
+                "options": [
+                    {
+                        "text": "Next",
+                        "value": "next",
+                        "action": "q.dialogue.next_page;"
+                    }
+                ]
+            }
+        },
+        {
+            "id": "greeting2",
+            "speaker": "npc",
+            "lines": [
+                "I sense a slight talent as a Dragon Tamer in you."
+            ],
+            "input": {
+                "type": "option",
+                "vertical": false,
+                "options": [
+                    {
+                        "text": "Next",
+                        "value": "next",
+                        "action": [
+                            "v.prompt_msg = 'Would you like me to teach a move to one of your Pokémon?';",
+                            "q.dialogue.set_page('prompt');"
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "id": "greetingmet",
+            "speaker": "npc",
+            "lines": [
+                "Ah, it is you again..."
+            ],
+            "input": {
+                "type": "option",
+                "vertical": false,
+                "options": [
+                    {
+                        "text": "Next",
+                        "value": "next",
+                        "action": [
+                            "v.prompt_msg = 'Would you like me to teach the best Dragon-type move I know to one of your Pokémon?';",
+                            "q.dialogue.set_page('prompt');"
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "id": "prompt",
+            "speaker": "npc",
+            "lines": [
+                {
+                    "type": "expression",
+                    "expression": "v.prompt_msg"
+                }
+            ],
+            "input": {
+                "type": "option",
+                "vertical": false,
+                "options": [
+                    {
+                        "text": "Yes",
+                        "value": "yes",
+                        "action": [
+                            "for_each(t.pokemon, q.player.party.pokemon, { t.pokemon.can_learn_move('dracometeor') ? { t.found = true; break }; }); !t.found ? return q.dialogue.set_page('nonecanlearn');",
+                            "v.max_party_index = v.page_length * math.ceil(q.player.party.count / v.page_length);",
+                            "q.dialogue.next_page;"
+                        ]
+                    },
+                    {
+                        "text": "No",
+                        "value": "no",
+                        "action": "q.dialogue.set_page('leave');"
+                    }
+                ]
+            }
+        },
+        {
+            "id": "partylist",
+            "speaker": "npc",
+            "lines": [
+                "Fine, fine, now pick the Pokémon I should teach the move to."
+            ],
+            "input": {
+                "type": "option",
+                "vertical": true,
+                "options": [
+                    {
+                        "value": "page_forward",
+                        "text": {
+                            "type": "expression",
+                            "expression": "'Page ' + (v.party_index / v.page_length + 1) + ' / ' + (v.max_party_index / v.page_length) + ' >>';"
+                        },
+                        "isVisible": "q.player.party.count > v.page_length + 1;",
+                        "action": [
+                            "v.party_index = v.party_index + v.page_length; v.party_index >= v.max_party_index ? { v.party_index = 0 };",
+                            "q.dialogue.set_page('partylist');"
+                        ]
+                    },
+                    {
+                        "value": "sel0",
+                        "text": {
+                            "type": "expression",
+                            "expression": "t.poke = q.player.party.pokemon.[v.party_index + 0]; t.poke.species.name == 0 ? return '' : return t.poke.species.name;"
+                        },
+                        "isVisible": "q.player.party.count > 0;",
+                        "isSelectable": "q.player.party.pokemon.[v.party_index + 0] != 0",
+                        "action": [
+                            "q.set_query('pokemon', q.player.party.pokemon.[v.party_index + 0]);",
+                            "q.run_script('pkmn_has_learned', q.pokemon, 'dracometeor') ? return q.dialogue.set_page('haslearned');",
+                            "!q.pokemon.can_learn_move('dracometeor') ? return q.dialogue.set_page('cantlearn');",
+                            "q.pokemon.friendship < 255 ? return q.dialogue.set_page('friendshiptoolow');",
+                            "q.dialogue.set_page('confirmation');"
+                        ]
+                    },
+                    {
+                        "value": "sel1",
+                        "text": {
+                            "type": "expression",
+                            "expression": "t.poke = q.player.party.pokemon.[v.party_index + 1]; t.poke.species.name == 0 ? return '' : return t.poke.species.name;"
+                        },
+                        "isVisible": "q.player.party.count > 1;",
+                        "isSelectable": "q.player.party.pokemon.[v.party_index + 1] != 0",
+                        "action": [
+                            "q.set_query('pokemon', q.player.party.pokemon.[v.party_index + 1]);",
+                            "q.run_script('pkmn_has_learned', q.pokemon, 'dracometeor') ? return q.dialogue.set_page('haslearned');",
+                            "!q.pokemon.can_learn_move('dracometeor') ? return q.dialogue.set_page('cantlearn');",
+                            "q.pokemon.friendship < 255 ? return q.dialogue.set_page('friendshiptoolow');",
+                            "q.dialogue.set_page('confirmation');"
+                        ]
+                    },
+                    {
+                        "value": "sel2",
+                        "text": {
+                            "type": "expression",
+                            "expression": "t.poke = q.player.party.pokemon.[v.party_index + 2]; t.poke.species.name == 0 ? return '' : return t.poke.species.name;"
+                        },
+                        "isVisible": "q.player.party.count > 2;",
+                        "isSelectable": "q.player.party.pokemon.[v.party_index + 2] != 0",
+                        "action": [
+                            "q.set_query('pokemon', q.player.party.pokemon.[v.party_index + 2]);",
+                            "q.run_script('pkmn_has_learned', q.pokemon, 'dracometeor') ? return q.dialogue.set_page('haslearned');",
+                            "!q.pokemon.can_learn_move('dracometeor') ? return q.dialogue.set_page('cantlearn');",
+                            "q.pokemon.friendship < 255 ? return q.dialogue.set_page('friendshiptoolow');",
+                            "q.dialogue.set_page('confirmation');"
+                        ]
+                    },
+                    {
+                        "value": "selend",
+                        "text": {
+                            "type": "expression",
+                            "expression": "t.poke = q.player.party.pokemon.[v.page_length]; t.poke.species.name == 0 ? return '' : return t.poke.species.name;"
+                        },
+                        "isVisible": "q.player.party.count - 1 == v.page_length;",
+                        "action": [
+                            "q.set_query('pokemon', q.player.party.pokemon.[v.page_length]);",
+                            "q.run_script('pkmn_has_learned', q.pokemon, 'dracometeor') ? return q.dialogue.set_page('haslearned');",
+                            "!q.pokemon.can_learn_move('dracometeor') ? return q.dialogue.set_page('cantlearn');",
+                            "q.pokemon.friendship < 255 ? return q.dialogue.set_page('friendshiptoolow');",
+                            "q.dialogue.set_page('confirmation');"
+                        ]
+                    },
+                    {
+                        "text": "Exit",
+                        "value": "exit",
+                        "action": "q.dialogue.set_page('leave');"
+                    }
+                ]
+            }
+        },
+        {
+            "id": "confirmation",
+            "speaker": "npc",
+            "lines": [
+                {
+                    "type": "expression",
+                    "expression": "'Well then, I will teach ' + q.pokemon.species.name + ' a move...'"
+                }
+            ],
+            "input": {
+                "type": "option",
+                "vertical": false,
+                "options": [
+                    {
+                        "text": "Next",
+                        "value": "next",
+                        "action": "q.dialogue.next_page;"
+                    }
+                ]
+            }
+        },
+        {
+            "id": "confirmation2",
+            "speaker": "none",
+            "lines": [
+                {
+                    "type": "expression",
+                    "expression": "t.dracometeor = q.get_move_from_id('dracometeor'); return t.dracometeor.display_name + ': ' + t.dracometeor.description"
+                }
+            ],
+            "input": {
+                "type": "option",
+                "vertical": true,
+                "options": [
+                    {
+                        "text": {
+                            "type": "expression",
+                            "expression": "'Teach ' + q.pokemon.species.name"
+                        },
+                        "value": "teach",
+                        "action": [
+                            "q.pokemon.teach_move('dracometeor');",
+                            "q.run_command('execute as ' + q.player.username + ' run function johto:sound/playlocalsfx {sfx:\"levelup\"}');",
+                            "q.dialogue.next_page;"
+                        ]
+                    },
+                    {
+                        "text": "Back",
+                        "value": "back",
+                        "action": "q.dialogue.set_page('partylist');"
+                    }
+                ]
+            }
+        },
+        {
+            "id": "success",
+            "speaker": "none",
+            "lines": [
+                {
+                    "type": "expression",
+                    "expression": "q.pokemon.species.name + ' learned Draco Meteor!'"
+                }
+            ],
+            "input": {
+                "type": "option",
+                "vertical": false,
+                "options": [
+                    {
+                        "text": "Next",
+                        "value": "next",
+                        "action": "q.dialogue.set_page('learned');"
+                    }
+                ]
+            }
+        },
+        {
+            "id": "learned",
+            "speaker": "npc",
+            "lines": [
+                "Draco Meteor's destructive power is awe inspiring."
+            ],
+            "input": {
+                "type": "option",
+                "vertical": false,
+                "options": [
+                    {
+                        "text": "Next",
+                        "value": "next",
+                        "action": "q.dialogue.next_page;"
+                    }
+                ]
+            }
+        },
+        {
+            "id": "learned2",
+            "speaker": "npc",
+            "lines": [
+                "However, using it will also lower the user's Special Attack."
+            ],
+            "input": {
+                "type": "option",
+                "vertical": false,
+                "options": [
+                    {
+                        "text": "Close",
+                        "value": "close",
+                        "action": "q.dialogue.close;"
+                    }
+                ]
+            }
+        },
+        {
+            "id": "nonecanlearn",
+            "speaker": "npc",
+            "lines": [
+                "I see...",
+                "I like your sense of adventure."
+            ],
+            "input": {
+                "type": "option",
+                "vertical": false,
+                "options": [
+                    {
+                        "text": "Next",
+                        "value": "next",
+                        "action": "q.dialogue.next_page;"
+                    }
+                ]
+            }
+        },
+        {
+            "id": "nonecanlearn2",
+            "speaker": "npc",
+            "lines": [
+                "However, none of the Pokémon with you now can learn the move."
+            ],
+            "input": {
+                "type": "option",
+                "vertical": false,
+                "options": [
+                    {
+                        "text": "Close",
+                        "value": "close",
+                        "action": "q.dialogue.close;"
+                    }
+                ]
+            }
+        },
+        {
+            "id": "friendshiptoolow",
+            "speaker": "npc",
+            "lines": [
+                "Sorry to disappoint you..."
+            ],
+            "input": {
+                "type": "option",
+                "vertical": false,
+                "options": [
+                    {
+                        "text": "Next",
+                        "value": "next",
+                        "action": "q.dialogue.next_page;"
+                    }
+                ]
+            }
+        },
+        {
+            "id": "friendshiptoolow2",
+            "speaker": "npc",
+            "lines": [
+                "That Pokémon you have can learn this move, but it hasn't come to trust you fully yet..."
+            ],
+            "input": {
+                "type": "option",
+                "vertical": false,
+                "options": [
+                    {
+                        "text": "Next",
+                        "value": "next",
+                        "action": "q.dialogue.next_page;"
+                    }
+                ]
+            }
+        },
+        {
+            "id": "friendshiptoolow3",
+            "speaker": "npc",
+            "lines": [
+                "Until then, I can't make it learn this move."
+            ],
+            "input": {
+                "type": "option",
+                "vertical": false,
+                "options": [
+                    {
+                        "text": "Back",
+                        "value": "back",
+                        "action": "q.dialogue.set_page('partylist');"
+                    }
+                ]
+            }
+        },
+        {
+            "id": "cantlearn",
+            "speaker": "npc",
+            "lines": [
+                "Sorry to disappoint you...",
+                "That Pokémon can't learn this move."
+            ],
+            "input": {
+                "type": "option",
+                "vertical": false,
+                "options": [
+                    {
+                        "text": "Back",
+                        "value": "back",
+                        "action": "q.dialogue.set_page('partylist');"
+                    }
+                ]
+            }
+        },
+        {
+            "id": "haslearned",
+            "speaker": "npc",
+            "lines": [
+                "Oh? That Pokémon already knows Draco Meteor."
+            ],
+            "input": {
+                "type": "option",
+                "vertical": false,
+                "options": [
+                    {
+                        "text": "Back",
+                        "value": "back",
+                        "action": "q.dialogue.set_page('partylist');"
+                    }
+                ]
+            }
+        },
+        {
+            "id": "leave",
+            "speaker": "npc",
+            "lines": [
+                "Well, perhaps if you change your mind, do come back."
+            ],
+            "input": {
+                "type": "option",
+                "vertical": false,
+                "options": [
+                    {
+                        "text": "Close",
+                        "value": "close",
+                        "action": "q.dialogue.close;"
+                    }
+                ]
+            }
+        }
+    ]
+}

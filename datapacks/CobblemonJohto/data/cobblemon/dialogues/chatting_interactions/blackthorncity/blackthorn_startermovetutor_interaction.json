@@ -1,0 +1,422 @@
+{
+    "initializationAction": [
+        "v.moves.0.id = 'blastburn'; v.moves.1.id = 'frenzyplant'; v.moves.2.id = 'hydrocannon';",
+        "q.player.data.met_startertutor ? q.dialogue.set_page('greetingmet');",
+        "q.player.data.met_startertutor = true; q.player.save_data;",
+        "v.page_length = 3;"
+    ],
+    "speakers": {
+        "npc": {
+            "name": " ",
+            "face": "q.npc.face"
+        },
+        "none": {
+            "name": " "
+        }
+    },
+    "pages": [
+        {
+            "id": "greeting",
+            "speaker": "npc",
+            "lines": [
+                "Your quest for power has brought you here..."
+            ],
+            "input": {
+                "type": "option",
+                "vertical": false,
+                "options": [
+                    {
+                        "text": "Next",
+                        "value": "next",
+                        "action": "q.dialogue.next_page;"
+                    }
+                ]
+            }
+        },
+        {
+            "id": "greeting2",
+            "speaker": "npc",
+            "lines": [
+                "Very well."
+            ],
+            "input": {
+                "type": "option",
+                "vertical": false,
+                "options": [
+                    {
+                        "text": "Next",
+                        "value": "next",
+                        "action": "q.dialogue.next_page;"
+                    }
+                ]
+            }
+        },
+        {
+            "id": "greeting3",
+            "speaker": "npc",
+            "lines": [
+                "Let me reward your passion with some absolutely astounding moves."
+            ],
+            "input": {
+                "type": "option",
+                "vertical": false,
+                "options": [
+                    {
+                        "text": "Next",
+                        "value": "next",
+                        "action": "q.dialogue.next_page;"
+                    }
+                ]
+            }
+        },
+        {
+            "id": "greeting4",
+            "speaker": "npc",
+            "lines": [
+                "They're the ultimate moves!"
+            ],
+            "input": {
+                "type": "option",
+                "vertical": false,
+                "options": [
+                    {
+                        "text": "Next",
+                        "value": "next",
+                        "action": "q.dialogue.set_page('prompt');"
+                    }
+                ]
+            }
+        },
+        {
+            "id": "greetingmet",
+            "speaker": "npc",
+            "lines": [
+                "The ultimate moves!"
+            ],
+            "input": {
+                "type": "option",
+                "vertical": false,
+                "options": [
+                    {
+                        "text": "Next",
+                        "value": "next",
+                        "action": "q.dialogue.set_page('prompt');"
+                    }
+                ]
+            }
+        },
+        {
+            "id": "prompt",
+            "speaker": "npc",
+            "lines": [
+                "Shall I teach them to your Pokémon?"
+            ],
+            "input": {
+                "type": "option",
+                "vertical": false,
+                "options": [
+                    {
+                        "text": "Yes",
+                        "value": "yes",
+                        "action": [
+                            "v.max_party_index = v.page_length * math.ceil(q.player.party.count / v.page_length);",
+                            "q.dialogue.next_page;"
+                        ]
+                    },
+                    {
+                        "text": "No",
+                        "value": "no",
+                        "action": "q.dialogue.set_page('leave');"
+                    }
+                ]
+            }
+        },
+        {
+            "id": "partylist",
+            "speaker": "npc",
+            "lines": [
+                "To which Pokémon should I teach a move?"
+            ],
+            "input": {
+                "type": "option",
+                "vertical": true,
+                "options": [
+                    {
+                        "value": "page_forward",
+                        "text": {
+                            "type": "expression",
+                            "expression": "'Page ' + (v.party_index / v.page_length + 1) + ' / ' + (v.max_party_index / v.page_length) + ' >>';"
+                        },
+                        "isVisible": "q.player.party.count > v.page_length + 1;",
+                        "action": [
+                            "v.party_index = v.party_index + v.page_length; v.party_index >= v.max_party_index ? { v.party_index = 0 };",
+                            "q.dialogue.set_page('partylist');"
+                        ]
+                    },
+                    {
+                        "value": "sel0",
+                        "text": {
+                            "type": "expression",
+                            "expression": "t.poke = q.player.party.pokemon.[v.party_index + 0]; t.poke.species.name == 0 ? return '' : return t.poke.species.name;"
+                        },
+                        "isVisible": "q.player.party.count > 0;",
+                        "isSelectable": "q.player.party.pokemon.[v.party_index + 0] != 0",
+                        "action": [
+                            "q.set_query('pokemon', q.player.party.pokemon.[v.party_index + 0]);",
+                            "v.move_list = q.run_script('tutorable_moves', q.pokemon, v.moves);",
+                            "q.length(v.move_list) == 0 && (q.pokemon.can_learn_move('blastburn') || q.pokemon.can_learn_move('frenzyplant') || q.pokemon.can_learn_move('hydrocannon')) ? return q.dialogue.set_page('haslearned');",
+                            "q.length(v.move_list) == 0 ? return q.dialogue.set_page('cantlearn');",
+                            "q.pokemon.friendship < 255 ? return q.dialogue.set_page('friendshiptoolow');",
+                            "q.dialogue.set_page('movelist');"
+                        ]
+                    },
+                    {
+                        "value": "sel1",
+                        "text": {
+                            "type": "expression",
+                            "expression": "t.poke = q.player.party.pokemon.[v.party_index + 1]; t.poke.species.name == 0 ? return '' : return t.poke.species.name;"
+                        },
+                        "isVisible": "q.player.party.count > 1;",
+                        "isSelectable": "q.player.party.pokemon.[v.party_index + 1] != 0",
+                        "action": [
+                            "q.set_query('pokemon', q.player.party.pokemon.[v.party_index + 1]);",
+                            "v.move_list = q.run_script('tutorable_moves', q.pokemon, v.moves);",
+                            "q.length(v.move_list) == 0 && (q.pokemon.can_learn_move('blastburn') || q.pokemon.can_learn_move('frenzyplant') || q.pokemon.can_learn_move('hydrocannon')) ? return q.dialogue.set_page('haslearned');",
+                            "q.length(v.move_list) == 0 ? return q.dialogue.set_page('cantlearn');",
+                            "q.pokemon.friendship < 255 ? return q.dialogue.set_page('friendshiptoolow');",
+                            "q.dialogue.set_page('movelist');"
+                        ]
+                    },
+                    {
+                        "value": "sel2",
+                        "text": {
+                            "type": "expression",
+                            "expression": "t.poke = q.player.party.pokemon.[v.party_index + 2]; t.poke.species.name == 0 ? return '' : return t.poke.species.name;"
+                        },
+                        "isVisible": "q.player.party.count > 2;",
+                        "isSelectable": "q.player.party.pokemon.[v.party_index + 2] != 0",
+                        "action": [
+                            "q.set_query('pokemon', q.player.party.pokemon.[v.party_index + 2]);",
+                            "v.move_list = q.run_script('tutorable_moves', q.pokemon, v.moves);",
+                            "q.length(v.move_list) == 0 && (q.pokemon.can_learn_move('blastburn') || q.pokemon.can_learn_move('frenzyplant') || q.pokemon.can_learn_move('hydrocannon')) ? return q.dialogue.set_page('haslearned');",
+                            "q.length(v.move_list) == 0 ? return q.dialogue.set_page('cantlearn');",
+                            "q.pokemon.friendship < 255 ? return q.dialogue.set_page('friendshiptoolow');",
+                            "q.dialogue.set_page('movelist');"
+                        ]
+                    },
+                    {
+                        "value": "selend",
+                        "text": {
+                            "type": "expression",
+                            "expression": "t.poke = q.player.party.pokemon.[v.page_length]; t.poke.species.name == 0 ? return '' : return t.poke.species.name;"
+                        },
+                        "isVisible": "q.player.party.count - 1 == v.page_length;",
+                        "action": [
+                            "q.set_query('pokemon', q.player.party.pokemon.[v.page_length]);",
+                            "v.move_list = q.run_script('tutorable_moves', q.pokemon, v.moves);",
+                            "q.length(v.move_list) == 0 && (q.pokemon.can_learn_move('blastburn') || q.pokemon.can_learn_move('frenzyplant') || q.pokemon.can_learn_move('hydrocannon')) ? return q.dialogue.set_page('haslearned');",
+                            "q.length(v.move_list) == 0 ? return q.dialogue.set_page('cantlearn');",
+                            "q.pokemon.friendship < 255 ? return q.dialogue.set_page('friendshiptoolow');",
+                            "q.dialogue.set_page('movelist');"
+                        ]
+                    },
+                    {
+                        "text": "Exit",
+                        "value": "exit",
+                        "action": "q.dialogue.set_page('leave');"
+                    }
+                ]
+            }
+        },
+        {
+            "id": "movelist",
+            "speaker": "npc",
+            "lines": [
+                {
+                    "type": "expression",
+                    "expression": "'Well then, I will teach ' + q.pokemon.species.name + ' a move...'"
+                }
+            ],
+            "input": {
+                "type": "option",
+                "vertical": true,
+                "options": [
+                    {
+                        "value": "sel0",
+                        "text": {
+                            "type": "expression",
+                            "expression": "v.elem0 = v.move_list.[v.move_index + 0]; v.elem0 == 0 ? return '' : { t.move_template = q.get_move_from_id(v.elem0.id); return t.move_template.display_name };"
+                        },
+                        "isVisible": "q.length(v.move_list) > 0;",
+                        "isSelectable": "v.move_list.[v.move_index + 0] != 0;",
+                        "action": [
+                            "q.set_query('elem', v.elem0);",
+                            "q.dialogue.set_page('confirmation');"
+                        ]
+                    },
+                    {
+                        "value": "sel1",
+                        "text": {
+                            "type": "expression",
+                            "expression": "v.elem1 = v.move_list.[v.move_index + 1]; v.elem1 == 0 ? return '' : { t.move_template = q.get_move_from_id(v.elem1.id); return t.move_template.display_name };"
+                        },
+                        "isVisible": "q.length(v.move_list) > 1;",
+                        "isSelectable": "v.move_list.[v.move_index + 1] != 0;",
+                        "action": [
+                            "q.set_query('elem', v.elem1);",
+                            "q.dialogue.set_page('confirmation');"
+                        ]
+                    },
+                    {
+                        "value": "sel2",
+                        "text": {
+                            "type": "expression",
+                            "expression": "v.elem2 = v.move_list.[v.move_index + 2]; v.elem2 == 0 ? return '' : { t.move_template = q.get_move_from_id(v.elem2.id); return t.move_template.display_name };"
+                        },
+                        "isVisible": "q.length(v.move_list) > 2;",
+                        "isSelectable": "v.move_list.[v.move_index + 2] != 0;",
+                        "action": [
+                            "q.set_query('elem', v.elem2);",
+                            "q.dialogue.set_page('confirmation');"
+                        ]
+                    },
+                    {
+                        "text": "Back",
+                        "value": "back",
+                        "action": [
+                            "v.move_index = 0;",
+                            "q.dialogue.set_page('partylist');"
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "id": "confirmation",
+            "speaker": "none",
+            "lines": [
+                {
+                    "type": "expression",
+                    "expression": "v.move_template = q.get_move_from_id(q.elem.id); return v.move_template.display_name + ': ' + v.move_template.description"
+                }
+            ],
+            "input": {
+                "type": "option",
+                "vertical": true,
+                "options": [
+                    {
+                        "text": {
+                            "type": "expression",
+                            "expression": "'Teach ' + q.pokemon.species.name"
+                        },
+                        "value": "teach",
+                        "action": [
+                            "q.pokemon.teach_move(q.elem.id);",
+                            "q.run_command('execute as ' + q.player.username + ' run function johto:sound/playlocalsfx {sfx:\"levelup\"}');",
+                            "q.dialogue.next_page;"
+                        ]
+                    },
+                    {
+                        "text": "Back",
+                        "value": "back",
+                        "action": "q.dialogue.set_page('partylist');"
+                    }
+                ]
+            }
+        },
+        {
+            "id": "success",
+            "speaker": "none",
+            "lines": [
+                {
+                    "type": "expression",
+                    "expression": "q.pokemon.species.name + ' learned ' + v.move_template.display_name + '!'"
+                }
+            ],
+            "input": {
+                "type": "option",
+                "vertical": false,
+                "options": [
+                    {
+                        "text": "Close",
+                        "value": "close",
+                        "action": "q.dialogue.close;"
+                    }
+                ]
+            }
+        },
+        {
+            "id": "friendshiptoolow",
+            "speaker": "npc",
+            "lines": [
+                "You've not bonded strongly enough with your Pokémon! Keh!"
+            ],
+            "input": {
+                "type": "option",
+                "vertical": false,
+                "options": [
+                    {
+                        "text": "Back",
+                        "value": "back",
+                        "action": "q.dialogue.set_page('partylist');"
+                    }
+                ]
+            }
+        },
+        {
+            "id": "cantlearn",
+            "speaker": "npc",
+            "lines": [
+                "That Pokémon can't learn a move! Keh!"
+            ],
+            "input": {
+                "type": "option",
+                "vertical": false,
+                "options": [
+                    {
+                        "text": "Back",
+                        "value": "back",
+                        "action": "q.dialogue.set_page('partylist');"
+                    }
+                ]
+            }
+        },
+        {
+            "id": "haslearned",
+            "speaker": "npc",
+            "lines": [
+                "That Pokémon already knows the move I've offered to teach! Keh!"
+            ],
+            "input": {
+                "type": "option",
+                "vertical": false,
+                "options": [
+                    {
+                        "text": "Back",
+                        "value": "back",
+                        "action": "q.dialogue.set_page('partylist');"
+                    }
+                ]
+            }
+        },
+        {
+            "id": "leave",
+            "speaker": "npc",
+            "lines": [
+                "Hmm... Well, that is fine, as well.",
+                "Visit if you have a change of heart."
+            ],
+            "input": {
+                "type": "option",
+                "vertical": false,
+                "options": [
+                    {
+                        "text": "Close",
+                        "value": "close",
+                        "action": "q.dialogue.close;"
+                    }
+                ]
+            }
+        }
+    ]
+}
