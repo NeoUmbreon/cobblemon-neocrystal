@@ -6,12 +6,12 @@ Writes:
   source_data/encounter_data.json (--output)
 
 Transformations:
-- Species: formats to Cobblemon names (lowercase alphanumeric)
-- Levels: int -> "N", {min,max} -> "min" or "min-max"
-- Time dicts (morn/day/nite): collapse to single species if all times match
-- Drops contexts with no mons, and maps with no surviving contexts
-- Version dicts are kept intact
-- Keeps only the swarm type this map can roll (per sSwarmMapLUT)
+- Species: formats to Cobblemon
+- Levels: int -> "N", {min,max} -> "min-max" or just "min" if == "max"
+- Time dicts (morn/day/nite): collapse to anytime if species matches across all times
+- Drops contexts with no mons
+- Drops maps with no surviving contexts
+- Keeps only the swarm type each map can roll (per sSwarmMapLUT)
 - Appends human-readable map alias from maps.h
 
 Args:
@@ -63,10 +63,10 @@ def load_map_names(maps_h: Path) -> dict:
 
 def normalize_species(v):
     if isinstance(v, dict):
-        # Version dict (HEARTGOLD/SOULSILVER): recurse each arm independently
+        # Recurse each version independently
         if VERSION_KEYS & v.keys():
             return {k: normalize_species(x) for k, x in v.items()}
-        # Time dict (morn/day/nite): collapse to one species if all times agree
+        # Collapse time dicts to anytime if species matches
         if all(k in v for k in TIMES):
             vals = [v[k] for k in TIMES]
             if all(x == vals[0] for x in vals):
@@ -75,20 +75,12 @@ def normalize_species(v):
     return re.sub(r"[^a-z0-9]", "", v.replace("SPECIES_", "").lower())
 
 
-def is_none(v):
-    return v in (None, "", "SPECIES_NONE", "none")
-
-
 def normalize_level(v):
     if isinstance(v, dict):
         if set(v) <= VERSION_KEYS and v:
             return {k: normalize_level(x) for k, x in v.items()}
         lo, hi = v["min"], v["max"]
-        # If one side is a version dict and the other isn't, broadcast the
-        # scalar to both versions so min/max pair up per version
         if isinstance(lo, dict) or isinstance(hi, dict):
-            lo = lo if isinstance(lo, dict) else {k: lo for k in VERSION_KEYS}
-            hi = hi if isinstance(hi, dict) else {k: hi for k in VERSION_KEYS}
             return {k: f"{normalize_level(lo[k])}-{normalize_level(hi[k])}" for k in lo}
         lo_s, hi_s = normalize_level(lo), normalize_level(hi)
         return lo_s if lo_s == hi_s else f"{lo_s}-{hi_s}"
@@ -118,7 +110,7 @@ def normalize_fishing(fishing):
 
 
 def normalize_encounter(enc, map_names):
-    # Normalize one raw map entry; drops contexts with no mons
+    # Normalize one map, drop contexts with no mons
     # Returns None if no encounter data survives
     map_code = enc["map"]
     out = {"map": map_code, "name": map_names.get(map_code, map_code)}
@@ -133,11 +125,11 @@ def normalize_encounter(enc, map_names):
         out["fishing"] = fishing
 
     night_fish = enc.get("nightFish")
-    if not is_none(night_fish):
+    if night_fish is not None:
         out["nightFish"] = normalize_species(night_fish)
 
     for region in RADIO_REGIONS:
-        species = [normalize_species(x) for x in enc.get(region, []) if not is_none(x)]
+        species = [normalize_species(x) for x in enc.get(region, []) if x is not None]
         if species:
             out[region] = species
 
@@ -145,10 +137,10 @@ def normalize_encounter(enc, map_names):
     swarm_key = SWARM_MAPS.get(map_code)
     if swarm_key:
         v = enc.get(swarm_key)
-        if not is_none(v):
+        if v is not None:
             out[swarm_key] = normalize_species(v)
 
-    return out if len(out) > 2 else None  # 2 = map + name; drop if nothing else survived
+    return out if len(out) > 2 else None  # 2 = map + name; drop
 
 
 def main():

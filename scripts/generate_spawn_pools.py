@@ -42,15 +42,13 @@ NIGHT_FISH_SLOT = (None, 3, 1)
 SOUND_SLOT_INDICES = (2, 3, 4, 5)
 SOUND_ELEM_INDEX = (0, 0, 1, 1)
 
-# Swarms
-# Land slot replacement
-LAND_SWARM_SLOTS = frozenset((0, 1))
-
-# Fishing slot replacement
+# Swarms slot replacement by context
+LAND_SWARM_SLOTS = (0, 1)
+SURF_SWARM_SLOTS = (0,)
 FISHING_SWARM_SLOTS = {
     "old_rod": (2,),
     "good_rod": (0, 2, 3),
-    "super_rod": None, # all slots
+    "super_rod": (0, 1, 2, 3, 4),
 }
 
 
@@ -81,11 +79,7 @@ def emit_versioned(species, level, times, weight, slots=None):
         return [
             {"pokemon": species, "level": level, "times": times, "weight": weight, "slots": sl}
         ]
-    vers = [
-        v
-        for v in VERSION_KEYS
-        if (species[v] if sp_ver else species) is not None
-    ]
+    vers = list(VERSION_KEYS)
     n = len(vers)
     return [
         {
@@ -117,7 +111,7 @@ def build_slot_list(mons, slot_weights, night_fish, night_slot):
     """Pair each slot with its weight and time restriction."""
     work = [(slot, w, None, i) for i, (slot, w) in enumerate(zip(mons, slot_weights))]
 
-    if night_fish is None or night_slot is None or night_slot >= len(work):
+    if night_fish is None or night_slot is None:
         return work
 
     # Night-fish override: no-op if it matches species; else restrict displaced
@@ -147,10 +141,10 @@ def merge_time_weights(per_time):
         if extra > 0 and extra == run_w:
             run.append(t)
             continue
-        if run_w and run_w > 0:
+        if run_w:
             out.append((frozenset(run), run_w))
         run, run_w = ([t], extra) if extra > 0 else ([], None)
-    if run_w and run_w > 0:
+    if run_w:
         out.append((frozenset(run), run_w))
 
     # Wrap-around merge
@@ -234,8 +228,6 @@ def compact_and_emit(spawns, slots, weights, has_times, zone_name,
                     context_label, ctx_preset, suffix="", night_fish=None,
                     night_slot=None):
     """Compact slots and append one make_entry per result to spawns."""
-    if not slots:
-        return
     compacted = compact_slots(slots, weights, has_times,
                                night_fish=night_fish, night_slot=night_slot)
     for i, entry in enumerate(compacted):
@@ -243,23 +235,8 @@ def compact_and_emit(spawns, slots, weights, has_times, zone_name,
                                 ctx_preset, i, suffix))
 
 
-class SpawnEmitter:
-    """Per-map emitter: binds spawns accumulator and zone name to compact_and_emit."""
-
-    def __init__(self, spawns, zone_name):
-        self.spawns = spawns
-        self.zone_name = zone_name
-
-    def emit(self, slots, weights, has_times, context_label, ctx_preset, suffix="",
-             night_fish=None, night_slot=None):
-        compact_and_emit(self.spawns, slots, weights, has_times, self.zone_name,
-                        context_label, ctx_preset, suffix,
-                        night_fish=night_fish, night_slot=night_slot)
-
-
 def night_slot_in_group(night_slot, affected_indices):
-    """Map a night fishing slot's global index (into the rod's slot list) to its index
-    within a swarm-affected subgroup. Returns None if the slot is not in that subgroup."""
+    """Index of a night-fish slot within a swarm-affected subgroup; None if absent (old_rod) or not in the group."""
     if night_slot is None or night_slot not in affected_indices:
         return None
     return sorted(affected_indices).index(night_slot)
@@ -273,41 +250,10 @@ def replacement_entries(affected_slots, affected_weights, active_species, has_ti
         night_fish=night_fish, night_slot=night_slot,
     )
     # Active entries replace the species but keep the displaced slot's level
-    synth_slots = [{"pokemon": active_species, "level": s.get("level")} for s in affected_slots]
+    synth_slots = [{"pokemon": active_species, "level": s["level"]} for s in affected_slots]
     synth_weights = list(affected_weights)
     active = compact_slots(synth_slots, synth_weights, has_times)
     return inactive, active
-
-
-
-def compact_surf_and_fishing(enc):
-    """Run compaction for surf and fishing contexts of one map."""
-    out = {}
-
-    if "surf" in enc:
-        out["surf"] = compact_slots(
-            enc["surf"]["mons"], SLOT_WEIGHTS["surf"], has_times=False
-        )
-
-    night_fish = enc.get("nightFish")
-    fishing = {}
-    for rod in RODS:
-        ctx = enc.get("fishing", {}).get(rod)
-        if not ctx:
-            continue
-        rod_idx = RODS.index(rod)
-        fishing[rod] = compact_slots(
-            ctx["mons"],
-            SLOT_WEIGHTS["fishing"],
-            has_times=False,
-            night_fish=night_fish,
-            night_slot=NIGHT_FISH_SLOT[rod_idx],
-        )
-    if fishing:
-        out["fishing"] = fishing
-
-    return out
-
 
 
 def make_entry_id(zone_name, context_label, idx, id_suffix=""):
@@ -340,67 +286,77 @@ def make_entry(zone_name, entry, context_label, ctx_preset, idx, id_suffix=""):
 # ---------------------------------------------------------------------------
 # Per-map generators
 # ---------------------------------------------------------------------------
+def generate_for_map(enc: dict, zone: dict) -> list:
+    """Generate spawn entries for one map from its encounter and zone data."""
+    zone_name = zone["name"].lower()
+    spawns = []
 
-def generate_land(enc: dict, zone: dict, zone_name: str, has_sound: bool, hoenn: list, sinnoh: list) -> list:
+    spawns.extend(generate_land(enc, zone, zone_name))
+    spawns.extend(generate_surf(enc, zone, zone_name))
+    spawns.extend(generate_fishing(enc, zone, zone_name))
+
+    return spawns
+
+
+def generate_land(enc: dict, zone: dict, zone_name: str) -> list:
     """Generate land spawn entries."""
     spawns = []
-    emitter = SpawnEmitter(spawns, zone_name)
     land_context = zone.get("landContext", "none")
     if land_context == "none":
         return spawns
     ctx_preset = land_context
     land_mons = enc.get("land", {}).get("mons", [])
-    land_weights = SLOT_WEIGHTS["land"][:len(land_mons)]
 
-    excluded = set()
+    # Flag slots that would get displaced
+    displaced = set()
+    hoenn = enc.get("hoenn") or []
+    sinnoh = enc.get("sinnoh") or []
+    has_sound = bool(hoenn or sinnoh)
     if has_sound:
-        excluded |= set(SOUND_SLOT_INDICES)
+        displaced |= set(SOUND_SLOT_INDICES)
     land_swarm = enc.get("landSwarm")
     if land_swarm:
-        excluded |= LAND_SWARM_SLOTS
-    non_sound_indices = [i for i in range(len(land_mons)) if i not in excluded]
-    non_sound_slots = [land_mons[i] for i in non_sound_indices]
-    non_sound_weights = [SLOT_WEIGHTS["land"][i] for i in non_sound_indices]
-    sound_slots_raw = [land_mons[i] for i in range(2, min(6, len(land_mons)))] if has_sound else []
-    sound_weights = [SLOT_WEIGHTS["land"][i] for i in range(2, min(6, len(land_mons)))] if has_sound else []
+        displaced |= set(LAND_SWARM_SLOTS)
 
-    # Non-sound (and full, when no sound) land entries
-    if land_mons and not has_sound:
-        emitter.emit(land_mons, land_weights,
-                     True, "land", ctx_preset)
-    elif non_sound_slots:
-        emitter.emit(non_sound_slots, non_sound_weights, True,
+    # Regular land entries
+    regular_indices = [i for i in range(len(land_mons)) if i not in displaced]
+    regular_slots = [land_mons[i] for i in regular_indices]
+    regular_weights = [SLOT_WEIGHTS["land"][i] for i in regular_indices]
+    
+    compact_and_emit(spawns, regular_slots, regular_weights, True, zone_name,
                      "land", ctx_preset)
+    
+    # Sound
+    if has_sound:
+        sound_slots_raw = [land_mons[i] for i in range(2, min(6, len(land_mons)))]
+        sound_weights = [SLOT_WEIGHTS["land"][i] for i in range(2, min(6, len(land_mons)))]
 
-    # Sound-inactive entries for sound slots
-    if sound_slots_raw and has_sound:
-        emitter.emit(sound_slots_raw, sound_weights, True,
-                     "land", ctx_preset, "-sound_inactive")
+        # sound_inactive entries
+        compact_and_emit(spawns, sound_slots_raw, sound_weights, True, zone_name, "land", ctx_preset, "-sound_inactive")
 
-    # Sound-active entries (hoenn/sinnoh replacement)
-    if has_sound and hoenn and sound_slots_raw:
-        hoenn_slots, hoenn_w = [], []
-        for si, orig_slot in enumerate(sound_slots_raw):
-            elem_idx = SOUND_ELEM_INDEX[si]
-            if elem_idx < len(hoenn):
+        # sound_active entries
+        # Hoenn
+        if hoenn:
+            hoenn_slots, hoenn_w = [], []
+            for si, orig_slot in enumerate(sound_slots_raw):
+                elem_idx = SOUND_ELEM_INDEX[si]
                 hoenn_slots.append({"pokemon": hoenn[elem_idx], "level": orig_slot.get("level")})
                 hoenn_w.append(sound_weights[si])
-        emitter.emit(hoenn_slots, hoenn_w, True,
-                     "land", ctx_preset, "-hoennsound_active")
+            compact_and_emit(spawns, hoenn_slots, hoenn_w, True, zone_name,
+                        "land", ctx_preset, "-hoennsound_active")
 
-    if has_sound and sinnoh and sound_slots_raw:
-        sinnoh_slots, sinnoh_w = [], []
-        for si, orig_slot in enumerate(sound_slots_raw):
-            elem_idx = SOUND_ELEM_INDEX[si]
-            if elem_idx < len(sinnoh):
+        # Sinnoh
+        if sinnoh:
+            sinnoh_slots, sinnoh_w = [], []
+            for si, orig_slot in enumerate(sound_slots_raw):
+                elem_idx = SOUND_ELEM_INDEX[si]
                 sinnoh_slots.append({"pokemon": sinnoh[elem_idx], "level": orig_slot.get("level")})
                 sinnoh_w.append(sound_weights[si])
-        emitter.emit(sinnoh_slots, sinnoh_w, True,
-                     "land", ctx_preset, "-sinnohsound_active")
+            compact_and_emit(spawns, sinnoh_slots, sinnoh_w, True, zone_name,
+                        "land", ctx_preset, "-sinnohsound_active")
 
-    # Swarm entries
-    land_swarm = enc.get("landSwarm")
-    if land_swarm and len(land_mons) >= 2:
+    # Swarms
+    if land_swarm:
         swarm_affected = land_mons[:2]
         swarm_affected_w = SLOT_WEIGHTS["land"][:2]
         swarm_inactive, swarm_active = replacement_entries(
@@ -416,13 +372,23 @@ def generate_land(enc: dict, zone: dict, zone_name: str, has_sound: bool, hoenn:
 def generate_surf(enc: dict, zone: dict, zone_name: str) -> list:
     """Generate surf spawn entries."""
     spawns = []
-    emitter = SpawnEmitter(spawns, zone_name)
     surf_mons = enc.get("surf", {}).get("mons", [])
-    if not surf_mons:
-        return spawns
     surf_swarm = enc.get("surfSwarm")
+
+    # Flag slots that would get displaced (empty when no swarm)
+    displaced = set()
     if surf_swarm:
-        # Swarm replacement: slot 0 inactive, swarm species active
+        displaced |= set(SURF_SWARM_SLOTS)
+    regular_indices = [i for i in range(len(surf_mons)) if i not in displaced]
+    regular_slots = [surf_mons[i] for i in regular_indices]
+    regular_weights = [SLOT_WEIGHTS["surf"][i] for i in regular_indices]
+
+    # Regular entries (all slots when no swarm, else non-displaced)
+    compact_and_emit(spawns, regular_slots, regular_weights, False, zone_name,
+                     "surf", "surf")
+
+    # Swarms
+    if surf_swarm:
         surf_inactive, surf_active = replacement_entries(
             surf_mons[:1], SLOT_WEIGHTS["surf"][:1], surf_swarm, has_times=False,
         )
@@ -430,110 +396,77 @@ def generate_surf(enc: dict, zone: dict, zone_name: str) -> list:
             spawns.append(make_entry(zone_name, entry, "surf", "surf", i, "-swarm_inactive"))
         for i, entry in enumerate(surf_active):
             spawns.append(make_entry(zone_name, entry, "surf", "surf", i, "-swarm_active"))
-        if len(surf_mons) > 1:
-            non_surf = surf_mons[1:]
-            non_surf_w = SLOT_WEIGHTS["surf"][1:len(surf_mons)]
-            emitter.emit(non_surf, non_surf_w, False,
-                         "surf", "surf")
-    else:
-        compacted = compact_surf_and_fishing(enc)
-        if "surf" in compacted:
-            for i, entry in enumerate(compacted["surf"]):
-                spawns.append(make_entry(zone_name, entry, "surf", "surf", i))
+
     return spawns
 
 
 def generate_fishing(enc: dict, zone: dict, zone_name: str) -> list:
     """Generate fishing spawn entries."""
     spawns = []
-    emitter = SpawnEmitter(spawns, zone_name)
     fishing_raw = enc.get("fishing", {})
     fish_swarm = enc.get("fishSwarm")
     night_fish = enc.get("nightFish")
+
+    # Run per-rod
     for rod in RODS:
         ctx = fishing_raw.get(rod)
         if not ctx:
             continue
-        mons = ctx.get("mons", [])
-        if not mons:
-            continue
-        affected_slots_spec = FISHING_SWARM_SLOTS[rod]
-        if affected_slots_spec is None:
-            affected_indices = set(range(len(mons)))
-        else:
-            affected_indices = {i for i in affected_slots_spec if i < len(mons)}
-
-        has_swarm = bool(fish_swarm) and bool(affected_indices)
+        mons = ctx["mons"]
         night_slot = NIGHT_FISH_SLOT[RODS.index(rod)]
+        has_swarm = bool(fish_swarm)
 
+        # Flag slots that would get displaced
+        displaced = set()
         if has_swarm:
-            affected_mons = [mons[i] for i in sorted(affected_indices)]
-            affected_w = [SLOT_WEIGHTS["fishing"][i] for i in sorted(affected_indices)]
-            non_affected_indices = [i for i in range(len(mons)) if i not in affected_indices]
-            non_affected_mons = [mons[i] for i in non_affected_indices]
-            non_affected_w = [SLOT_WEIGHTS["fishing"][i] for i in non_affected_indices]
+            displaced |= set(FISHING_SWARM_SLOTS[rod])
+        regular_indices = [i for i in range(len(mons)) if i not in displaced]
+        regular_slots = [mons[i] for i in regular_indices]
+        regular_weights = [SLOT_WEIGHTS["fishing"][i] for i in regular_indices]
 
-            emitter.emit(
-                affected_mons, affected_w, False,
+        # Regular surf entries
+        non_aff_ns = night_slot_in_group(night_slot, set(regular_indices))
+        compact_and_emit(spawns, regular_slots, regular_weights, False, zone_name,
+            rod, rod, "",
+            night_fish=night_fish, night_slot=non_aff_ns,
+        )
+
+        # Swarms
+        if has_swarm:
+            displaced_mons = [mons[i] for i in sorted(displaced)]
+            displaced_w = [SLOT_WEIGHTS["fishing"][i] for i in sorted(displaced)]
+
+            # swarm_inactive entries
+            compact_and_emit(spawns, displaced_mons, displaced_w, False, zone_name,
                 rod, rod, "-swarm_inactive",
                 night_fish=night_fish,
-                night_slot=night_slot_in_group(night_slot, affected_indices),
+                night_slot=night_slot_in_group(night_slot, displaced),
             )
 
+            # swarm_active entries
             swarm_slots = []
             swarm_w = []
-            for si in sorted(affected_indices):
+            for si in sorted(displaced):
                 orig_slot = mons[si]
                 synth_slot = {"pokemon": fish_swarm, "level": orig_slot.get("level")}
                 swarm_slots.append(synth_slot)
                 swarm_w.append(SLOT_WEIGHTS["fishing"][si])
-            emitter.emit(swarm_slots, swarm_w, False,
+            compact_and_emit(spawns, swarm_slots, swarm_w, False, zone_name,
                          rod, rod, "-swarm_active")
 
-            if non_affected_mons:
-                non_aff_ns = night_slot_in_group(night_slot, set(non_affected_indices))
-                emitter.emit(
-                    non_affected_mons, non_affected_w, False,
-                    rod, rod, "",
-                    night_fish=night_fish, night_slot=non_aff_ns,
-                )
-        else:
-            compacted = compact_surf_and_fishing(enc)
-            if rod in compacted.get("fishing", {}):
-                for i, entry in enumerate(compacted["fishing"][rod]):
-                    spawns.append(make_entry(zone_name, entry, rod, rod, i))
     return spawns
 
-
-def generate_for_map(enc: dict, zone: dict) -> dict:
-    """Generate spawn entries for one map from its encounter and zone data."""
-    hoenn = enc.get("hoenn") or []
-    sinnoh = enc.get("sinnoh") or []
-    has_sound = bool(hoenn or sinnoh)
-    zone_name = zone["name"].lower()
-    spawns = []
-
-    spawns.extend(generate_land(enc, zone, zone_name, has_sound, hoenn, sinnoh))
-    spawns.extend(generate_surf(enc, zone, zone_name))
-    spawns.extend(generate_fishing(enc, zone, zone_name))
-
-    return {"spawns": spawns}
-
-def load_inputs() -> tuple:
-    """Load and index encounter data by map code."""
-    encounters = json.loads(ENC_DATA.read_text(encoding="utf-8"))
-    zones = {
-        z["map"]: z for z in json.loads(ZONES.read_text(encoding="utf-8"))
-    }
-    return encounters, zones
-
+# ---------------------------------------------------------------------------
 
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--zone", default=None, help="Only generate for this map code (e.g. R32)")
     args = parser.parse_args()
 
-    encounters, zones = load_inputs()
+    encounters = json.loads(ENC_DATA.read_text(encoding="utf-8"))
+    zones = {
+        z["map"]: z for z in json.loads(ZONES.read_text(encoding="utf-8"))
+    }
     OUT_DIR.mkdir(parents=True, exist_ok=True)
     for enc in encounters:
         if args.zone and enc["map"] != args.zone and enc.get("name", "").lower() != args.zone.lower():
@@ -550,13 +483,13 @@ def main() -> None:
             )
         if zone.get("landContext") == "none" and not enc.get("surf") and not enc.get("fishing"):
             continue
-        result = generate_for_map(enc, zone)
-        if not result["spawns"]:
+        spawns = generate_for_map(enc, zone)
+        if not spawns:
             continue
         name = enc['name'].lower()
         out_path = OUT_DIR / f"{name}.json"
         out_path.write_text(
-            json.dumps(result, indent=2, ensure_ascii=False), encoding="utf-8"
+            json.dumps({"spawns": spawns}, indent=2, ensure_ascii=False), encoding="utf-8"
         )
         print(f"Wrote spawn_pool_world\\{name}.json")
 

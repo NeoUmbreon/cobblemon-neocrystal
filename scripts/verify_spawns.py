@@ -1,5 +1,5 @@
-"""Verify spawn pool output: for each of 18 conditions, each context
-(land/surf/old_rod/good_rod/super_rod) should separately sum to 100 weight."""
+"""Verify spawn pool output: for each of 18 conditions, (times * swarm * radio)
+each context (land/surf/old_rod/good_rod/super_rod) should sum to 100 weight."""
 
 import json
 import glob
@@ -26,7 +26,7 @@ CONTEXTS = ["land", "surf", "old_rod", "good_rod", "super_rod"]
 
 
 def get_context(entry):
-    """First preset = context preset"""
+    """First preset = context"""
     presets = entry.get("presets", [])
     if not presets:
         return None
@@ -41,7 +41,7 @@ def get_context(entry):
 
 
 def get_time_preset(entry):
-    """Extract time preset"""
+    """Check if last preset is a time preset"""
     presets = entry.get("presets", [])
     last_preset = presets[len(presets) - 1]
     if last_preset in TIME_PRESETS:
@@ -58,7 +58,7 @@ def time_matches(time_preset, current_time):
 
 
 def swarm_active(entry_id, swarm_state):
-    """Check if entry is active during swarm (True=active, False=inactive)"""
+    """Check if entry is active during swarm"""
     if "swarm_inactive" in entry_id:
         return not swarm_state
     if "swarm_active" in entry_id:
@@ -67,7 +67,7 @@ def swarm_active(entry_id, swarm_state):
 
 
 def radio_active(entry_id, radio_state):
-    """Check if entry is active during radio state"""
+    """Check if entry is active during radio states"""
     if "sound_inactive" in entry_id:
         return radio_state == "none"
     if "hoennsound_active" in entry_id:
