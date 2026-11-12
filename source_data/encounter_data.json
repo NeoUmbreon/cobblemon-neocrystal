@@ -3035,23 +3035,23 @@
       "mons": [
         {
           "pokemon": "wooper",
-          "level": "10-20"
+          "level": "4-5"
         },
         {
-          "pokemon": "quagsire",
-          "level": "15-25"
+          "pokemon": "wooper",
+          "level": "4-6"
         },
         {
-          "pokemon": "quagsire",
-          "level": "10-20"
+          "pokemon": "wooper",
+          "level": "4-5"
         },
         {
-          "pokemon": "quagsire",
-          "level": "10-20"
+          "pokemon": "wooper",
+          "level": "4-5"
         },
         {
-          "pokemon": "quagsire",
-          "level": "10-20"
+          "pokemon": "wooper",
+          "level": "4-5"
         }
       ],
       "rate": 10
@@ -3482,23 +3482,23 @@
       "mons": [
         {
           "pokemon": "wooper",
-          "level": "10-20"
+          "level": "5-6"
         },
         {
-          "pokemon": "quagsire",
-          "level": "15-25"
+          "pokemon": "wooper",
+          "level": "6-7"
         },
         {
-          "pokemon": "quagsire",
-          "level": "10-20"
+          "pokemon": "wooper",
+          "level": "5-6"
         },
         {
-          "pokemon": "quagsire",
-          "level": "10-20"
+          "pokemon": "wooper",
+          "level": "5-6"
         },
         {
-          "pokemon": "quagsire",
-          "level": "10-20"
+          "pokemon": "wooper",
+          "level": "5-6"
         }
       ],
       "rate": 15
@@ -3656,23 +3656,23 @@
       "mons": [
         {
           "pokemon": "wooper",
-          "level": "10-20"
+          "level": "7-8"
         },
         {
-          "pokemon": "quagsire",
-          "level": "15-25"
+          "pokemon": "wooper",
+          "level": "7-9"
         },
         {
-          "pokemon": "quagsire",
-          "level": "10-20"
+          "pokemon": "wooper",
+          "level": "7-8"
         },
         {
-          "pokemon": "quagsire",
-          "level": "10-20"
+          "pokemon": "wooper",
+          "level": "7-8"
         },
         {
-          "pokemon": "quagsire",
-          "level": "10-20"
+          "pokemon": "wooper",
+          "level": "7-8"
         }
       ],
       "rate": 15
@@ -3992,23 +3992,23 @@
       "mons": [
         {
           "pokemon": "slowpoke",
-          "level": "10-20"
+          "level": "6-8"
         },
         {
           "pokemon": "slowpoke",
-          "level": "15-25"
+          "level": "7-8"
         },
         {
           "pokemon": "slowpoke",
-          "level": "5-15"
+          "level": "5-6"
         },
         {
           "pokemon": "slowpoke",
-          "level": "5-15"
+          "level": "5-6"
         },
         {
           "pokemon": "slowpoke",
-          "level": "5-15"
+          "level": "5-6"
         }
       ],
       "rate": 10
@@ -7157,23 +7157,23 @@
       "mons": [
         {
           "pokemon": "magikarp",
-          "level": "10-20"
+          "level": "3-5"
         },
         {
           "pokemon": "magikarp",
-          "level": "5-15"
+          "level": "3-4"
         },
         {
           "pokemon": "magikarp",
-          "level": "2-10"
+          "level": "3"
         },
         {
           "pokemon": "magikarp",
-          "level": "2-10"
+          "level": "3"
         },
         {
           "pokemon": "magikarp",
-          "level": "2-10"
+          "level": "3"
         }
       ],
       "rate": 10
@@ -12567,23 +12567,23 @@
       "mons": [
         {
           "pokemon": "poliwag",
-          "level": "15-25"
+          "level": "2-4"
         },
         {
           "pokemon": "poliwag",
-          "level": "10-20"
+          "level": "2-3"
         },
         {
-          "pokemon": "poliwhirl",
-          "level": "15-25"
+          "pokemon": "poliwag",
+          "level": "2-4"
         },
         {
-          "pokemon": "poliwhirl",
-          "level": "15-25"
+          "pokemon": "poliwag",
+          "level": "2-4"
         },
         {
-          "pokemon": "poliwhirl",
-          "level": "32"
+          "pokemon": "poliwag",
+          "level": "4"
         }
       ],
       "rate": 15
@@ -12841,23 +12841,23 @@
       "mons": [
         {
           "pokemon": "poliwag",
-          "level": "15-25"
+          "level": "3-5"
         },
         {
           "pokemon": "poliwag",
-          "level": "10-20"
+          "level": "3-4"
         },
         {
-          "pokemon": "poliwhirl",
-          "level": "15-25"
+          "pokemon": "poliwag",
+          "level": "3-5"
         },
         {
-          "pokemon": "poliwhirl",
-          "level": "15-25"
+          "pokemon": "poliwag",
+          "level": "3-5"
         },
         {
-          "pokemon": "poliwhirl",
-          "level": "32"
+          "pokemon": "poliwag",
+          "level": "5"
         }
       ],
       "rate": 15
@@ -13055,23 +13055,23 @@
       "mons": [
         {
           "pokemon": "tentacool",
-          "level": "10-20"
+          "level": "4-5"
         },
         {
-          "pokemon": "quagsire",
-          "level": "15-25"
+          "pokemon": "wooper",
+          "level": "5-6"
         },
         {
-          "pokemon": "tentacruel",
-          "level": "15-25"
+          "pokemon": "tentacool",
+          "level": "5-6"
         },
         {
-          "pokemon": "tentacruel",
-          "level": "15-25"
+          "pokemon": "tentacool",
+          "level": "5-6"
         },
         {
-          "pokemon": "tentacruel",
-          "level": "36"
+          "pokemon": "tentacool",
+          "level": "6"
         }
       ],
       "rate": 15
@@ -13327,23 +13327,23 @@
       "mons": [
         {
           "pokemon": "tentacool",
-          "level": "15-25"
+          "level": "10-12"
         },
         {
           "pokemon": "tentacool",
-          "level": "10-20"
+          "level": "10-11"
         },
         {
-          "pokemon": "tentacruel",
-          "level": "15-25"
+          "pokemon": "tentacool",
+          "level": "10-12"
         },
         {
-          "pokemon": "tentacruel",
-          "level": "15-25"
+          "pokemon": "tentacool",
+          "level": "10-12"
         },
         {
-          "pokemon": "tentacruel",
-          "level": "29"
+          "pokemon": "tentacool",
+          "level": "13"
         }
       ],
       "rate": 15
@@ -13516,23 +13516,23 @@
       "mons": [
         {
           "pokemon": "psyduck",
-          "level": "15-25"
+          "level": "12-14"
         },
         {
           "pokemon": "psyduck",
-          "level": "10-20"
+          "level": "10-12"
         },
         {
-          "pokemon": "golduck",
-          "level": "15-25"
+          "pokemon": "psyduck",
+          "level": "12-14"
         },
         {
-          "pokemon": "golduck",
-          "level": "15-25"
+          "pokemon": "psyduck",
+          "level": "12-14"
         },
         {
-          "pokemon": "golduck",
-          "level": "31"
+          "pokemon": "psyduck",
+          "level": "14"
         }
       ],
       "rate": 15
@@ -15939,23 +15939,23 @@
       "mons": [
         {
           "pokemon": "tentacool",
-          "level": "15-25"
+          "level": "2-4"
         },
         {
           "pokemon": "tentacool",
-          "level": "10-20"
+          "level": "2-3"
         },
         {
-          "pokemon": "tentacruel",
-          "level": "15-25"
+          "pokemon": "tentacool",
+          "level": "2-4"
         },
         {
-          "pokemon": "tentacruel",
-          "level": "15-25"
+          "pokemon": "tentacool",
+          "level": "2-4"
         },
         {
-          "pokemon": "tentacruel",
-          "level": "15-25"
+          "pokemon": "tentacool",
+          "level": "2-4"
         }
       ],
       "rate": 15
@@ -16046,23 +16046,23 @@
       "mons": [
         {
           "pokemon": "tentacool",
-          "level": "15-25"
+          "level": "2-4"
         },
         {
           "pokemon": "tentacool",
-          "level": "10-20"
+          "level": "2-3"
         },
         {
-          "pokemon": "tentacruel",
-          "level": "15-25"
+          "pokemon": "tentacool",
+          "level": "2-4"
         },
         {
-          "pokemon": "tentacruel",
-          "level": "15-25"
+          "pokemon": "tentacool",
+          "level": "2-4"
         },
         {
-          "pokemon": "tentacruel",
-          "level": "15-25"
+          "pokemon": "tentacool",
+          "level": "2-4"
         }
       ],
       "rate": 15
@@ -16153,23 +16153,23 @@
       "mons": [
         {
           "pokemon": "poliwag",
-          "level": "15-25"
+          "level": "3-5"
         },
         {
           "pokemon": "poliwag",
-          "level": "10-20"
+          "level": "3-4"
         },
         {
-          "pokemon": "poliwhirl",
-          "level": "15-25"
+          "pokemon": "poliwag",
+          "level": "3-5"
         },
         {
-          "pokemon": "poliwhirl",
-          "level": "15-25"
+          "pokemon": "poliwag",
+          "level": "3-5"
         },
         {
-          "pokemon": "poliwhirl",
-          "level": "15-25"
+          "pokemon": "poliwag",
+          "level": "3-5"
         }
       ],
       "rate": 15
