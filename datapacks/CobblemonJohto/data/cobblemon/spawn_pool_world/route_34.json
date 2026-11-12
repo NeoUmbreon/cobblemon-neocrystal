@@ -168,7 +168,7 @@
       ],
       "pokemon": "tentacool",
       "level": "10-12",
-      "weight": 90
+      "weight": 69
     },
     {
       "id": "route_34-surf-1",
@@ -177,8 +177,18 @@
         "route_34"
       ],
       "pokemon": "tentacool",
+      "level": "10-11",
+      "weight": 30
+    },
+    {
+      "id": "route_34-surf-2",
+      "presets": [
+        "surf",
+        "route_34"
+      ],
+      "pokemon": "tentacool",
       "level": "13",
-      "weight": 10
+      "weight": 1
     },
     {
       "id": "route_34-old_rod-0",

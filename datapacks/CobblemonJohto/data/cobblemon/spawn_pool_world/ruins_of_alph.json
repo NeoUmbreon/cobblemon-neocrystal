@@ -147,8 +147,18 @@
         "ruins_of_alph"
       ],
       "pokemon": "wooper",
+      "level": "4-5",
+      "weight": 70
+    },
+    {
+      "id": "ruins_of_alph-surf-1",
+      "presets": [
+        "surf",
+        "ruins_of_alph"
+      ],
+      "pokemon": "wooper",
       "level": "4-6",
-      "weight": 100
+      "weight": 30
     },
     {
       "id": "ruins_of_alph-old_rod-0",

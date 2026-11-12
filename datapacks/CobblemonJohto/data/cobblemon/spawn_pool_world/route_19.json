@@ -1,26 +1,6 @@
 {
   "spawns": [
     {
-      "id": "route_19-surf_swarm_inactive-0",
-      "presets": [
-        "surf",
-        "route_19"
-      ],
-      "pokemon": "tentacool",
-      "level": "35",
-      "weight": 60
-    },
-    {
-      "id": "route_19-surf_swarm_active-0",
-      "presets": [
-        "surf",
-        "route_19"
-      ],
-      "pokemon": "clamperl",
-      "level": "35",
-      "weight": 60
-    },
-    {
       "id": "route_19-surf-0",
       "presets": [
         "surf",
@@ -39,6 +19,26 @@
       "pokemon": "tentacruel",
       "level": "35",
       "weight": 10
+    },
+    {
+      "id": "route_19-surf_swarm_inactive-0",
+      "presets": [
+        "surf",
+        "route_19"
+      ],
+      "pokemon": "tentacool",
+      "level": "35",
+      "weight": 60
+    },
+    {
+      "id": "route_19-surf_swarm_active-0",
+      "presets": [
+        "surf",
+        "route_19"
+      ],
+      "pokemon": "clamperl",
+      "level": "35",
+      "weight": 60
     },
     {
       "id": "route_19-old_rod-0",

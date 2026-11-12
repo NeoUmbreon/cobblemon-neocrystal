@@ -227,8 +227,8 @@
         "route_32"
       ],
       "pokemon": "tentacool",
-      "level": "4-6",
-      "weight": 70
+      "level": "4-5",
+      "weight": 60
     },
     {
       "id": "route_32-surf-1",
@@ -239,6 +239,46 @@
       "pokemon": "wooper",
       "level": "5-6",
       "weight": 30
+    },
+    {
+      "id": "route_32-surf-2",
+      "presets": [
+        "surf",
+        "route_32"
+      ],
+      "pokemon": "tentacool",
+      "level": "5-6",
+      "weight": 9
+    },
+    {
+      "id": "route_32-surf-3",
+      "presets": [
+        "surf",
+        "route_32"
+      ],
+      "pokemon": "tentacool",
+      "level": "6",
+      "weight": 1
+    },
+    {
+      "id": "route_32-old_rod-0",
+      "presets": [
+        "old_rod",
+        "route_32"
+      ],
+      "pokemon": "magikarp",
+      "level": "10",
+      "weight": 70
+    },
+    {
+      "id": "route_32-old_rod-1",
+      "presets": [
+        "old_rod",
+        "route_32"
+      ],
+      "pokemon": "tentacool",
+      "level": "10",
+      "weight": 15
     },
     {
       "id": "route_32-old_rod_swarm_inactive-0",
@@ -261,24 +301,24 @@
       "weight": 15
     },
     {
-      "id": "route_32-old_rod-0",
+      "id": "route_32-good_rod-0",
       "presets": [
-        "old_rod",
-        "route_32"
-      ],
-      "pokemon": "magikarp",
-      "level": "10",
-      "weight": 70
-    },
-    {
-      "id": "route_32-old_rod-1",
-      "presets": [
-        "old_rod",
+        "good_rod",
         "route_32"
       ],
       "pokemon": "tentacool",
-      "level": "10",
-      "weight": 15
+      "level": "20",
+      "weight": 30
+    },
+    {
+      "id": "route_32-good_rod-1",
+      "presets": [
+        "good_rod",
+        "route_32"
+      ],
+      "pokemon": "qwilfish",
+      "level": "20",
+      "weight": 5
     },
     {
       "id": "route_32-good_rod_swarm_inactive-0",
@@ -309,26 +349,6 @@
       "pokemon": "qwilfish",
       "level": "20",
       "weight": 65
-    },
-    {
-      "id": "route_32-good_rod-0",
-      "presets": [
-        "good_rod",
-        "route_32"
-      ],
-      "pokemon": "tentacool",
-      "level": "20",
-      "weight": 30
-    },
-    {
-      "id": "route_32-good_rod-1",
-      "presets": [
-        "good_rod",
-        "route_32"
-      ],
-      "pokemon": "qwilfish",
-      "level": "20",
-      "weight": 5
     },
     {
       "id": "route_32-super_rod_swarm_inactive-0",

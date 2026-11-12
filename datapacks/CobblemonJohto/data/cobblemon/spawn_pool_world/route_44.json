@@ -171,6 +171,26 @@
       "weight": 10
     },
     {
+      "id": "route_44-old_rod-0",
+      "presets": [
+        "old_rod",
+        "route_44"
+      ],
+      "pokemon": "magikarp",
+      "level": "10",
+      "weight": 70
+    },
+    {
+      "id": "route_44-old_rod-1",
+      "presets": [
+        "old_rod",
+        "route_44"
+      ],
+      "pokemon": "poliwag",
+      "level": "10",
+      "weight": 15
+    },
+    {
       "id": "route_44-old_rod_swarm_inactive-0",
       "presets": [
         "old_rod",
@@ -191,24 +211,24 @@
       "weight": 15
     },
     {
-      "id": "route_44-old_rod-0",
+      "id": "route_44-good_rod-0",
       "presets": [
-        "old_rod",
-        "route_44"
-      ],
-      "pokemon": "magikarp",
-      "level": "10",
-      "weight": 70
-    },
-    {
-      "id": "route_44-old_rod-1",
-      "presets": [
-        "old_rod",
+        "good_rod",
         "route_44"
       ],
       "pokemon": "poliwag",
-      "level": "10",
-      "weight": 15
+      "level": "20",
+      "weight": 30
+    },
+    {
+      "id": "route_44-good_rod-1",
+      "presets": [
+        "good_rod",
+        "route_44"
+      ],
+      "pokemon": "remoraid",
+      "level": "20",
+      "weight": 5
     },
     {
       "id": "route_44-good_rod_swarm_inactive-0",
@@ -239,26 +259,6 @@
       "pokemon": "remoraid",
       "level": "20",
       "weight": 65
-    },
-    {
-      "id": "route_44-good_rod-0",
-      "presets": [
-        "good_rod",
-        "route_44"
-      ],
-      "pokemon": "poliwag",
-      "level": "20",
-      "weight": 30
-    },
-    {
-      "id": "route_44-good_rod-1",
-      "presets": [
-        "good_rod",
-        "route_44"
-      ],
-      "pokemon": "remoraid",
-      "level": "20",
-      "weight": 5
     },
     {
       "id": "route_44-super_rod_swarm_inactive-0",

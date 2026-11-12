@@ -342,7 +342,7 @@
       ],
       "pokemon": "poliwag",
       "level": "3-5",
-      "weight": 60
+      "weight": 69
     },
     {
       "id": "route_31-surf-1",
@@ -361,8 +361,8 @@
         "route_31"
       ],
       "pokemon": "poliwag",
-      "level": "3",
-      "weight": 10
+      "level": "5",
+      "weight": 1
     },
     {
       "id": "route_31-old_rod-0",

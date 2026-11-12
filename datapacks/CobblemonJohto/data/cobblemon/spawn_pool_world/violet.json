@@ -7,8 +7,8 @@
         "violet"
       ],
       "pokemon": "poliwag",
-      "level": "3-6",
-      "weight": 60
+      "level": "3-5",
+      "weight": 70
     },
     {
       "id": "violet-surf-1",
@@ -21,14 +21,24 @@
       "weight": 30
     },
     {
-      "id": "violet-surf-2",
+      "id": "violet-old_rod-0",
       "presets": [
-        "surf",
+        "old_rod",
+        "violet"
+      ],
+      "pokemon": "magikarp",
+      "level": "10",
+      "weight": 70
+    },
+    {
+      "id": "violet-old_rod-1",
+      "presets": [
+        "old_rod",
         "violet"
       ],
       "pokemon": "poliwag",
-      "level": "3",
-      "weight": 10
+      "level": "10",
+      "weight": 15
     },
     {
       "id": "violet-old_rod_swarm_inactive-0",
@@ -51,24 +61,14 @@
       "weight": 15
     },
     {
-      "id": "violet-old_rod-0",
+      "id": "violet-good_rod-0",
       "presets": [
-        "old_rod",
-        "violet"
-      ],
-      "pokemon": "magikarp",
-      "level": "10",
-      "weight": 70
-    },
-    {
-      "id": "violet-old_rod-1",
-      "presets": [
-        "old_rod",
+        "good_rod",
         "violet"
       ],
       "pokemon": "poliwag",
-      "level": "10",
-      "weight": 15
+      "level": "20",
+      "weight": 35
     },
     {
       "id": "violet-good_rod_swarm_inactive-0",
@@ -99,16 +99,6 @@
       "pokemon": "whiscash",
       "level": "20",
       "weight": 65
-    },
-    {
-      "id": "violet-good_rod-0",
-      "presets": [
-        "good_rod",
-        "violet"
-      ],
-      "pokemon": "poliwag",
-      "level": "20",
-      "weight": 35
     },
     {
       "id": "violet-super_rod_swarm_inactive-0",

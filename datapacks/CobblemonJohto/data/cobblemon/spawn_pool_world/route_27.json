@@ -232,26 +232,6 @@
       "weight": 20
     },
     {
-      "id": "route_27-surf_swarm_inactive-0",
-      "presets": [
-        "surf",
-        "route_27"
-      ],
-      "pokemon": "tentacool",
-      "level": "20",
-      "weight": 60
-    },
-    {
-      "id": "route_27-surf_swarm_active-0",
-      "presets": [
-        "surf",
-        "route_27"
-      ],
-      "pokemon": "luvdisc",
-      "level": "20",
-      "weight": 60
-    },
-    {
       "id": "route_27-surf-0",
       "presets": [
         "surf",
@@ -270,6 +250,26 @@
       "pokemon": "tentacruel",
       "level": "20",
       "weight": 10
+    },
+    {
+      "id": "route_27-surf_swarm_inactive-0",
+      "presets": [
+        "surf",
+        "route_27"
+      ],
+      "pokemon": "tentacool",
+      "level": "20",
+      "weight": 60
+    },
+    {
+      "id": "route_27-surf_swarm_active-0",
+      "presets": [
+        "surf",
+        "route_27"
+      ],
+      "pokemon": "luvdisc",
+      "level": "20",
+      "weight": 60
     },
     {
       "id": "route_27-old_rod-0",
