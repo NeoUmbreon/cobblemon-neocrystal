@@ -1,5 +1,5 @@
 {
-  "initializationAction": "q.player.has_tag('Falkner') || q.player.has_tag('Bugsy') ? q.dialogue.set_page('no_tutorial');",
+  "initializationAction": "q.player.has_tag('Li') ? q.dialogue.set_page('no_tutorial');",
   "speakers": {
     "npc": {
       "name": " ",
