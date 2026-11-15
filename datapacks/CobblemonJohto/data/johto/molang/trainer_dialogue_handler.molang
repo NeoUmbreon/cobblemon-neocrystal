@@ -13,9 +13,9 @@ t.trainers = q.file.load('data/molang/trainers.json');
 v.trainer_data = q.get_variable(t.trainers, t.class);
 v.trainer_id = v.trainer_data.doubles_id != 0 ? v.trainer_data.doubles_id : t.class;
 
-!q.is_blank(v.trainer_data.requirements) && !q.run_molang(v.trainer_data.requirements) ? return q.npc.run_dialogue(q.player, v.trainer_id + '_interaction_fail');
+!q.is_blank(v.trainer_data.requirements) && !q.run_molang(v.trainer_data.requirements) ? return q.npc.run_dialogue(q.player, t.class + '_interaction_fail');
 
-(v.trainer_data.no_rematch || !q.player.main_held_item.item.is_of('nether_star')) && q.player.has_tag('defeated.' + v.trainer_id) ? return q.npc.run_dialogue(q.player, v.trainer_id + '_end_defeated');
+(v.trainer_data.no_rematch || !q.player.main_held_item.item.is_of('nether_star')) && q.player.has_tag('defeated.' + v.trainer_id) ? return q.npc.run_dialogue(q.player, t.class + '_end_defeated');
 
 !q.player.party.has_usable_pokemon ? return q.player.tell('&7&oYou have no usable Pokémon!');
 
