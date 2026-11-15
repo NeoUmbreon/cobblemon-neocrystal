@@ -10,6 +10,7 @@
     "isInvulnerable": true,
     "canDespawn": false,
     "hideNameTag": true,
+    "skill": 5,
     "ai": [
         {
             "type": "add_tasks_to_activity",
