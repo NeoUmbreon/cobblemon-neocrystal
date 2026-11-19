@@ -1,7 +1,5 @@
 {   "initializationAction": [],
     "escapeAction": [              
-        "q.run_command('scoreboard players set ' + q.player.username + ' BattleStart 0');",
-        "q.run_command('execute as ' + q.player.username + ' run function johto:tools/forceclick');",
         "q.player.remove_tag('InDialogue');",
         "q.dialogue.close();"
         ],
@@ -130,8 +128,6 @@
                         "text": "§c⚔ Battle ⚔§r",
                         "value": "battle",
                         "action": [                           
-                                    "q.run_command('scoreboard players set ' + q.player.username + ' BattleStart 13');",
-                                    "q.run_command('execute as ' + q.player.username + ' run function johto:tools/forceclick');",
                                     "q.player.remove_tag('InDialogue');",
                                     "v.battle = q.npc.start_battle(q.player);"
                             ]
@@ -140,8 +136,6 @@
                         "text": "No",
                         "value": "no",
                         "action": [              
-                            "q.run_command('scoreboard players set ' + q.player.username + ' BattleStart 0');",
-                            "q.run_command('execute as ' + q.player.username + ' run function johto:tools/forceclick');",
                             "q.player.remove_tag('InDialogue');",
                             "q.dialogue.close();"]
                         }
