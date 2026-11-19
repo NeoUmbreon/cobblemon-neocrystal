@@ -1,8 +1,4 @@
-{   "initializationAction": [              
-    "q.run_command('scoreboard players set ' + q.player.username + ' BattleStart 1');",
-    "q.run_command('execute as ' + q.player.username + ' run function johto:tools/forceclick');",
-    "q.player.add_tag('InDialogue');"
-        ],
+{   "initializationAction": [],
     "escapeAction": [              
         "q.run_command('scoreboard players set ' + q.player.username + ' BattleStart 0');",
         "q.run_command('execute as ' + q.player.username + ' run function johto:tools/forceclick');",
