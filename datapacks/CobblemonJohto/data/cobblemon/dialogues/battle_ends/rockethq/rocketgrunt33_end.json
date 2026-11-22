@@ -2,7 +2,7 @@
     "initializationAction": [
         "c.npc.set_chatting();",
         "q.player.add_tag('Dialogue58');",
-        "q.run_command('scoreboard players set ' + q.player.username + ' BattleEnd 1');",
+        "q.run_script('battle_end', 1);",
         "q.player.tell('&7&oYou got $1,584 for winning!');",
         "q.run_command('scoreboard players add ' + q.player.username + ' Money 1584');"
     ],
@@ -56,7 +56,10 @@
                     {
                         "text": "Next",
                         "value": "next",
-                        "action": "q.dialogue.set_page('page3');"
+                        "action": [
+                            "q.run_script('fade_battle_music');",
+                            "q.dialogue.next_page;"
+                        ]
                     }
                 ]
             }
@@ -110,9 +113,7 @@
                     {
                         "text": "Close",
                         "value": "close",
-                        "action": [
-                            "q.dialogue.close();"
-                        ]
+                        "action": "q.dialogue.close();"
                     }
                 ]
             }

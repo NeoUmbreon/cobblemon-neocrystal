@@ -2,8 +2,8 @@
     "initializationAction": [
         "c.npc.set_chatting();",
         "q.run_script('johto:clear_gym','blackthorn');",
-        "q.run_command('scoreboard players set ' + q.player.username + ' BattleEnd 2');",
         "q.player.add_tag('Dialogue78');",
+        "q.run_script('battle_end', 2);",
         "q.player.tell('&7&oYou got $4,920 for winning!');",
         "q.run_command('scoreboard players add ' + q.player.username + ' Money 4920');"
     ],
@@ -52,7 +52,7 @@
                         "text": "Next",
                         "value": "next",
                         "action": [
-                            "q.run_command('execute as ' + q.player.username + ' run function johto:tools/forceclick');",
+                            "q.run_script('fade_battle_music');",
                             "q.dialogue.next_page;"
                         ]
                     }

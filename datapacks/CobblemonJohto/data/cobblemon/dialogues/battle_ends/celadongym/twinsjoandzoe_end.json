@@ -1,9 +1,10 @@
-{   "initializationAction": [              
+{
+  "initializationAction": [
     "c.npc.set_chatting();",
-    "q.run_command('scoreboard players set ' + q.player.username + ' BattleEnd 1');",
+    "q.run_script('battle_end', 1);",
     "q.player.tell('&7&oYou got $1,504 for winning!');",
     "q.run_command('scoreboard players add ' + q.player.username + ' Money 1504');"
-        ],
+  ],
   "speakers": {
     "jo": {
       "name": "Jo",
@@ -28,39 +29,47 @@
     {
       "id": "greeting",
       "speaker": "Jo",
-      "lines": ["We lost..."],
-            "input": {
-                "type": "option",
-                "vertical": false,
-                "options": [
-                    {
-                        "text": "Next",
-                        "value": "next",
-                        "action": [              
-                            "q.dialogue.next_page;"]
-                    }
-                ]
-            }
-        },
+      "lines": [
+        "We lost..."
+      ],
+      "input": {
+        "type": "option",
+        "vertical": false,
+        "options": [
+          {
+            "text": "Next",
+            "value": "next",
+            "action": [
+              "q.dialogue.next_page;"
+            ]
+          }
+        ]
+      }
+    },
     {
       "id": "page2",
       "speaker": "Zoe",
-      "lines": ["We couldn't win..."],
-            "input": {
-                "type": "option",
-                "vertical": false,
-                "options": [
-                    {
-                        "text": "Close",
-                        "value": "close",
-                        "action": [              
-                            "q.dialogue.close();"]
-                    }
-                ]
-            }
-        }
-    ],
-    "escapeAction": [              
-      "q.dialogue.close();"
-      ]
+      "lines": [
+        "We couldn't win..."
+      ],
+      "input": {
+        "type": "option",
+        "vertical": false,
+        "options": [
+          {
+            "text": "Close",
+            "value": "close",
+            "action": [
+              "q.run_script('fade_battle_music');",
+              "q.dialogue.close();"
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "escapeAction": [
+    "q.run_script('fade_battle_music');",
+    "q.dialogue.close();"
+  ]
 }

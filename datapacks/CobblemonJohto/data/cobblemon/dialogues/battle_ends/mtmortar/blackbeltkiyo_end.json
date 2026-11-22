@@ -1,26 +1,29 @@
-{   "initializationAction": [              
-    "c.npc.set_chatting();",
-    "q.run_command('scoreboard players set ' + q.player.username + ' BattleEnd 1');",
-    "q.run_command('execute as ' + q.player.username + ' run pokegive tyrogue level=10 ');",
-    "q.player.tell('&7&oYou got $816 for winning!');",
-    "q.run_command('scoreboard players add ' + q.player.username + ' Money 816');"
-        ],
-  "speakers": {
-    "npc": {
-      "name": "Kiyo",
-      "face": {
-        "type": "artificial",
-        "modelType": "npc",
-        "identifier": "cobblemon:blackbelt",
-        "isLeftSide": true
-      }
-    }
-  },
-  "pages": [
-    {
-      "id": "greeting",
-      "speaker": "npc",
-      "lines": ["Waaaarggh!\nI'm beaten!"],
+{
+    "initializationAction": [
+        "c.npc.set_chatting();",
+        "q.run_script('battle_end', 1);",
+        "q.run_command('execute as ' + q.player.username + ' run pokegive tyrogue level=10 ');",
+        "q.player.tell('&7&oYou got $816 for winning!');",
+        "q.run_command('scoreboard players add ' + q.player.username + ' Money 816');"
+    ],
+    "speakers": {
+        "npc": {
+            "name": "Kiyo",
+            "face": {
+                "type": "artificial",
+                "modelType": "npc",
+                "identifier": "cobblemon:blackbelt",
+                "isLeftSide": true
+            }
+        }
+    },
+    "pages": [
+        {
+            "id": "greeting",
+            "speaker": "npc",
+            "lines": [
+                "Waaaarggh!\nI'm beaten!"
+            ],
             "input": {
                 "type": "option",
                 "vertical": false,
@@ -28,31 +31,20 @@
                     {
                         "text": "Next",
                         "value": "next",
-                        "action": "q.dialogue.next_page;"
+                        "action": [
+                            "q.run_script('fade_battle_music');",
+                            "q.dialogue.next_page;"
+                        ]
                     }
                 ]
             }
         },
-    {
-      "id": "page2",
-      "speaker": "npc",
-      "lines": ["I... I'm crushed..."],
-            "input": {
-                "type": "option",
-                "vertical": false,
-                "options": [
-                    {
-                        "text": "Next",
-                        "value": "next",
-                        "action": "q.dialogue.next_page;"
-                    }
-                ]
-            }
-        },
-    {
-      "id": "page3",
-      "speaker": "npc",
-      "lines": ["My training is still not enough...\nBut a loss is a loss. I admit it."],
+        {
+            "id": "page2",
+            "speaker": "npc",
+            "lines": [
+                "I... I'm crushed..."
+            ],
             "input": {
                 "type": "option",
                 "vertical": false,
@@ -66,23 +58,43 @@
             }
         },
         {
-          "id": "page4",
-          "speaker": "npc",
-          "lines": ["As proof that you defeated me, I'll give you a rare Fighting-type Pokémon."],
-                "input": {
-                    "type": "option",
-                    "vertical": false,
-                    "options": [
-                        {
-                            "text": "Close",
-                            "value": "close",
-                            "action": [
-                                "q.run_command('execute as ' + q.player.username + ' run function johto:sound/playlocalsfx {sfx:\"caughtmon\"}');",    
-                                "q.npc.run_dialogue(q.player, 'blackbeltkiyo_end_defeated');"
-                            ]
-                        }
-                    ]
-                }
+            "id": "page3",
+            "speaker": "npc",
+            "lines": [
+                "My training is still not enough...\nBut a loss is a loss. I admit it."
+            ],
+            "input": {
+                "type": "option",
+                "vertical": false,
+                "options": [
+                    {
+                        "text": "Next",
+                        "value": "next",
+                        "action": "q.dialogue.next_page;"
+                    }
+                ]
+            }
+        },
+        {
+            "id": "page4",
+            "speaker": "npc",
+            "lines": [
+                "As proof that you defeated me, I'll give you a rare Fighting-type Pokémon."
+            ],
+            "input": {
+                "type": "option",
+                "vertical": false,
+                "options": [
+                    {
+                        "text": "Close",
+                        "value": "close",
+                        "action": [
+                            "q.run_command('execute as ' + q.player.username + ' run function johto:sound/playlocalsfx {sfx:\"caughtmon\"}');",
+                            "q.npc.run_dialogue(q.player, 'blackbeltkiyo_end_defeated');"
+                        ]
+                    }
+                ]
+            }
         }
     ],
     "escapeAction": []

@@ -1,81 +1,86 @@
-{   "initializationAction": [              
-    "c.npc.set_chatting();",
-    "q.player.add_tag('Dialogue35');",
-    "q.run_command('scoreboard players set ' + q.player.username + ' BattleEnd 1');",
-    "q.run_command('scoreboard players set ' + q.player.username + ' DialogueMusic 5');",
-    "q.player.tell('&7&oYou got $1,408 for winning!');",
-    "q.run_command('scoreboard players add ' + q.player.username + ' Money 1408');"
-        ],
-  "speakers": {
-    "npc": {
-      "name": "Silver",
-      "face": {
-        "type": "artificial",
-        "modelType": "npc",
-        "identifier": "cobblemon:silver",
-        "isLeftSide": true
-      }
-    }
-  },
-  "pages": [
-    {
-      "id": "greeting",
-      "speaker": "npc",
-      "lines": [
-          "...Humph!"
-      ],
-      "input": {
-          "type": "option",
-          "vertical": false,
-          "options": [
-              {
-                  "text": "Next",
-                  "value": "next",
-                  "action": "q.dialogue.next_page;"
-              }
-          ]
-      }
-  },
-    {
-      "id": "page2",
-      "speaker": "npc",
-      "lines": [
-          "I'm not fighting with another weakling ever again. It's just too much playing around."
-      ],
-      "input": {
-          "type": "option",
-          "vertical": false,
-          "options": [
-              {
-                  "text": "Next",
-                  "value": "next",
-                  "action": "q.dialogue.next_page;"
-              }
-          ]
-      }
-  },
-    {
-      "id": "page3",
-      "speaker": "npc",
-      "lines": [
-          "...Aw, whatever."
-      ],
-      "input": {
-          "type": "option",
-          "vertical": false,
-          "options": [
-              {
-                  "text": "Next",
-                  "value": "next",
-                  "action": "q.dialogue.next_page;"
-              }
-          ]
-      }
-  },
-    {
-      "id": "page4",
-      "speaker": "npc",
-      "lines": ["You would never be able to catch a legendary Pokémon anyway."],
+{
+    "initializationAction": [
+        "c.npc.set_chatting();",
+        "q.player.add_tag('Dialogue35');",
+        "q.run_script('battle_end', 1);",
+        "q.player.tell('&7&oYou got $1,408 for winning!');",
+        "q.run_command('scoreboard players add ' + q.player.username + ' Money 1408');"
+    ],
+    "speakers": {
+        "npc": {
+            "name": "Silver",
+            "face": {
+                "type": "artificial",
+                "modelType": "npc",
+                "identifier": "cobblemon:silver",
+                "isLeftSide": true
+            }
+        }
+    },
+    "pages": [
+        {
+            "id": "greeting",
+            "speaker": "npc",
+            "lines": [
+                "...Humph!"
+            ],
+            "input": {
+                "type": "option",
+                "vertical": false,
+                "options": [
+                    {
+                        "text": "Next",
+                        "value": "next",
+                        "action": "q.dialogue.next_page;"
+                    }
+                ]
+            }
+        },
+        {
+            "id": "page2",
+            "speaker": "npc",
+            "lines": [
+                "I'm not fighting with another weakling ever again. It's just too much playing around."
+            ],
+            "input": {
+                "type": "option",
+                "vertical": false,
+                "options": [
+                    {
+                        "text": "Next",
+                        "value": "next",
+                        "action": [
+                            "q.run_script('request_music_change', (q.player.has_tag('DSSound') ? 'ds' : 'gb') + '/npc/rival2', 3, 1333);",
+                            "q.dialogue.next_page;"
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "id": "page3",
+            "speaker": "npc",
+            "lines": [
+                "...Aw, whatever."
+            ],
+            "input": {
+                "type": "option",
+                "vertical": false,
+                "options": [
+                    {
+                        "text": "Next",
+                        "value": "next",
+                        "action": "q.dialogue.next_page;"
+                    }
+                ]
+            }
+        },
+        {
+            "id": "page4",
+            "speaker": "npc",
+            "lines": [
+                "You would never be able to catch a legendary Pokémon anyway."
+            ],
             "input": {
                 "type": "option",
                 "vertical": false,
@@ -84,11 +89,10 @@
                         "text": "Close",
                         "value": "close",
                         "action": [
-                            "q.run_command('scoreboard players set ' + q.player.username + ' DialogueMusic 0');",
-                            "q.run_command('execute as ' + q.player.username + ' run function johto:tools/forceclick');",
+                            "q.run_script('fade_dialogue_music');",
                             "q.dialogue.close();",
                             "q.run_command('scoreboard players set ' + q.player.username + ' TriggerCommand 97');"
-                          ]
+                        ]
                     }
                 ]
             }

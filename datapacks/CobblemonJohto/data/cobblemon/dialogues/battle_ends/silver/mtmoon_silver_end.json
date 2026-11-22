@@ -1,158 +1,161 @@
-{   "initializationAction": [              
-    "c.npc.set_chatting();",
-    "q.player.add_tag('Dialogue131');",
-    "q.run_command('scoreboard players set ' + q.player.username + ' BattleEnd 1');",
-    "q.run_command('scoreboard players set ' + q.player.username + ' DialogueMusic 5');",
-    "q.player.tell('&7&oYou got $3,200 for winning!');",
-    "q.run_command('scoreboard players add ' + q.player.username + ' Money 3200');"
-        ],
-  "speakers": {
-    "npc": {
-      "name": "Silver",
-      "face": {
-        "type": "artificial",
-        "modelType": "npc",
-        "identifier": "cobblemon:silver",
-        "isLeftSide": true
-      }
-    }
-  },
-  "pages": [
-    {
-      "id": "greeting",
-      "speaker": "npc",
-      "lines": [
-          "Humph!\nI guess it can't be helped..."
-      ],
-      "input": {
-          "type": "option",
-          "vertical": false,
-          "options": [
-              {
-                  "text": "Next",
-                  "value": "next",
-                  "action": "q.dialogue.next_page;"
-              }
-          ]
-      }
-  },
-    {
-      "id": "page2",
-      "speaker": "npc",
-      "lines": [
-          "My training's still not good enough...?"
-      ],
-      "input": {
-          "type": "option",
-          "vertical": false,
-          "options": [
-              {
-                  "text": "Next",
-                  "value": "next",
-                  "action": "q.dialogue.next_page;"
-              }
-          ]
-      }
-  },
-  {
-    "id": "page3",
-    "speaker": "npc",
-    "lines": [
-        "My Pokémon are so weak, it makes me frustrated..."
+{
+    "initializationAction": [
+        "c.npc.set_chatting();",
+        "q.player.add_tag('Dialogue131');",
+        "q.run_script('battle_end', 1);",
+        "q.player.tell('&7&oYou got $3,200 for winning!');",
+        "q.run_command('scoreboard players add ' + q.player.username + ' Money 3200');"
     ],
-    "input": {
-        "type": "option",
-        "vertical": false,
-        "options": [
-            {
-                "text": "Next",
-                "value": "next",
-                "action": "q.dialogue.next_page;"
+    "speakers": {
+        "npc": {
+            "name": "Silver",
+            "face": {
+                "type": "artificial",
+                "modelType": "npc",
+                "identifier": "cobblemon:silver",
+                "isLeftSide": true
             }
-        ]
-    }
-},
-{
-  "id": "page4",
-  "speaker": "npc",
-  "lines": [
-      "But I can feel that they are getting better after each battle..."
-  ],
-  "input": {
-      "type": "option",
-      "vertical": false,
-      "options": [
-          {
-              "text": "Next",
-              "value": "next",
-              "action": "q.dialogue.next_page;"
-          }
-      ]
-  }
-},
-{
-  "id": "page5",
-  "speaker": "npc",
-  "lines": [
-      "..................\nTch!"
-  ],
-  "input": {
-      "type": "option",
-      "vertical": false,
-      "options": [
-          {
-              "text": "Next",
-              "value": "next",
-              "action": "q.dialogue.next_page;"
-          }
-      ]
-  }
-},
-{
-  "id": "page6",
-  "speaker": "npc",
-  "lines": [
-      "They're still too weak!\nI need to give them more training..."
-  ],
-  "input": {
-      "type": "option",
-      "vertical": false,
-      "options": [
-          {
-              "text": "Next",
-              "value": "next",
-              "action": "q.dialogue.next_page;"
-          }
-      ]
-  }
-},
-{
-  "id": "page7",
-  "speaker": "npc",
-  "lines": [
-      "I know!\nI should take them to Dragon's Den!"
-  ],
-  "input": {
-      "type": "option",
-      "vertical": false,
-      "options": [
-          {
-              "text": "Next",
-              "value": "next",
-              "action": "q.dialogue.next_page;"
-          }
-      ]
-  }
-},
-    {
-      "id": "page8",
-      "speaker": "npc",
-      "lines": [
-        {
-            "type": "expression",
-            "expression": "'See ya, ' + q.player.username + '!';"
         }
-    ],
+    },
+    "pages": [
+        {
+            "id": "greeting",
+            "speaker": "npc",
+            "lines": [
+                "Humph!\nI guess it can't be helped..."
+            ],
+            "input": {
+                "type": "option",
+                "vertical": false,
+                "options": [
+                    {
+                        "text": "Next",
+                        "value": "next",
+                        "action": [
+                            "q.run_script('request_music_change', (q.player.has_tag('DSSound') ? 'ds' : 'gb') + '/npc/rival2', 3, 1333);",
+                            "q.dialogue.next_page;"
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "id": "page2",
+            "speaker": "npc",
+            "lines": [
+                "My training's still not good enough...?"
+            ],
+            "input": {
+                "type": "option",
+                "vertical": false,
+                "options": [
+                    {
+                        "text": "Next",
+                        "value": "next",
+                        "action": "q.dialogue.next_page;"
+                    }
+                ]
+            }
+        },
+        {
+            "id": "page3",
+            "speaker": "npc",
+            "lines": [
+                "My Pokémon are so weak, it makes me frustrated..."
+            ],
+            "input": {
+                "type": "option",
+                "vertical": false,
+                "options": [
+                    {
+                        "text": "Next",
+                        "value": "next",
+                        "action": "q.dialogue.next_page;"
+                    }
+                ]
+            }
+        },
+        {
+            "id": "page4",
+            "speaker": "npc",
+            "lines": [
+                "But I can feel that they are getting better after each battle..."
+            ],
+            "input": {
+                "type": "option",
+                "vertical": false,
+                "options": [
+                    {
+                        "text": "Next",
+                        "value": "next",
+                        "action": "q.dialogue.next_page;"
+                    }
+                ]
+            }
+        },
+        {
+            "id": "page5",
+            "speaker": "npc",
+            "lines": [
+                "..................\nTch!"
+            ],
+            "input": {
+                "type": "option",
+                "vertical": false,
+                "options": [
+                    {
+                        "text": "Next",
+                        "value": "next",
+                        "action": "q.dialogue.next_page;"
+                    }
+                ]
+            }
+        },
+        {
+            "id": "page6",
+            "speaker": "npc",
+            "lines": [
+                "They're still too weak!\nI need to give them more training..."
+            ],
+            "input": {
+                "type": "option",
+                "vertical": false,
+                "options": [
+                    {
+                        "text": "Next",
+                        "value": "next",
+                        "action": "q.dialogue.next_page;"
+                    }
+                ]
+            }
+        },
+        {
+            "id": "page7",
+            "speaker": "npc",
+            "lines": [
+                "I know!\nI should take them to Dragon's Den!"
+            ],
+            "input": {
+                "type": "option",
+                "vertical": false,
+                "options": [
+                    {
+                        "text": "Next",
+                        "value": "next",
+                        "action": "q.dialogue.next_page;"
+                    }
+                ]
+            }
+        },
+        {
+            "id": "page8",
+            "speaker": "npc",
+            "lines": [
+                {
+                    "type": "expression",
+                    "expression": "'See ya, ' + q.player.username + '!';"
+                }
+            ],
             "input": {
                 "type": "option",
                 "vertical": false,
@@ -161,11 +164,10 @@
                         "text": "Close",
                         "value": "close",
                         "action": [
-                            "q.run_command('scoreboard players set ' + q.player.username + ' DialogueMusic 0');",
-                            "q.run_command('execute as ' + q.player.username + ' run function johto:tools/forceclick');",
+                            "q.run_script('fade_dialogue_music');",
                             "q.dialogue.close();",
                             "q.run_command('scoreboard players set ' + q.player.username + ' TriggerCommand 99');"
-                          ]
+                        ]
                     }
                 ]
             }

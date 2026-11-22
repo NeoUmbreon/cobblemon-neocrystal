@@ -1,56 +1,64 @@
-{   "initializationAction": [              
-    "c.npc.set_chatting();",
-    "q.run_command('scoreboard players set ' + q.player.username + ' BattleEnd 1');",
-    "q.player.tell('&7&oYou got $2,560 for winning!');",
-    "q.run_command('scoreboard players add ' + q.player.username + ' Money 2560');"
-        ],
-  "speakers": {
-    "npc": {
-      "name": "Ariana",
-      "face": {
-        "type": "artificial",
-        "modelType": "npc",
-        "identifier": "cobblemon:ariana",
-        "isLeftSide": true
-      }
-    }
-  },
-  "pages": [
-        {
-          "id": "page2",
-          "speaker": "npc",
-          "lines": ["Aaaieeeee!\nThis can't be happening!"],
-                "input": {
-                    "type": "option",
-                    "vertical": false,
-                    "options": [
-                        {
-                            "text": "Next",
-                            "value": "next",
-                            "action": "q.dialogue.next_page;"
-                        }
-                    ]
-                }
-            },
-        {
-          "id": "page3",
-          "speaker": "npc",
-          "lines": ["I fought hard, but I still lost..."],
-                "input": {
-                    "type": "option",
-                    "vertical": false,
-                    "options": [
-                        {
-                            "text": "Close",
-                            "value": "close",
-                            "action": [              
-                                "q.dialogue.close();"]
-                        }
-                    ]
-                }
-            }
+{
+    "initializationAction": [
+        "c.npc.set_chatting();",
+        "q.run_script('battle_end', 1);",
+        "q.player.tell('&7&oYou got $2,560 for winning!');",
+        "q.run_command('scoreboard players add ' + q.player.username + ' Money 2560');"
     ],
-    "escapeAction": [              
-      "q.dialogue.close();"
-      ]
+    "speakers": {
+        "npc": {
+            "name": "Ariana",
+            "face": {
+                "type": "artificial",
+                "modelType": "npc",
+                "identifier": "cobblemon:ariana",
+                "isLeftSide": true
+            }
+        }
+    },
+    "pages": [
+        {
+            "id": "page2",
+            "speaker": "npc",
+            "lines": [
+                "Aaaieeeee!\nThis can't be happening!"
+            ],
+            "input": {
+                "type": "option",
+                "vertical": false,
+                "options": [
+                    {
+                        "text": "Next",
+                        "value": "next",
+                        "action": "q.dialogue.next_page;"
+                    }
+                ]
+            }
+        },
+        {
+            "id": "page3",
+            "speaker": "npc",
+            "lines": [
+                "I fought hard, but I still lost..."
+            ],
+            "input": {
+                "type": "option",
+                "vertical": false,
+                "options": [
+                    {
+                        "text": "Close",
+                        "value": "close",
+                        "action": [
+                            "q.run_script('fade_battle_music');",
+                            "q.dialogue.close();"
+                        ]
+                    }
+                ]
+            }
+        }
+    ],
+    "escapeAction": [
+        "q.run_script('fade_battle_music');",
+        "q.dialogue.close();"
+    ]
 }

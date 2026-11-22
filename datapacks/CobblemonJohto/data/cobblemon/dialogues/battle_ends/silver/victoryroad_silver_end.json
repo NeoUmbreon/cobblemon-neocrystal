@@ -1,153 +1,158 @@
-{   "initializationAction": [              
-    "c.npc.set_chatting();",
-    "q.player.add_tag('Dialogue85');",
-    "q.run_command('scoreboard players set ' + q.player.username + ' BattleEnd 1');",
-    "q.run_command('scoreboard players set ' + q.player.username + ' DialogueMusic 5');",
-    "q.player.tell('&7&oYou got $2,560 for winning!');",
-    "q.run_command('scoreboard players add ' + q.player.username + ' Money 2560');"
-        ],
-  "speakers": {
-    "npc": {
-      "name": "Silver",
-      "face": {
-        "type": "artificial",
-        "modelType": "npc",
-        "identifier": "cobblemon:silver",
-        "isLeftSide": true
-      }
-    }
-  },
-  "pages": [
-    {
-      "id": "greeting",
-      "speaker": "npc",
-      "lines": [
-          "...I couldn't win..."
-      ],
-      "input": {
-          "type": "option",
-          "vertical": false,
-          "options": [
-              {
-                  "text": "Next",
-                  "value": "next",
-                  "action": "q.dialogue.next_page;"
-              }
-          ]
-      }
-  },
-    {
-      "id": "page2",
-      "speaker": "npc",
-      "lines": [
-          "I gave it everything I had..."
-      ],
-      "input": {
-          "type": "option",
-          "vertical": false,
-          "options": [
-              {
-                  "text": "Next",
-                  "value": "next",
-                  "action": "q.dialogue.next_page;"
-              }
-          ]
-      }
-  },
-    {
-      "id": "page3",
-      "speaker": "npc",
-      "lines": [
-          "What you possess, and what I lack...\nI'm beginning to understand what that Dragon Tamer said to me..."
-      ],
-      "input": {
-          "type": "option",
-          "vertical": false,
-          "options": [
-              {
-                  "text": "Next",
-                  "value": "next",
-                  "action": "q.dialogue.next_page;"
-              }
-          ]
-      }
-  },
-    {
-      "id": "page4",
-      "speaker": "npc",
-      "lines": [
-          "..............."
-      ],
-      "input": {
-          "type": "option",
-          "vertical": false,
-          "options": [
-              {
-                  "text": "Next",
-                  "value": "next",
-                  "action": "q.dialogue.next_page;"
-              }
-          ]
-      }
-  },
-  {
-    "id": "page5",
-    "speaker": "npc",
-    "lines": [
-        "I haven't given up on becoming the greatest Trainer..."
+{
+    "initializationAction": [
+        "c.npc.set_chatting();",
+        "q.player.add_tag('Dialogue85');",
+        "q.run_script('battle_end', 1);",
+        "q.player.tell('&7&oYou got $2,560 for winning!');",
+        "q.run_command('scoreboard players add ' + q.player.username + ' Money 2560');"
     ],
-    "input": {
-        "type": "option",
-        "vertical": false,
-        "options": [
-            {
-                "text": "Next",
-                "value": "next",
-                "action": "q.dialogue.next_page;"
+    "speakers": {
+        "npc": {
+            "name": "Silver",
+            "face": {
+                "type": "artificial",
+                "modelType": "npc",
+                "identifier": "cobblemon:silver",
+                "isLeftSide": true
             }
-        ]
-    }
-},
-{
-  "id": "page6",
-  "speaker": "npc",
-  "lines": [
-      "I'm going to find out why I can't win and become stronger..."
-  ],
-  "input": {
-      "type": "option",
-      "vertical": false,
-      "options": [
-          {
-              "text": "Next",
-              "value": "next",
-              "action": "q.dialogue.next_page;"
-          }
-      ]
-  }
-},
-{
-  "id": "page7",
-  "speaker": "npc",
-  "lines": [
-      "When I do, I will challenge you."
-  ],
-  "input": {
-      "type": "option",
-      "vertical": false,
-      "options": [
-          {
-              "text": "Next",
-              "value": "next",
-              "action": "q.dialogue.next_page;"
-          }
-      ]
-  }
-},
-    {
-      "id": "page8",
-      "speaker": "npc",
-      "lines": ["I'll beat you down with all my power.\n...Humph! You keep at it until then."],
+        }
+    },
+    "pages": [
+        {
+            "id": "greeting",
+            "speaker": "npc",
+            "lines": [
+                "...I couldn't win..."
+            ],
+            "input": {
+                "type": "option",
+                "vertical": false,
+                "options": [
+                    {
+                        "text": "Next",
+                        "value": "next",
+                        "action": "q.dialogue.next_page;"
+                    }
+                ]
+            }
+        },
+        {
+            "id": "page2",
+            "speaker": "npc",
+            "lines": [
+                "I gave it everything I had..."
+            ],
+            "input": {
+                "type": "option",
+                "vertical": false,
+                "options": [
+                    {
+                        "text": "Next",
+                        "value": "next",
+                        "action": "q.dialogue.next_page;"
+                    }
+                ]
+            }
+        },
+        {
+            "id": "page3",
+            "speaker": "npc",
+            "lines": [
+                "What you possess, and what I lack...\nI'm beginning to understand what that Dragon Tamer said to me..."
+            ],
+            "input": {
+                "type": "option",
+                "vertical": false,
+                "options": [
+                    {
+                        "text": "Next",
+                        "value": "next",
+                        "action": [
+                            "q.run_script('request_music_change', (q.player.has_tag('DSSound') ? 'ds' : 'gb') + '/npc/rival2', 3, 1333);",
+                            "q.dialogue.next_page;"
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "id": "page4",
+            "speaker": "npc",
+            "lines": [
+                "..............."
+            ],
+            "input": {
+                "type": "option",
+                "vertical": false,
+                "options": [
+                    {
+                        "text": "Next",
+                        "value": "next",
+                        "action": "q.dialogue.next_page;"
+                    }
+                ]
+            }
+        },
+        {
+            "id": "page5",
+            "speaker": "npc",
+            "lines": [
+                "I haven't given up on becoming the greatest Trainer..."
+            ],
+            "input": {
+                "type": "option",
+                "vertical": false,
+                "options": [
+                    {
+                        "text": "Next",
+                        "value": "next",
+                        "action": "q.dialogue.next_page;"
+                    }
+                ]
+            }
+        },
+        {
+            "id": "page6",
+            "speaker": "npc",
+            "lines": [
+                "I'm going to find out why I can't win and become stronger..."
+            ],
+            "input": {
+                "type": "option",
+                "vertical": false,
+                "options": [
+                    {
+                        "text": "Next",
+                        "value": "next",
+                        "action": "q.dialogue.next_page;"
+                    }
+                ]
+            }
+        },
+        {
+            "id": "page7",
+            "speaker": "npc",
+            "lines": [
+                "When I do, I will challenge you."
+            ],
+            "input": {
+                "type": "option",
+                "vertical": false,
+                "options": [
+                    {
+                        "text": "Next",
+                        "value": "next",
+                        "action": "q.dialogue.next_page;"
+                    }
+                ]
+            }
+        },
+        {
+            "id": "page8",
+            "speaker": "npc",
+            "lines": [
+                "I'll beat you down with all my power.\n...Humph! You keep at it until then."
+            ],
             "input": {
                 "type": "option",
                 "vertical": false,
@@ -156,11 +161,10 @@
                         "text": "Close",
                         "value": "close",
                         "action": [
-                            "q.run_command('scoreboard players set ' + q.player.username + ' DialogueMusic 0');",
-                            "q.run_command('execute as ' + q.player.username + ' run function johto:tools/forceclick');",
+                            "q.run_script('fade_dialogue_music');",
                             "q.dialogue.close();",
                             "q.run_command('scoreboard players set ' + q.player.username + ' TriggerCommand 98');"
-                          ]
+                        ]
                     }
                 ]
             }
