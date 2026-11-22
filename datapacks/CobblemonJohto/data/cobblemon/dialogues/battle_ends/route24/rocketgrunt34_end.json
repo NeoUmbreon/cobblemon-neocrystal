@@ -2,7 +2,7 @@
     "initializationAction": [
         "c.npc.set_chatting();",
         "q.player.add_tag('Dialogue219');",
-        "q.run_command('scoreboard players set ' + q.player.username + ' BattleEnd 1');",
+        "q.run_script('battle_end', 1);",
         "q.player.tell('&7&oYou got $1,560 for winning!');",
         "q.run_command('scoreboard players add ' + q.player.username + ' Money 1560');"
     ],
@@ -31,7 +31,10 @@
                     {
                         "text": "Next",
                         "value": "next",
-                        "action": "q.dialogue.next_page;"
+                        "action": [
+                            "q.run_script('fade_battle_music');",
+                            "q.dialogue.next_page;"
+                        ]
                     }
                 ]
             }
@@ -122,7 +125,7 @@
                         "text": "Next",
                         "value": "next",
                         "action": [
-                            "q.run_command('execute as ' + q.player.username + ' run function johto:sound/overwriterecord {track:\"\",duration:-1}');",
+                            "q.run_script('request_music_change', 0, 3, 1333);",
                             "q.dialogue.next_page;"
                         ]
                     }
@@ -233,7 +236,7 @@
                         "text": "Close",
                         "value": "close",
                         "action": [
-                            "q.run_command('execute as ' + q.player.username + ' run function johto:tools/forceclick');",
+                            "q.run_script('fade_dialogue_music');",
                             "q.run_command('execute as ' + q.player.username + ' run particle cloud -2743 66 870 1 1 1 1 100');",
                             "q.run_command('execute as ' + q.player.username + ' run tp @e[x=-2743,y=65,z=870,dy=3,type=cobblemon:npc] -800 -50000 -280');",
                             "q.dialogue.close();"

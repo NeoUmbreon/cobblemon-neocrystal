@@ -9,4 +9,4 @@ $execute unless score @s MusicTitles matches 201..300 run title @s subtitle {"te
 $execute if score @s MusicTitles matches 201..300 run title @s actionbar {"text":"$(text)"}
 
 # Update score and/or music
-$function johto:world/musictitles/updatelocation {location:"$(location)",includes:"$(includes)"}
+$function johto:world/musictitles/updatelocation {location:"$(location)"}

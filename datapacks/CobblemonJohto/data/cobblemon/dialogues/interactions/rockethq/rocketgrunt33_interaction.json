@@ -1,12 +1,5 @@
-{   "initializationAction": [              
-    "q.run_command('scoreboard players set ' + q.player.username + ' BattleStart 7');",
-    "q.run_command('execute as ' + q.player.username + ' run function johto:tools/forceclick');"
-        ],
-    "escapeAction": [              
-        "q.run_command('scoreboard players set ' + q.player.username + ' BattleStart 0');",
-        "q.run_command('execute as ' + q.player.username + ' run function johto:tools/forceclick');",
-        "q.dialogue.close();"
-        ],
+{   "initializationAction": [],
+    "escapeAction": [],
     "speakers": {
         "npc": {
             "name": {
@@ -85,8 +78,6 @@
                         "text": "§c⚔ Battle ⚔§r",
                         "value": "battle",
                         "action": [                           
-                                    "q.run_command('scoreboard players set ' + q.player.username + ' BattleStart 14');",
-                                    "q.run_command('execute as ' + q.player.username + ' run function johto:tools/forceclick');",
                                     "v.battle = q.npc.start_battle(q.player);"
                             ]
                     },
@@ -94,8 +85,6 @@
                         "text": "No",
                         "value": "no",
                         "action": [              
-                            "q.run_command('scoreboard players set ' + q.player.username + ' BattleStart 0');",
-                            "q.run_command('execute as ' + q.player.username + ' run function johto:tools/forceclick');",
                             "q.dialogue.close();"]
                         }
                     ]

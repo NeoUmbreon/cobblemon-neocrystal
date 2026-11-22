@@ -1,0 +1,5 @@
+'resolve location number to track name';
+t.map = q.file.load('data/molang/sound_data/loc_' + (q.player.has_tag('DSSound') ? 'ds' : 'gb') + '.json');
+t.track = q.get_variable(t.map, c.arg_1);
+q.player.data.sound.location_track = t.track;
+q.run_script('request_music_change', t.track, 0, 2000);

@@ -1,9 +1,10 @@
-{   "initializationAction": [              
+{
+  "initializationAction": [
     "c.npc.set_chatting();",
-    "q.run_command('scoreboard players set ' + q.player.username + ' BattleEnd 2');",
+    "q.run_script('battle_end', 2);",
     "q.player.tell('&7&oYou got $7,440 for winning!');",
     "q.run_command('scoreboard players add ' + q.player.username + ' Money 7440');"
-        ],
+  ],
   "speakers": {
     "npc": {
       "name": "Blaine",
@@ -16,28 +17,30 @@
     }
   },
   "pages": [
-        {
-          "id": "greeting",
-          "speaker": "npc",
-          "lines": ["My spirit has not been defeated!"],
-                "input": {
-                    "type": "option",
-                    "vertical": false,
-                    "options": [
-                        {
-                            "text": "Next",
-                            "value": "next",
-                            "action": [
-                              "q.run_command('execute as ' + q.player.username + ' run function johto:tools/forceclick');",
-                              "q.npc.run_dialogue(q.player, 'blaine_rematch_end_defeated');"
-                            ]
-                        }
-                    ]
-                }
-        }
-    ],
-    "escapeAction": [
-      "q.run_command('execute as ' + q.player.username + ' run function johto:tools/forceclick');",
-      "q.dialogue.close();"
-      ]
+    {
+      "id": "greeting",
+      "speaker": "npc",
+      "lines": [
+        "My spirit has not been defeated!"
+      ],
+      "input": {
+        "type": "option",
+        "vertical": false,
+        "options": [
+          {
+            "text": "Next",
+            "value": "next",
+            "action": [
+              "q.run_script('fade_battle_music');",
+              "q.npc.run_dialogue(q.player, 'blaine_rematch_end_defeated');"
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "escapeAction": [
+    "q.run_script('fade_battle_music');",
+    "q.dialogue.close();"
+  ]
 }

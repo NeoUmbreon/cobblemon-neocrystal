@@ -1,153 +1,158 @@
-{   "initializationAction": [              
-    "c.npc.set_chatting();",
-    "q.player.add_tag('Dialogue20');",
-    "q.run_command('scoreboard players set ' + q.player.username + ' BattleEnd 1');",
-    "q.run_command('scoreboard players set ' + q.player.username + ' DialogueMusic 5');",
-    "q.player.tell('&7&oYou got $1,152 for winning!');",
-    "q.run_command('scoreboard players add ' + q.player.username + ' Money 1152');"
-        ],
-  "speakers": {
-    "npc": {
-      "name": "Silver",
-      "face": {
-        "type": "artificial",
-        "modelType": "npc",
-        "identifier": "cobblemon:silver",
-        "isLeftSide": true
-      }
-    }
-  },
-  "pages": [
-    {
-      "id": "greeting",
-      "speaker": "npc",
-      "lines": [
-          "...Humph!\nUseless Pokémon!"
-      ],
-      "input": {
-          "type": "option",
-          "vertical": false,
-          "options": [
-              {
-                  "text": "Next",
-                  "value": "next",
-                  "action": "q.dialogue.next_page;"
-              }
-          ]
-      }
-  },
-    {
-      "id": "page2",
-      "speaker": "npc",
-      "lines": [
-          "Listen, you. You won only because my Pokémon were weak."
-      ],
-      "input": {
-          "type": "option",
-          "vertical": false,
-          "options": [
-              {
-                  "text": "Next",
-                  "value": "next",
-                  "action": "q.dialogue.next_page;"
-              }
-          ]
-      }
-  },
-    {
-      "id": "page3",
-      "speaker": "npc",
-      "lines": [
-          "I hate the weak."
-      ],
-      "input": {
-          "type": "option",
-          "vertical": false,
-          "options": [
-              {
-                  "text": "Next",
-                  "value": "next",
-                  "action": "q.dialogue.next_page;"
-              }
-          ]
-      }
-  },
-  {
-    "id": "page4",
-    "speaker": "npc",
-    "lines": [
-        "Pokémon, Trainers.\nIt doesn't matter who or what."
+{
+    "initializationAction": [
+        "c.npc.set_chatting();",
+        "q.player.add_tag('Dialogue20');",
+        "q.run_script('battle_end', 1);",
+        "q.player.tell('&7&oYou got $1,152 for winning!');",
+        "q.run_command('scoreboard players add ' + q.player.username + ' Money 1152');"
     ],
-    "input": {
-        "type": "option",
-        "vertical": false,
-        "options": [
-            {
-                "text": "Next",
-                "value": "next",
-                "action": "q.dialogue.next_page;"
+    "speakers": {
+        "npc": {
+            "name": "Silver",
+            "face": {
+                "type": "artificial",
+                "modelType": "npc",
+                "identifier": "cobblemon:silver",
+                "isLeftSide": true
             }
-        ]
-    }
-},
-{
-  "id": "page5",
-  "speaker": "npc",
-  "lines": [
-      "I hate to see them hanging around.\nThat goes for Team Rocket, too."
-  ],
-  "input": {
-      "type": "option",
-      "vertical": false,
-      "options": [
-          {
-              "text": "Next",
-              "value": "next",
-              "action": "q.dialogue.next_page;"
-          }
-      ]
-  }
-},
-{
-  "id": "page6",
-  "speaker": "npc",
-  "lines": [
-      "They think they are big and tough as long as they are in a group."
-  ],
-  "input": {
-      "type": "option",
-      "vertical": false,
-      "options": [
-          {
-              "text": "Next",
-              "value": "next",
-              "action": "q.dialogue.next_page;"
-          }
-      ]
-  }
-},
-{
-  "id": "page7",
-  "speaker": "npc",
-  "lines": [
-      "But get them alone, and they're weak.\nI hate them all."
-  ],
-  "input": {
-      "type": "option",
-      "vertical": false,
-      "options": [
-          {
-              "text": "Next",
-              "value": "next",
-              "action": "q.dialogue.next_page;"
-          }
-      ]
-  }
-},
-    {
-      "id": "page8",
-      "speaker": "npc",
-      "lines": ["You stay out of my way.\nYou won't be an exception if you get in my way."],
+        }
+    },
+    "pages": [
+        {
+            "id": "greeting",
+            "speaker": "npc",
+            "lines": [
+                "...Humph!\nUseless Pokémon!"
+            ],
+            "input": {
+                "type": "option",
+                "vertical": false,
+                "options": [
+                    {
+                        "text": "Next",
+                        "value": "next",
+                        "action": "q.dialogue.next_page;"
+                    }
+                ]
+            }
+        },
+        {
+            "id": "page2",
+            "speaker": "npc",
+            "lines": [
+                "Listen, you. You won only because my Pokémon were weak."
+            ],
+            "input": {
+                "type": "option",
+                "vertical": false,
+                "options": [
+                    {
+                        "text": "Next",
+                        "value": "next",
+                        "action": [
+                            "q.run_script('request_music_change', (q.player.has_tag('DSSound') ? 'ds' : 'gb') + '/npc/rival2', 3, 1333);",
+                            "q.dialogue.next_page;"
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "id": "page3",
+            "speaker": "npc",
+            "lines": [
+                "I hate the weak."
+            ],
+            "input": {
+                "type": "option",
+                "vertical": false,
+                "options": [
+                    {
+                        "text": "Next",
+                        "value": "next",
+                        "action": "q.dialogue.next_page;"
+                    }
+                ]
+            }
+        },
+        {
+            "id": "page4",
+            "speaker": "npc",
+            "lines": [
+                "Pokémon, Trainers.\nIt doesn't matter who or what."
+            ],
+            "input": {
+                "type": "option",
+                "vertical": false,
+                "options": [
+                    {
+                        "text": "Next",
+                        "value": "next",
+                        "action": "q.dialogue.next_page;"
+                    }
+                ]
+            }
+        },
+        {
+            "id": "page5",
+            "speaker": "npc",
+            "lines": [
+                "I hate to see them hanging around.\nThat goes for Team Rocket, too."
+            ],
+            "input": {
+                "type": "option",
+                "vertical": false,
+                "options": [
+                    {
+                        "text": "Next",
+                        "value": "next",
+                        "action": "q.dialogue.next_page;"
+                    }
+                ]
+            }
+        },
+        {
+            "id": "page6",
+            "speaker": "npc",
+            "lines": [
+                "They think they are big and tough as long as they are in a group."
+            ],
+            "input": {
+                "type": "option",
+                "vertical": false,
+                "options": [
+                    {
+                        "text": "Next",
+                        "value": "next",
+                        "action": "q.dialogue.next_page;"
+                    }
+                ]
+            }
+        },
+        {
+            "id": "page7",
+            "speaker": "npc",
+            "lines": [
+                "But get them alone, and they're weak.\nI hate them all."
+            ],
+            "input": {
+                "type": "option",
+                "vertical": false,
+                "options": [
+                    {
+                        "text": "Next",
+                        "value": "next",
+                        "action": "q.dialogue.next_page;"
+                    }
+                ]
+            }
+        },
+        {
+            "id": "page8",
+            "speaker": "npc",
+            "lines": [
+                "You stay out of my way.\nYou won't be an exception if you get in my way."
+            ],
             "input": {
                 "type": "option",
                 "vertical": false,
@@ -156,11 +161,10 @@
                         "text": "Close",
                         "value": "close",
                         "action": [
-                            "q.run_command('scoreboard players set ' + q.player.username + ' DialogueMusic 0');",
-                            "q.run_command('execute as ' + q.player.username + ' run function johto:tools/forceclick');",
+                            "q.run_script('fade_dialogue_music');",
                             "q.dialogue.close();",
                             "q.run_command('scoreboard players set ' + q.player.username + ' TriggerCommand 95');"
-                          ]
+                        ]
                     }
                 ]
             }

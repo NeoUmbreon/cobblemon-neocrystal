@@ -1,66 +1,66 @@
 {
-  "initializationAction": [
-      "c.npc.set_chatting();",
-      "q.run_command('scoreboard players set ' + q.player.username + ' BattleEnd 2');",
-      "q.player.tell('&7&oYou got $7,200 for winning!');",
-      "q.run_command('scoreboard players add ' + q.player.username + ' Money 7200');"
-  ],
-  "speakers": {
-      "npc": {
-          "name": "Clair",
-          "face": {
-              "type": "artificial",
-              "modelType": "npc",
-              "identifier": "cobblemon:clair",
-              "isLeftSide": true
-          }
-      }
-  },
-  "pages": [
-      {
-          "id": "greeting",
-          "speaker": "npc",
-          "lines": [
-              "I lost? ..."
-          ],
-          "input": {
-              "type": "option",
-              "vertical": false,
-              "options": [
-                  {
-                      "text": "Next",
-                      "value": "next",
-                      "action": [
-                          "q.dialogue.next_page;"
-                      ]
-                  }
-              ]
-          }
-      },
-      {
-          "id": "page2",
-          "speaker": "npc",
-          "lines": [
-              "I don't believe it.\nThere must be some mistake..."
-          ],
-          "input": {
-              "type": "option",
-              "vertical": false,
-              "options": [
+    "initializationAction": [
+        "c.npc.set_chatting();",
+        "q.run_script('battle_end', 2);",
+        "q.player.tell('&7&oYou got $7,200 for winning!');",
+        "q.run_command('scoreboard players add ' + q.player.username + ' Money 7200');"
+    ],
+    "speakers": {
+        "npc": {
+            "name": "Clair",
+            "face": {
+                "type": "artificial",
+                "modelType": "npc",
+                "identifier": "cobblemon:clair",
+                "isLeftSide": true
+            }
+        }
+    },
+    "pages": [
+        {
+            "id": "greeting",
+            "speaker": "npc",
+            "lines": [
+                "I lost? ..."
+            ],
+            "input": {
+                "type": "option",
+                "vertical": false,
+                "options": [
                     {
                         "text": "Next",
                         "value": "next",
                         "action": [
-                            "q.run_command('execute as ' + q.player.username + ' run function johto:tools/forceclick');",
+                            "q.dialogue.next_page;"
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "id": "page2",
+            "speaker": "npc",
+            "lines": [
+                "I don't believe it.\nThere must be some mistake..."
+            ],
+            "input": {
+                "type": "option",
+                "vertical": false,
+                "options": [
+                    {
+                        "text": "Next",
+                        "value": "next",
+                        "action": [
+                            "q.run_script('fade_battle_music');",
                             "q.npc.run_dialogue(q.player, 'clair_rematch_end_defeated');"
                         ]
                     }
                 ]
-          }
-      }
-  ],
-  "escapeAction": [
-    "q.run_command('execute as ' + q.player.username + ' run function johto:tools/forceclick');",
-      "q.dialogue.close();"
-  ]
+            }
+        }
+    ],
+    "escapeAction": [
+        "q.run_script('fade_battle_music');",
+        "q.dialogue.close();"
+    ]
 }

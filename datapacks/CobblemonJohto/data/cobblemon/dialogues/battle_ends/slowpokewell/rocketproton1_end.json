@@ -4,8 +4,7 @@
         "q.player.add_tag('InDialogue');",
         "q.player.tell('&7&oYou got $480 for winning!');",
         "q.run_command('scoreboard players add ' + q.player.username + ' Money 480');",
-        "q.run_command('scoreboard players set ' + q.player.username + ' BattleEnd 2');",
-        "q.run_command('execute as ' + q.player.username + ' run function johto:tools/forceclick');"
+        "q.run_script('battle_end', 1);"
     ],
     "escapeAction": [],
     "speakers": {
@@ -42,7 +41,10 @@
                     {
                         "text": "Next",
                         "value": "next",
-                        "action": "q.dialogue.next_page;"
+                        "action": [
+                            "q.run_script('fade_battle_music');",
+                            "q.dialogue.next_page;"
+                        ]
                     }
                 ]
             }

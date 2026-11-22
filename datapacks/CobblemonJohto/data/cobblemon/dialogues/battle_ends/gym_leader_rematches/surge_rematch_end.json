@@ -1,10 +1,11 @@
-{   "initializationAction": [              
+{
+  "initializationAction": [
     "c.npc.set_chatting();",
-    "q.run_command('scoreboard players set ' + q.player.username + ' BattleEnd 2');",
+    "q.run_script('battle_end', 2);",
     "q.player.add_tag('SurgeRematch');",
     "q.player.tell('&7&oYou got $6,720 for winning!');",
     "q.run_command('scoreboard players add ' + q.player.username + ' Money 6720');"
-        ],
+  ],
   "speakers": {
     "npc": {
       "name": "Lt. Surge",
@@ -20,25 +21,27 @@
     {
       "id": "greeting",
       "speaker": "npc",
-      "lines": ["My electric trick..."],
-            "input": {
-                "type": "option",
-                "vertical": false,
-                "options": [
-                    {
-                        "text": "Next",
-                        "value": "next",
-                        "action": [
-                            "q.run_command('execute as ' + q.player.username + ' run function johto:tools/forceclick');",
-                            "q.npc.run_dialogue(q.player, 'surge_rematch_end_defeated');"
-                        ]
-                    }
-                ]
-            }
-        }
-    ],
-    "escapeAction": [
-      "q.run_command('execute as ' + q.player.username + ' run function johto:tools/forceclick');",
-      "q.dialogue.close();"
-      ]
+      "lines": [
+        "My electric trick..."
+      ],
+      "input": {
+        "type": "option",
+        "vertical": false,
+        "options": [
+          {
+            "text": "Next",
+            "value": "next",
+            "action": [
+              "q.run_script('fade_battle_music');",
+              "q.npc.run_dialogue(q.player, 'surge_rematch_end_defeated');"
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "escapeAction": [
+    "q.run_script('fade_battle_music');",
+    "q.dialogue.close();"
+  ]
 }

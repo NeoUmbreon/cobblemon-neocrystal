@@ -1,0 +1,5 @@
+q.player.data.sound.requested_priority <= c.arg_2 ? {
+    q.player.data.sound.requested_track = c.arg_1;
+    q.player.data.sound.requested_priority = c.arg_2;
+    q.player.data.sound.fade_ms = c.arg_3;
+};
