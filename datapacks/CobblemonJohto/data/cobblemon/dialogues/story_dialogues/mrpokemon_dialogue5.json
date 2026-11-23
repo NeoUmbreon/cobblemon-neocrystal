@@ -77,10 +77,10 @@
                         "text": "Next",
                         "value": "next",
                         "action": [
-                        "q.dialogue.set_page('page4');",
-                        "q.run_command('execute as ' + q.player.username + ' run function johto:spawn/mysteryegg');",
-                        "q.run_command('execute as ' + q.player.username + ' run function johto:sound/playlocalsfx {sfx:\"keyitem\"}');"
-                    ]
+                            "q.dialogue.set_page('page4');",
+                            "q.run_command('execute as ' + q.player.username + ' run function johto:spawn/mysteryegg');",
+                            "q.run_command('execute as ' + q.player.username + ' run function johto:sound/playlocalsfx {sfx:\"keyitem\"}');"
+                        ]
                     }
                 ]
             }
@@ -171,8 +171,7 @@
                         "text": "Next",
                         "value": "next",
                         "action": [
-                            "q.run_command('scoreboard players set ' + q.player.username + ' DialogueMusic 4');",
-                            "q.run_command('execute as ' + q.player.username + ' run function johto:tools/forceclick');",
+                            "q.run_script('request_music_change', (q.player.has_tag('DSSound') ? 'ds' : 'gb') + '/npc/professoroak', 3, -1);",
                             "q.dialogue.set_page('page9');"
                         ]
                     }
@@ -185,7 +184,7 @@
             "lines": [
                 {
                     "type": "expression",
-                    "expression": "'Aha! So you’re ' + q.player.username + '! I’m Oak!';"
+                    "expression": "'Aha! So you\\'re ' + q.player.username + '! I\\'m Oak!';"
                 }
             ],
             "input": {
@@ -426,7 +425,7 @@
             "lines": [
                 {
                     "type": "expression",
-                    "expression": "'' + q.player.username + ', I’m counting on you!';"
+                    "expression": "q.player.username + ', I\\'m counting on you!';"
                 }
             ],
             "input": {
@@ -437,8 +436,7 @@
                         "text": "Next",
                         "value": "next",
                         "action": [
-                            "q.run_command('scoreboard players set ' + q.player.username + ' DialogueMusic 0');",
-                            "q.run_command('execute as ' + q.player.username + ' run function johto:tools/forceclick');",
+                            "q.run_script('fade_dialogue_music');",
                             "q.dialogue.set_page('page23');"
                         ]
                     }

@@ -39,7 +39,7 @@
                             "q.run_command('execute as ' + q.player.username + ' run advancement grant @s only johto:badges/badge8');",
                             "q.player.add_tag('Clair');",
                             "q.dialogue.next_page;"
-                    ]
+                        ]
                     }
                 ]
             }
@@ -155,8 +155,7 @@
                         "text": "Next",
                         "value": "next",
                         "action": [
-                            "q.run_command('scoreboard players set ' + q.player.username + ' DialogueMusic 6');",
-                            "q.run_command('execute as ' + q.player.username + ' run function johto:tools/forceclick');",
+                            "q.run_script('request_music_change', (q.player.has_tag('DSSound') ? 'ds' : 'gb') + '/npc/clair', 3, -1);",
                             "q.dialogue.next_page;"
                         ]
                     }
@@ -195,8 +194,8 @@
                         "text": "Next",
                         "value": "next",
                         "action": [
-                        "q.dialogue.next_page;"
-                    ]
+                            "q.dialogue.next_page;"
+                        ]
                     }
                 ]
             }
@@ -215,8 +214,8 @@
                         "text": "Next",
                         "value": "next",
                         "action": [
-                        "q.dialogue.next_page;"
-                    ]
+                            "q.dialogue.next_page;"
+                        ]
                     }
                 ]
             }
@@ -235,8 +234,8 @@
                         "text": "Next",
                         "value": "next",
                         "action": [
-                        "q.dialogue.next_page;"
-                    ]
+                            "q.dialogue.next_page;"
+                        ]
                     }
                 ]
             }
@@ -255,8 +254,8 @@
                         "text": "Next",
                         "value": "next",
                         "action": [
-                        "q.dialogue.next_page;"
-                    ]
+                            "q.dialogue.next_page;"
+                        ]
                     }
                 ]
             }
@@ -275,8 +274,8 @@
                         "text": "Next",
                         "value": "next",
                         "action": [
-                        "q.dialogue.next_page;"
-                    ]
+                            "q.dialogue.next_page;"
+                        ]
                     }
                 ]
             }
@@ -295,8 +294,7 @@
                         "text": "Close",
                         "value": "close",
                         "action": [
-                            "q.run_command('scoreboard players set ' + q.player.username + ' DialogueMusic 0');",
-                            "q.run_command('execute as ' + q.player.username + ' run function johto:tools/forceclick');",
+                            "q.run_script('fade_dialogue_music');",
                             "q.run_command('execute as ' + q.player.username + ' run particle cloud -688 74 540 1 1 1 1 100');",
                             "q.run_command('execute as ' + q.player.username + ' run tp @e[x=-688,y=74,z=540,distance=..3,type=cobblemon:npc] -800 -50000 -280');",
                             "q.player.add_tag('Dialogue79');",

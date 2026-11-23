@@ -1,21 +1,20 @@
-{   "initializationAction": [              
-    "q.run_command('scoreboard players set ' + q.player.username + ' BattleStart 1');",
-    "q.run_command('execute as ' + q.player.username + ' run function johto:tools/forceclick');",
-    "q.player.add_tag('InDialogue');"
-        ],
-    "escapeAction": [              
-        ],
+{
+    "initializationAction": [
+        "q.run_script('request_music_change', (q.player.has_tag('DSSound') ? 'ds' : 'gb') + '/npc/rival', 3, -1);",
+        "q.player.add_tag('InDialogue');"
+    ],
+    "escapeAction": [],
     "speakers": {
         "npc": {
-          "name": "Silver",
-          "face": {
-            "type": "artificial",
-            "modelType": "npc",
-            "identifier": "cobblemon:silver",
-            "isLeftSide": true
-          }
+            "name": "Silver",
+            "face": {
+                "type": "artificial",
+                "modelType": "npc",
+                "identifier": "cobblemon:silver",
+                "isLeftSide": true
+            }
         }
-      },
+    },
     "pages": [
         {
             "id": "greeting",
@@ -122,15 +121,14 @@
                         "value": "close",
                         "action": [
                             "q.dialogue.close();",
-                            "q.run_command('scoreboard players set ' + q.player.username + ' BattleStart 0');",
-                            "q.run_command('execute as ' + q.player.username + ' run function johto:tools/forceclick');",
+                            "q.run_script('fade_dialogue_music');",
                             "q.player.add_tag('Dialogue39');",
                             "q.player.remove_tag('InDialogue');",
                             "q.run_command('scoreboard players set ' + q.player.username + ' TriggerCommand 92');"
-                            ]
+                        ]
                     }
                 ]
             }
         }
-        ]
-    }
+    ]
+}

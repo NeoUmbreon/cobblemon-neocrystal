@@ -1,12 +1,9 @@
 {
     "initializationAction": [
-        "q.run_command('scoreboard players set ' + q.player.username + ' DialogueMusic 1');",
-        "q.run_command('execute as ' + q.player.username + ' run function johto:tools/forceclick');",
+        "q.run_script('request_music_change', (q.player.has_tag('DSSound') ? 'ds' : 'gb') + '/routes/30', 3, -1);",
         "q.player.add_tag('InDialogue');"
     ],
-    "escapeAction": [              
-        ],
-
+    "escapeAction": [],
     "names": [
         "Professor Oak"
     ],
@@ -30,14 +27,14 @@
             }
         },
         "wooper": {
-      "name": "Wooper",
-      "face": {
-        "type": "artificial",
-        "modelType": "pokemon",
-        "identifier": "cobblemon:wooper",
-        "isLeftSide": false
-      }
-    }
+            "name": "Wooper",
+            "face": {
+                "type": "artificial",
+                "modelType": "pokemon",
+                "identifier": "cobblemon:wooper",
+                "isLeftSide": false
+            }
+        }
     },
     "pages": [
         {
@@ -188,11 +185,11 @@
             "id": "page9",
             "speaker": "npc",
             "lines": [
-        {
-            "type": "expression",
-            "expression": "'' + q.player.username + ', are you ready?';"
-        }
-    ],
+                {
+                    "type": "expression",
+                    "expression": "'' + q.player.username + ', are you ready?';"
+                }
+            ],
             "input": {
                 "type": "option",
                 "vertical": false,
@@ -273,7 +270,7 @@
                         "text": "Close",
                         "value": "close",
                         "action": [
-                            "q.run_command('scoreboard players set ' + q.player.username + ' DialogueMusic 0');",
+                            "q.run_script('fade_dialogue_music');",
                             "q.run_command('execute as ' + q.player.username + ' at @s run function johto:tools/tpwithsfx {sfx:\"warpfrom\",xyz:\"-724 69 -491\"}');",
                             "q.player.add_tag('Dialogue1');",
                             "q.player.remove_tag('InDialogue');",

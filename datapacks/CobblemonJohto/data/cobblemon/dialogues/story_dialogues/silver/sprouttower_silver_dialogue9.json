@@ -1,27 +1,28 @@
-{   "initializationAction": [              
-    "q.player.add_tag('InDialogue');"
-        ],
+{
+    "initializationAction": [
+        "q.player.add_tag('InDialogue');"
+    ],
     "escapeAction": [],
     "speakers": {
         "silver": {
-          "name": "Silver",
-          "face": {
-            "type": "artificial",
-            "modelType": "npc",
-            "identifier": "cobblemon:silver",
-            "isLeftSide": true
-          }
+            "name": "Silver",
+            "face": {
+                "type": "artificial",
+                "modelType": "npc",
+                "identifier": "cobblemon:silver",
+                "isLeftSide": true
+            }
         },
         "sage": {
-          "name": "Elder Li",
-          "face": {
-            "type": "artificial",
-            "modelType": "npc",
-            "identifier": "cobblemon:sage",
-            "isLeftSide": false
-          }
+            "name": "Elder Li",
+            "face": {
+                "type": "artificial",
+                "modelType": "npc",
+                "identifier": "cobblemon:sage",
+                "isLeftSide": false
+            }
         }
-      },
+    },
     "pages": [
         {
             "id": "greeting",
@@ -73,8 +74,7 @@
                         "text": "Next",
                         "value": "next",
                         "action": [
-                            "q.run_command('scoreboard players set ' + q.player.username + ' DialogueMusic 5');",
-                            "q.run_command('execute as ' + q.player.username + ' run function johto:tools/forceclick');",
+                            "q.run_script('request_music_change', (q.player.has_tag('DSSound') ? 'ds' : 'gb') + '/npc/rival2', 3, -1);",
                             "q.dialogue.set_page('page4');"
                         ]
                     }
@@ -150,15 +150,14 @@
                         "value": "close",
                         "action": [
                             "q.dialogue.close();",
-                            "q.run_command('scoreboard players set ' + q.player.username + ' DialogueMusic 0');",
-                            "q.run_command('execute as ' + q.player.username + ' run function johto:tools/forceclick');",
+                            "q.run_script('fade_dialogue_music');",
                             "q.player.add_tag('Dialogue9');",
                             "q.player.remove_tag('InDialogue');",
                             "q.run_command('scoreboard players set ' + q.player.username + ' TriggerCommand 91');"
-                            ]
+                        ]
                     }
                 ]
             }
         }
-        ]
-    }
+    ]
+}
