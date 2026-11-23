@@ -156,3 +156,9 @@ scoreboard objectives add SurfingCD dummy
 # Game Corner scoreboard objectives
 scoreboard objectives add SlotTimer dummy
 scoreboard objectives add SlotRNG dummy
+
+# Whiteout Money loss scoreboard objective
+scoreboard objectives add WhiteoutMoney dummy
+
+# Money balance check trigger
+scoreboard objectives add balance trigger

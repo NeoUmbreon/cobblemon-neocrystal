@@ -1,0 +1,13 @@
+t.badges = 0;
+t.leaders = q.array('Falkner','Bugsy','Whitney','Morty','Chuck','Jasmine','Pryce','Clair');
+!q.player.world.server.data.challenge_mode_disabled ? { t.leaders[0] = 'Li' };
+
+for_each(t.leader, t.leaders, {
+    q.player.has_tag(t.leader) ? { t.badges = t.badges + 1 };
+});
+
+t.payouts = q.array(8, 16, 24, 36, 48, 64, 80, 100, 120);
+t.loss = t.payouts[t.badges] * q.player.party.highest_level;
+
+q.run_command('scoreboard players set ' + q.player.username + ' WhiteoutMoney ' + t.loss);
+q.run_command('execute as ' + q.player.username + ' run function johto:triggers/whiteout_money');
