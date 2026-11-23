@@ -459,7 +459,9 @@
   "pokefancolin": {},
   "pokefanderek": {},
   "pokefaneleanor": {},
-  "pokefanjamie": {},
+  "pokefanjamie": {
+    "requirements": "q.npc.world.is_time_of_day('night') && !q.npc.world.is_time_of_day('twilight')"
+  },
   "pokefanjoshua": {},
   "pokefanrex": {},
   "pokefanrobert": {},
