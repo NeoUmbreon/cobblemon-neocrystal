@@ -39,7 +39,7 @@
             "id": "page2",
             "speaker": "npc",
             "lines": [
-                "The toll is $1000 to go through."
+                "The toll is ₽1000 to go through."
             ],
             "input": {
                 "type": "option",

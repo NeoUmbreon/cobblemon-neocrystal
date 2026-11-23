@@ -54,7 +54,7 @@
                         "value": "sel0",
                         "text": {
                             "type": "expression",
-                            "expression": "t.elem = v.stock.[v.index + 0]; t.elem.name == 0 ? return '' : { return t.elem.name + ': $' + t.elem.price };"
+                            "expression": "t.elem = v.stock.[v.index + 0]; t.elem.name == 0 ? return '' : { return t.elem.name + ': ₽' + t.elem.price };"
                         },
                         "isVisible": "q.length(v.stock) > 0;",
                         "isSelectable": "v.stock.[v.index + 0] != 0;",
@@ -68,7 +68,7 @@
                         "value": "sel1",
                         "text": {
                             "type": "expression",
-                            "expression": "t.elem = v.stock.[v.index + 1]; t.elem.name == 0 ? return '' : { return t.elem.name + ': $' + t.elem.price };"
+                            "expression": "t.elem = v.stock.[v.index + 1]; t.elem.name == 0 ? return '' : { return t.elem.name + ': ₽' + t.elem.price };"
                         },
                         "isVisible": "q.length(v.stock) > 1;",
                         "isSelectable": "v.stock.[v.index + 1] != 0;",
@@ -82,7 +82,7 @@
                         "value": "sel2",
                         "text": {
                             "type": "expression",
-                            "expression": "t.elem = v.stock.[v.index + 2]; t.elem.name == 0 ? return '' : { return t.elem.name + ': $' + t.elem.price };"
+                            "expression": "t.elem = v.stock.[v.index + 2]; t.elem.name == 0 ? return '' : { return t.elem.name + ': ₽' + t.elem.price };"
                         },
                         "isVisible": "q.length(v.stock) > 2;",
                         "isSelectable": "v.stock.[v.index + 2] != 0;",
@@ -96,7 +96,7 @@
                         "value": "selend",
                         "text": {
                             "type": "expression",
-                            "expression": "t.elem = v.stock.[v.page_length]; t.elem.name == 0 ? return '' : { return t.elem.name + ': $' + t.elem.price };"
+                            "expression": "t.elem = v.stock.[v.page_length]; t.elem.name == 0 ? return '' : { return t.elem.name + ': ₽' + t.elem.price };"
                         },
                         "isVisible": "q.length(v.stock) - 1 == v.page_length;",
                         "action": [
@@ -129,7 +129,7 @@
                     {
                         "text": {
                             "type": "expression",
-                            "expression": "'Buy 1: $' + q.elem.price"
+                            "expression": "'Buy 1: ₽' + q.elem.price"
                         },
                         "value": "buy1",
                         "action": [
@@ -140,7 +140,7 @@
                     {
                         "text": {
                             "type": "expression",
-                            "expression": "'Buy 5: $' + q.elem.price * 5"
+                            "expression": "'Buy 5: ₽' + q.elem.price * 5"
                         },
                         "value": "buy5",
                         "action": [
@@ -151,7 +151,7 @@
                     {
                         "text": {
                             "type": "expression",
-                            "expression": "'Buy 10: $' + q.elem.price * 10"
+                            "expression": "'Buy 10: ₽' + q.elem.price * 10"
                         },
                         "value": "buy10",
                         "action": [

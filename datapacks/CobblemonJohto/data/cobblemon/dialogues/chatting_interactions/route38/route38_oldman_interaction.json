@@ -135,7 +135,7 @@
             "id": "prompt",
             "speaker": "npc",
             "lines": [
-                "I'll give it to ya fer just $500."
+                "I'll give it to ya fer just ₽500."
             ],
             "input": {
                 "type": "option",

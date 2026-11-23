@@ -69,7 +69,7 @@
             "id": "page4",
             "speaker": "npc",
             "lines": [
-                "There's no time or step limit, just a $500 admission fee, so get hunting today!"
+                "There's no time or step limit, just a ₽500 admission fee, so get hunting today!"
             ],
             "input": {
                 "type": "option",

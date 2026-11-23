@@ -2307,385 +2307,385 @@ execute as @s[x=11,y=64,z=-100,distance=..5,tag=!ItemLoot380] run tag @s add Ite
 
 execute as @s[x=-99,y=64,z=-552,distance=..4,tag=ItemLoot381] run tellraw @s {"text":"You've already claimed this loot!","italic":true,"color":"gray"}
 execute as @s[x=-99,y=64,z=-552,distance=..4,tag=!ItemLoot381] run scoreboard players add @s Money 5000
-execute as @s[x=-99,y=64,z=-552,distance=..4,tag=!ItemLoot381] run tellraw @s {"text":"You found $5000!","italic":true,"color":"gray"}
+execute as @s[x=-99,y=64,z=-552,distance=..4,tag=!ItemLoot381] run tellraw @s {"text":"You found ₽5000!","italic":true,"color":"gray"}
 execute as @s[x=-99,y=64,z=-552,distance=..4,tag=!ItemLoot381] run function johto:sound/playlocalsfx {sfx:"item"}
 execute as @s[x=-99,y=64,z=-552,distance=..4,tag=!ItemLoot381] run tag @s add ItemLoot381
 
 execute as @s[x=215,y=64,z=-102,distance=..4,tag=ItemLoot382] run tellraw @s {"text":"You've already claimed this loot!","italic":true,"color":"gray"}
 execute as @s[x=215,y=64,z=-102,distance=..4,tag=!ItemLoot382] run scoreboard players add @s Money 250
-execute as @s[x=215,y=64,z=-102,distance=..4,tag=!ItemLoot382] run tellraw @s {"text":"You found $250!","italic":true,"color":"gray"}
+execute as @s[x=215,y=64,z=-102,distance=..4,tag=!ItemLoot382] run tellraw @s {"text":"You found ₽250!","italic":true,"color":"gray"}
 execute as @s[x=215,y=64,z=-102,distance=..4,tag=!ItemLoot382] run function johto:sound/playlocalsfx {sfx:"item"}
 execute as @s[x=215,y=64,z=-102,distance=..4,tag=!ItemLoot382] run tag @s add ItemLoot382
 
 execute as @s[x=226,y=64,z=-187,distance=..4,tag=ItemLoot383] run tellraw @s {"text":"You've already claimed this loot!","italic":true,"color":"gray"}
 execute as @s[x=226,y=64,z=-187,distance=..4,tag=!ItemLoot383] run scoreboard players add @s Money 5000
-execute as @s[x=226,y=64,z=-187,distance=..4,tag=!ItemLoot383] run tellraw @s {"text":"You found $5000!","italic":true,"color":"gray"}
+execute as @s[x=226,y=64,z=-187,distance=..4,tag=!ItemLoot383] run tellraw @s {"text":"You found ₽5000!","italic":true,"color":"gray"}
 execute as @s[x=226,y=64,z=-187,distance=..4,tag=!ItemLoot383] run function johto:sound/playlocalsfx {sfx:"item"}
 execute as @s[x=226,y=64,z=-187,distance=..4,tag=!ItemLoot383] run tag @s add ItemLoot383
 
 execute as @s[x=262,y=64,z=-208,distance=..4,tag=ItemLoot384] run tellraw @s {"text":"You've already claimed this loot!","italic":true,"color":"gray"}
 execute as @s[x=262,y=64,z=-208,distance=..4,tag=!ItemLoot384] run scoreboard players add @s Money 2500
-execute as @s[x=262,y=64,z=-208,distance=..4,tag=!ItemLoot384] run tellraw @s {"text":"You found $2500!","italic":true,"color":"gray"}
+execute as @s[x=262,y=64,z=-208,distance=..4,tag=!ItemLoot384] run tellraw @s {"text":"You found ₽2500!","italic":true,"color":"gray"}
 execute as @s[x=262,y=64,z=-208,distance=..4,tag=!ItemLoot384] run function johto:sound/playlocalsfx {sfx:"item"}
 execute as @s[x=262,y=64,z=-208,distance=..4,tag=!ItemLoot384] run tag @s add ItemLoot384
 
 execute as @s[x=205,y=52,z=-149,distance=..3,tag=ItemLoot385] run tellraw @s {"text":"You've already claimed this loot!","italic":true,"color":"gray"}
 execute as @s[x=205,y=52,z=-149,distance=..3,tag=!ItemLoot385] run scoreboard players add @s Money 1500
-execute as @s[x=205,y=52,z=-149,distance=..3,tag=!ItemLoot385] run tellraw @s {"text":"You found $1500!","italic":true,"color":"gray"}
+execute as @s[x=205,y=52,z=-149,distance=..3,tag=!ItemLoot385] run tellraw @s {"text":"You found ₽1500!","italic":true,"color":"gray"}
 execute as @s[x=205,y=52,z=-149,distance=..3,tag=!ItemLoot385] run function johto:sound/playlocalsfx {sfx:"item"}
 execute as @s[x=205,y=52,z=-149,distance=..3,tag=!ItemLoot385] run tag @s add ItemLoot385
 
 execute as @s[x=198,y=52,z=-149,distance=..3,tag=ItemLoot386] run tellraw @s {"text":"You've already claimed this loot!","italic":true,"color":"gray"}
 execute as @s[x=198,y=52,z=-149,distance=..3,tag=!ItemLoot386] run scoreboard players add @s Money 6000
-execute as @s[x=198,y=52,z=-149,distance=..3,tag=!ItemLoot386] run tellraw @s {"text":"You found $6000!","italic":true,"color":"gray"}
+execute as @s[x=198,y=52,z=-149,distance=..3,tag=!ItemLoot386] run tellraw @s {"text":"You found ₽6000!","italic":true,"color":"gray"}
 execute as @s[x=198,y=52,z=-149,distance=..3,tag=!ItemLoot386] run function johto:sound/playlocalsfx {sfx:"item"}
 execute as @s[x=198,y=52,z=-149,distance=..3,tag=!ItemLoot386] run tag @s add ItemLoot386
 
 execute as @s[x=189,y=48,z=-674,distance=..4,tag=ItemLoot387] run tellraw @s {"text":"You've already claimed this loot!","italic":true,"color":"gray"}
 execute as @s[x=189,y=48,z=-674,distance=..4,tag=!ItemLoot387] run scoreboard players add @s Money 4000
-execute as @s[x=189,y=48,z=-674,distance=..4,tag=!ItemLoot387] run tellraw @s {"text":"You found $4000!","italic":true,"color":"gray"}
+execute as @s[x=189,y=48,z=-674,distance=..4,tag=!ItemLoot387] run tellraw @s {"text":"You found ₽4000!","italic":true,"color":"gray"}
 execute as @s[x=189,y=48,z=-674,distance=..4,tag=!ItemLoot387] run function johto:sound/playlocalsfx {sfx:"item"}
 execute as @s[x=189,y=48,z=-674,distance=..4,tag=!ItemLoot387] run tag @s add ItemLoot387
 
 execute as @s[x=571,y=64,z=-629,distance=..4,tag=ItemLoot388] run tellraw @s {"text":"You've already claimed this loot!","italic":true,"color":"gray"}
 execute as @s[x=571,y=64,z=-629,distance=..4,tag=!ItemLoot388] run scoreboard players add @s Money 250
-execute as @s[x=571,y=64,z=-629,distance=..4,tag=!ItemLoot388] run tellraw @s {"text":"You found $250!","italic":true,"color":"gray"}
+execute as @s[x=571,y=64,z=-629,distance=..4,tag=!ItemLoot388] run tellraw @s {"text":"You found ₽250!","italic":true,"color":"gray"}
 execute as @s[x=571,y=64,z=-629,distance=..4,tag=!ItemLoot388] run function johto:sound/playlocalsfx {sfx:"item"}
 execute as @s[x=571,y=64,z=-629,distance=..4,tag=!ItemLoot388] run tag @s add ItemLoot388
 
 execute as @s[x=551,y=64,z=-656,distance=..4,tag=ItemLoot389] run tellraw @s {"text":"You've already claimed this loot!","italic":true,"color":"gray"}
 execute as @s[x=551,y=64,z=-656,distance=..4,tag=!ItemLoot389] run scoreboard players add @s Money 250
-execute as @s[x=551,y=64,z=-656,distance=..4,tag=!ItemLoot389] run tellraw @s {"text":"You found $250!","italic":true,"color":"gray"}
+execute as @s[x=551,y=64,z=-656,distance=..4,tag=!ItemLoot389] run tellraw @s {"text":"You found ₽250!","italic":true,"color":"gray"}
 execute as @s[x=551,y=64,z=-656,distance=..4,tag=!ItemLoot389] run function johto:sound/playlocalsfx {sfx:"item"}
 execute as @s[x=551,y=64,z=-656,distance=..4,tag=!ItemLoot389] run tag @s add ItemLoot389
 
 execute as @s[x=601,y=64,z=-672,distance=..4,tag=ItemLoot390] run tellraw @s {"text":"You've already claimed this loot!","italic":true,"color":"gray"}
 execute as @s[x=601,y=64,z=-672,distance=..4,tag=!ItemLoot390] run scoreboard players add @s Money 250
-execute as @s[x=601,y=64,z=-672,distance=..4,tag=!ItemLoot390] run tellraw @s {"text":"You found $250!","italic":true,"color":"gray"}
+execute as @s[x=601,y=64,z=-672,distance=..4,tag=!ItemLoot390] run tellraw @s {"text":"You found ₽250!","italic":true,"color":"gray"}
 execute as @s[x=601,y=64,z=-672,distance=..4,tag=!ItemLoot390] run function johto:sound/playlocalsfx {sfx:"item"}
 execute as @s[x=601,y=64,z=-672,distance=..4,tag=!ItemLoot390] run tag @s add ItemLoot390
 
 execute as @s[x=645,y=64,z=-653,distance=..4,tag=ItemLoot391] run tellraw @s {"text":"You've already claimed this loot!","italic":true,"color":"gray"}
 execute as @s[x=645,y=64,z=-653,distance=..4,tag=!ItemLoot391] run scoreboard players add @s Money 2500
-execute as @s[x=645,y=64,z=-653,distance=..4,tag=!ItemLoot391] run tellraw @s {"text":"You found $2500!","italic":true,"color":"gray"}
+execute as @s[x=645,y=64,z=-653,distance=..4,tag=!ItemLoot391] run tellraw @s {"text":"You found ₽2500!","italic":true,"color":"gray"}
 execute as @s[x=645,y=64,z=-653,distance=..4,tag=!ItemLoot391] run function johto:sound/playlocalsfx {sfx:"item"}
 execute as @s[x=645,y=64,z=-653,distance=..4,tag=!ItemLoot391] run tag @s add ItemLoot391
 
 execute as @s[x=465,y=64,z=-745,distance=..4,tag=ItemLoot392] run tellraw @s {"text":"You've already claimed this loot!","italic":true,"color":"gray"}
 execute as @s[x=465,y=64,z=-745,distance=..4,tag=!ItemLoot392] run scoreboard players add @s Money 5000
-execute as @s[x=465,y=64,z=-745,distance=..4,tag=!ItemLoot392] run tellraw @s {"text":"You found $5000!","italic":true,"color":"gray"}
+execute as @s[x=465,y=64,z=-745,distance=..4,tag=!ItemLoot392] run tellraw @s {"text":"You found ₽5000!","italic":true,"color":"gray"}
 execute as @s[x=465,y=64,z=-745,distance=..4,tag=!ItemLoot392] run function johto:sound/playlocalsfx {sfx:"item"}
 execute as @s[x=465,y=64,z=-745,distance=..4,tag=!ItemLoot392] run tag @s add ItemLoot392
 
 execute as @s[x=532,y=64,z=-128,distance=..4,tag=ItemLoot393] run tellraw @s {"text":"You've already claimed this loot!","italic":true,"color":"gray"}
 execute as @s[x=532,y=64,z=-128,distance=..4,tag=!ItemLoot393] run scoreboard players add @s Money 5000
-execute as @s[x=532,y=64,z=-128,distance=..4,tag=!ItemLoot393] run tellraw @s {"text":"You found $5000!","italic":true,"color":"gray"}
+execute as @s[x=532,y=64,z=-128,distance=..4,tag=!ItemLoot393] run tellraw @s {"text":"You found ₽5000!","italic":true,"color":"gray"}
 execute as @s[x=532,y=64,z=-128,distance=..4,tag=!ItemLoot393] run function johto:sound/playlocalsfx {sfx:"item"}
 execute as @s[x=532,y=64,z=-128,distance=..4,tag=!ItemLoot393] run tag @s add ItemLoot393
 
 execute as @s[x=261,y=133,z=302,distance=..4,tag=ItemLoot394] run tellraw @s {"text":"You've already claimed this loot!","italic":true,"color":"gray"}
 execute as @s[x=261,y=133,z=302,distance=..4,tag=!ItemLoot394] run scoreboard players add @s Money 5000
-execute as @s[x=261,y=133,z=302,distance=..4,tag=!ItemLoot394] run tellraw @s {"text":"You found $5000!","italic":true,"color":"gray"}
+execute as @s[x=261,y=133,z=302,distance=..4,tag=!ItemLoot394] run tellraw @s {"text":"You found ₽5000!","italic":true,"color":"gray"}
 execute as @s[x=261,y=133,z=302,distance=..4,tag=!ItemLoot394] run function johto:sound/playlocalsfx {sfx:"item"}
 execute as @s[x=261,y=133,z=302,distance=..4,tag=!ItemLoot394] run tag @s add ItemLoot394
 
 execute as @s[x=812,y=64,z=269,distance=..4,tag=ItemLoot395] run tellraw @s {"text":"You've already claimed this loot!","italic":true,"color":"gray"}
 execute as @s[x=812,y=64,z=269,distance=..4,tag=!ItemLoot395] run scoreboard players add @s Money 5000
-execute as @s[x=812,y=64,z=269,distance=..4,tag=!ItemLoot395] run tellraw @s {"text":"You found $5000!","italic":true,"color":"gray"}
+execute as @s[x=812,y=64,z=269,distance=..4,tag=!ItemLoot395] run tellraw @s {"text":"You found ₽5000!","italic":true,"color":"gray"}
 execute as @s[x=812,y=64,z=269,distance=..4,tag=!ItemLoot395] run function johto:sound/playlocalsfx {sfx:"item"}
 execute as @s[x=812,y=64,z=269,distance=..4,tag=!ItemLoot395] run tag @s add ItemLoot395
 
 execute as @s[x=774,y=64,z=-75,distance=..4,tag=ItemLoot396] run tellraw @s {"text":"You've already claimed this loot!","italic":true,"color":"gray"}
 execute as @s[x=774,y=64,z=-75,distance=..4,tag=!ItemLoot396] run scoreboard players add @s Money 1000
-execute as @s[x=774,y=64,z=-75,distance=..4,tag=!ItemLoot396] run tellraw @s {"text":"You found $1000!","italic":true,"color":"gray"}
+execute as @s[x=774,y=64,z=-75,distance=..4,tag=!ItemLoot396] run tellraw @s {"text":"You found ₽1000!","italic":true,"color":"gray"}
 execute as @s[x=774,y=64,z=-75,distance=..4,tag=!ItemLoot396] run function johto:sound/playlocalsfx {sfx:"item"}
 execute as @s[x=774,y=64,z=-75,distance=..4,tag=!ItemLoot396] run tag @s add ItemLoot396
 
 execute as @s[x=928,y=64,z=-341,distance=..4,tag=ItemLoot397] run tellraw @s {"text":"You've already claimed this loot!","italic":true,"color":"gray"}
 execute as @s[x=928,y=64,z=-341,distance=..4,tag=!ItemLoot397] run scoreboard players add @s Money 1500
-execute as @s[x=928,y=64,z=-341,distance=..4,tag=!ItemLoot397] run tellraw @s {"text":"You found $1500!","italic":true,"color":"gray"}
+execute as @s[x=928,y=64,z=-341,distance=..4,tag=!ItemLoot397] run tellraw @s {"text":"You found ₽1500!","italic":true,"color":"gray"}
 execute as @s[x=928,y=64,z=-341,distance=..4,tag=!ItemLoot397] run function johto:sound/playlocalsfx {sfx:"item"}
 execute as @s[x=928,y=64,z=-341,distance=..4,tag=!ItemLoot397] run tag @s add ItemLoot397
 
 execute as @s[x=1056,y=64,z=-315,distance=..4,tag=ItemLoot398] run tellraw @s {"text":"You've already claimed this loot!","italic":true,"color":"gray"}
 execute as @s[x=1056,y=64,z=-315,distance=..4,tag=!ItemLoot398] run scoreboard players add @s Money 1500
-execute as @s[x=1056,y=64,z=-315,distance=..4,tag=!ItemLoot398] run tellraw @s {"text":"You found $1500!","italic":true,"color":"gray"}
+execute as @s[x=1056,y=64,z=-315,distance=..4,tag=!ItemLoot398] run tellraw @s {"text":"You found ₽1500!","italic":true,"color":"gray"}
 execute as @s[x=1056,y=64,z=-315,distance=..4,tag=!ItemLoot398] run function johto:sound/playlocalsfx {sfx:"item"}
 execute as @s[x=1056,y=64,z=-315,distance=..4,tag=!ItemLoot398] run tag @s add ItemLoot398
 
 execute as @s[x=1104,y=64,z=-438,distance=..4,tag=ItemLoot399] run tellraw @s {"text":"You've already claimed this loot!","italic":true,"color":"gray"}
 execute as @s[x=1104,y=64,z=-438,distance=..4,tag=!ItemLoot399] run scoreboard players add @s Money 1500
-execute as @s[x=1104,y=64,z=-438,distance=..4,tag=!ItemLoot399] run tellraw @s {"text":"You found $1500!","italic":true,"color":"gray"}
+execute as @s[x=1104,y=64,z=-438,distance=..4,tag=!ItemLoot399] run tellraw @s {"text":"You found ₽1500!","italic":true,"color":"gray"}
 execute as @s[x=1104,y=64,z=-438,distance=..4,tag=!ItemLoot399] run function johto:sound/playlocalsfx {sfx:"item"}
 execute as @s[x=1104,y=64,z=-438,distance=..4,tag=!ItemLoot399] run tag @s add ItemLoot399
 
 execute as @s[x=1242,y=95,z=306,distance=..4,tag=ItemLoot400] run tellraw @s {"text":"You've already claimed this loot!","italic":true,"color":"gray"}
 execute as @s[x=1242,y=95,z=306,distance=..4,tag=!ItemLoot400] run scoreboard players add @s Money 5000
-execute as @s[x=1242,y=95,z=306,distance=..4,tag=!ItemLoot400] run tellraw @s {"text":"You found $5000!","italic":true,"color":"gray"}
+execute as @s[x=1242,y=95,z=306,distance=..4,tag=!ItemLoot400] run tellraw @s {"text":"You found ₽5000!","italic":true,"color":"gray"}
 execute as @s[x=1242,y=95,z=306,distance=..4,tag=!ItemLoot400] run function johto:sound/playlocalsfx {sfx:"item"}
 execute as @s[x=1242,y=95,z=306,distance=..4,tag=!ItemLoot400] run tag @s add ItemLoot400
 
 execute as @s[x=1229,y=99,z=287,distance=..4,tag=ItemLoot401] run tellraw @s {"text":"You've already claimed this loot!","italic":true,"color":"gray"}
 execute as @s[x=1229,y=99,z=287,distance=..4,tag=!ItemLoot401] run scoreboard players add @s Money 1000
-execute as @s[x=1229,y=99,z=287,distance=..4,tag=!ItemLoot401] run tellraw @s {"text":"You found $1000!","italic":true,"color":"gray"}
+execute as @s[x=1229,y=99,z=287,distance=..4,tag=!ItemLoot401] run tellraw @s {"text":"You found ₽1000!","italic":true,"color":"gray"}
 execute as @s[x=1229,y=99,z=287,distance=..4,tag=!ItemLoot401] run function johto:sound/playlocalsfx {sfx:"item"}
 execute as @s[x=1229,y=99,z=287,distance=..4,tag=!ItemLoot401] run tag @s add ItemLoot401
 
 execute as @s[x=1297,y=64,z=-390,distance=..4,tag=ItemLoot402] run tellraw @s {"text":"You've already claimed this loot!","italic":true,"color":"gray"}
 execute as @s[x=1297,y=64,z=-390,distance=..4,tag=!ItemLoot402] run scoreboard players add @s Money 1500
-execute as @s[x=1297,y=64,z=-390,distance=..4,tag=!ItemLoot402] run tellraw @s {"text":"You found $1500!","italic":true,"color":"gray"}
+execute as @s[x=1297,y=64,z=-390,distance=..4,tag=!ItemLoot402] run tellraw @s {"text":"You found ₽1500!","italic":true,"color":"gray"}
 execute as @s[x=1297,y=64,z=-390,distance=..4,tag=!ItemLoot402] run function johto:sound/playlocalsfx {sfx:"item"}
 execute as @s[x=1297,y=64,z=-390,distance=..4,tag=!ItemLoot402] run tag @s add ItemLoot402
 
 execute as @s[x=1491,y=64,z=-441,distance=..4,tag=ItemLoot403] run tellraw @s {"text":"You've already claimed this loot!","italic":true,"color":"gray"}
 execute as @s[x=1491,y=64,z=-441,distance=..4,tag=!ItemLoot403] run scoreboard players add @s Money 1000
-execute as @s[x=1491,y=64,z=-441,distance=..4,tag=!ItemLoot403] run tellraw @s {"text":"You found $1000!","italic":true,"color":"gray"}
+execute as @s[x=1491,y=64,z=-441,distance=..4,tag=!ItemLoot403] run tellraw @s {"text":"You found ₽1000!","italic":true,"color":"gray"}
 execute as @s[x=1491,y=64,z=-441,distance=..4,tag=!ItemLoot403] run function johto:sound/playlocalsfx {sfx:"item"}
 execute as @s[x=1491,y=64,z=-441,distance=..4,tag=!ItemLoot403] run tag @s add ItemLoot403
 
 execute as @s[x=1643,y=87,z=-429,distance=..4,tag=ItemLoot404] run tellraw @s {"text":"You've already claimed this loot!","italic":true,"color":"gray"}
 execute as @s[x=1643,y=87,z=-429,distance=..4,tag=!ItemLoot404] run scoreboard players add @s Money 1000
-execute as @s[x=1643,y=87,z=-429,distance=..4,tag=!ItemLoot404] run tellraw @s {"text":"You found $1000!","italic":true,"color":"gray"}
+execute as @s[x=1643,y=87,z=-429,distance=..4,tag=!ItemLoot404] run tellraw @s {"text":"You found ₽1000!","italic":true,"color":"gray"}
 execute as @s[x=1643,y=87,z=-429,distance=..4,tag=!ItemLoot404] run function johto:sound/playlocalsfx {sfx:"item"}
 execute as @s[x=1643,y=87,z=-429,distance=..4,tag=!ItemLoot404] run tag @s add ItemLoot404
 
 execute as @s[x=1643,y=88,z=-261,distance=..4,tag=ItemLoot405] run tellraw @s {"text":"You've already claimed this loot!","italic":true,"color":"gray"}
 execute as @s[x=1643,y=88,z=-261,distance=..4,tag=!ItemLoot405] run scoreboard players add @s Money 5000
-execute as @s[x=1643,y=88,z=-261,distance=..4,tag=!ItemLoot405] run tellraw @s {"text":"You found $5000!","italic":true,"color":"gray"}
+execute as @s[x=1643,y=88,z=-261,distance=..4,tag=!ItemLoot405] run tellraw @s {"text":"You found ₽5000!","italic":true,"color":"gray"}
 execute as @s[x=1643,y=88,z=-261,distance=..4,tag=!ItemLoot405] run function johto:sound/playlocalsfx {sfx:"item"}
 execute as @s[x=1643,y=88,z=-261,distance=..4,tag=!ItemLoot405] run tag @s add ItemLoot405
 
 execute as @s[x=1627,y=88,z=-140,distance=..4,tag=ItemLoot406] run tellraw @s {"text":"You've already claimed this loot!","italic":true,"color":"gray"}
 execute as @s[x=1627,y=88,z=-140,distance=..4,tag=!ItemLoot406] run scoreboard players add @s Money 250
-execute as @s[x=1627,y=88,z=-140,distance=..4,tag=!ItemLoot406] run tellraw @s {"text":"You found $250!","italic":true,"color":"gray"}
+execute as @s[x=1627,y=88,z=-140,distance=..4,tag=!ItemLoot406] run tellraw @s {"text":"You found ₽250!","italic":true,"color":"gray"}
 execute as @s[x=1627,y=88,z=-140,distance=..4,tag=!ItemLoot406] run function johto:sound/playlocalsfx {sfx:"item"}
 execute as @s[x=1627,y=88,z=-140,distance=..4,tag=!ItemLoot406] run tag @s add ItemLoot406
 
 execute as @s[x=1636,y=88,z=-197,distance=..4,tag=ItemLoot407] run tellraw @s {"text":"You've already claimed this loot!","italic":true,"color":"gray"}
 execute as @s[x=1636,y=88,z=-197,distance=..4,tag=!ItemLoot407] run scoreboard players add @s Money 250
-execute as @s[x=1636,y=88,z=-197,distance=..4,tag=!ItemLoot407] run tellraw @s {"text":"You found $250!","italic":true,"color":"gray"}
+execute as @s[x=1636,y=88,z=-197,distance=..4,tag=!ItemLoot407] run tellraw @s {"text":"You found ₽250!","italic":true,"color":"gray"}
 execute as @s[x=1636,y=88,z=-197,distance=..4,tag=!ItemLoot407] run function johto:sound/playlocalsfx {sfx:"item"}
 execute as @s[x=1636,y=88,z=-197,distance=..4,tag=!ItemLoot407] run tag @s add ItemLoot407
 
 execute as @s[x=1545,y=88,z=-130,distance=..4,tag=ItemLoot408] run tellraw @s {"text":"You've already claimed this loot!","italic":true,"color":"gray"}
 execute as @s[x=1545,y=88,z=-130,distance=..4,tag=!ItemLoot408] run scoreboard players add @s Money 250
-execute as @s[x=1545,y=88,z=-130,distance=..4,tag=!ItemLoot408] run tellraw @s {"text":"You found $250!","italic":true,"color":"gray"}
+execute as @s[x=1545,y=88,z=-130,distance=..4,tag=!ItemLoot408] run tellraw @s {"text":"You found ₽250!","italic":true,"color":"gray"}
 execute as @s[x=1545,y=88,z=-130,distance=..4,tag=!ItemLoot408] run function johto:sound/playlocalsfx {sfx:"item"}
 execute as @s[x=1545,y=88,z=-130,distance=..4,tag=!ItemLoot408] run tag @s add ItemLoot408
 
 execute as @s[x=17,y=53,z=410,distance=..4,tag=ItemLoot409] run tellraw @s {"text":"You've already claimed this loot!","italic":true,"color":"gray"}
 execute as @s[x=17,y=53,z=410,distance=..4,tag=!ItemLoot409] run scoreboard players add @s Money 5000
-execute as @s[x=17,y=53,z=410,distance=..4,tag=!ItemLoot409] run tellraw @s {"text":"You found $5000!","italic":true,"color":"gray"}
+execute as @s[x=17,y=53,z=410,distance=..4,tag=!ItemLoot409] run tellraw @s {"text":"You found ₽5000!","italic":true,"color":"gray"}
 execute as @s[x=17,y=53,z=410,distance=..4,tag=!ItemLoot409] run function johto:sound/playlocalsfx {sfx:"item"}
 execute as @s[x=17,y=53,z=410,distance=..4,tag=!ItemLoot409] run tag @s add ItemLoot409
 
 execute as @s[x=40,y=53,z=374,distance=..4,tag=ItemLoot410] run tellraw @s {"text":"You've already claimed this loot!","italic":true,"color":"gray"}
 execute as @s[x=40,y=53,z=374,distance=..4,tag=!ItemLoot410] run scoreboard players add @s Money 5000
-execute as @s[x=40,y=53,z=374,distance=..4,tag=!ItemLoot410] run tellraw @s {"text":"You found $5000!","italic":true,"color":"gray"}
+execute as @s[x=40,y=53,z=374,distance=..4,tag=!ItemLoot410] run tellraw @s {"text":"You found ₽5000!","italic":true,"color":"gray"}
 execute as @s[x=40,y=53,z=374,distance=..4,tag=!ItemLoot410] run function johto:sound/playlocalsfx {sfx:"item"}
 execute as @s[x=40,y=53,z=374,distance=..4,tag=!ItemLoot410] run tag @s add ItemLoot410
 
 execute as @s[x=-173,y=54,z=160,distance=..4,tag=ItemLoot411] run tellraw @s {"text":"You've already claimed this loot!","italic":true,"color":"gray"}
 execute as @s[x=-173,y=54,z=160,distance=..4,tag=!ItemLoot411] run scoreboard players add @s Money 5000
-execute as @s[x=-173,y=54,z=160,distance=..4,tag=!ItemLoot411] run tellraw @s {"text":"You found $5000!","italic":true,"color":"gray"}
+execute as @s[x=-173,y=54,z=160,distance=..4,tag=!ItemLoot411] run tellraw @s {"text":"You found ₽5000!","italic":true,"color":"gray"}
 execute as @s[x=-173,y=54,z=160,distance=..4,tag=!ItemLoot411] run function johto:sound/playlocalsfx {sfx:"item"}
 execute as @s[x=-173,y=54,z=160,distance=..4,tag=!ItemLoot411] run tag @s add ItemLoot411
 
 execute as @s[x=-560,y=64,z=-143,distance=..4,tag=ItemLoot412] run tellraw @s {"text":"You've already claimed this loot!","italic":true,"color":"gray"}
 execute as @s[x=-560,y=64,z=-143,distance=..4,tag=!ItemLoot412] run scoreboard players add @s Money 5000
-execute as @s[x=-560,y=64,z=-143,distance=..4,tag=!ItemLoot412] run tellraw @s {"text":"You found $5000!","italic":true,"color":"gray"}
+execute as @s[x=-560,y=64,z=-143,distance=..4,tag=!ItemLoot412] run tellraw @s {"text":"You found ₽5000!","italic":true,"color":"gray"}
 execute as @s[x=-560,y=64,z=-143,distance=..4,tag=!ItemLoot412] run function johto:sound/playlocalsfx {sfx:"item"}
 execute as @s[x=-560,y=64,z=-143,distance=..4,tag=!ItemLoot412] run tag @s add ItemLoot412
 
 execute as @s[x=-1105,y=64,z=-539,distance=..4,tag=ItemLoot413] run tellraw @s {"text":"You've already claimed this loot!","italic":true,"color":"gray"}
 execute as @s[x=-1105,y=64,z=-539,distance=..4,tag=!ItemLoot413] run scoreboard players add @s Money 5000
-execute as @s[x=-1105,y=64,z=-539,distance=..4,tag=!ItemLoot413] run tellraw @s {"text":"You found $5000!","italic":true,"color":"gray"}
+execute as @s[x=-1105,y=64,z=-539,distance=..4,tag=!ItemLoot413] run tellraw @s {"text":"You found ₽5000!","italic":true,"color":"gray"}
 execute as @s[x=-1105,y=64,z=-539,distance=..4,tag=!ItemLoot413] run function johto:sound/playlocalsfx {sfx:"item"}
 execute as @s[x=-1105,y=64,z=-539,distance=..4,tag=!ItemLoot413] run tag @s add ItemLoot413
 
 execute as @s[x=-1225,y=64,z=-509,distance=..4,tag=ItemLoot414] run tellraw @s {"text":"You've already claimed this loot!","italic":true,"color":"gray"}
 execute as @s[x=-1225,y=64,z=-509,distance=..4,tag=!ItemLoot414] run scoreboard players add @s Money 2500
-execute as @s[x=-1225,y=64,z=-509,distance=..4,tag=!ItemLoot414] run tellraw @s {"text":"You found $2500!","italic":true,"color":"gray"}
+execute as @s[x=-1225,y=64,z=-509,distance=..4,tag=!ItemLoot414] run tellraw @s {"text":"You found ₽2500!","italic":true,"color":"gray"}
 execute as @s[x=-1225,y=64,z=-509,distance=..4,tag=!ItemLoot414] run function johto:sound/playlocalsfx {sfx:"item"}
 execute as @s[x=-1225,y=64,z=-509,distance=..4,tag=!ItemLoot414] run tag @s add ItemLoot414
 
 execute as @s[x=-1248,y=64,z=-279,distance=..4,tag=ItemLoot415] run tellraw @s {"text":"You've already claimed this loot!","italic":true,"color":"gray"}
 execute as @s[x=-1248,y=64,z=-279,distance=..4,tag=!ItemLoot415] run scoreboard players add @s Money 2500
-execute as @s[x=-1248,y=64,z=-279,distance=..4,tag=!ItemLoot415] run tellraw @s {"text":"You found $2500!","italic":true,"color":"gray"}
+execute as @s[x=-1248,y=64,z=-279,distance=..4,tag=!ItemLoot415] run tellraw @s {"text":"You found ₽2500!","italic":true,"color":"gray"}
 execute as @s[x=-1248,y=64,z=-279,distance=..4,tag=!ItemLoot415] run function johto:sound/playlocalsfx {sfx:"item"}
 execute as @s[x=-1248,y=64,z=-279,distance=..4,tag=!ItemLoot415] run tag @s add ItemLoot415
 
 execute as @s[x=-1713,y=64,z=80,distance=..4,tag=ItemLoot416] run tellraw @s {"text":"You've already claimed this loot!","italic":true,"color":"gray"}
 execute as @s[x=-1713,y=64,z=80,distance=..4,tag=!ItemLoot416] run scoreboard players add @s Money 5000
-execute as @s[x=-1713,y=64,z=80,distance=..4,tag=!ItemLoot416] run tellraw @s {"text":"You found $5000!","italic":true,"color":"gray"}
+execute as @s[x=-1713,y=64,z=80,distance=..4,tag=!ItemLoot416] run tellraw @s {"text":"You found ₽5000!","italic":true,"color":"gray"}
 execute as @s[x=-1713,y=64,z=80,distance=..4,tag=!ItemLoot416] run function johto:sound/playlocalsfx {sfx:"item"}
 execute as @s[x=-1713,y=64,z=80,distance=..4,tag=!ItemLoot416] run tag @s add ItemLoot416
 
 execute as @s[x=-1580,y=64,z=293,distance=..4,tag=ItemLoot417] run tellraw @s {"text":"You've already claimed this loot!","italic":true,"color":"gray"}
 execute as @s[x=-1580,y=64,z=293,distance=..4,tag=!ItemLoot417] run scoreboard players add @s Money 2500
-execute as @s[x=-1580,y=64,z=293,distance=..4,tag=!ItemLoot417] run tellraw @s {"text":"You found $2500!","italic":true,"color":"gray"}
+execute as @s[x=-1580,y=64,z=293,distance=..4,tag=!ItemLoot417] run tellraw @s {"text":"You found ₽2500!","italic":true,"color":"gray"}
 execute as @s[x=-1580,y=64,z=293,distance=..4,tag=!ItemLoot417] run function johto:sound/playlocalsfx {sfx:"item"}
 execute as @s[x=-1580,y=64,z=293,distance=..4,tag=!ItemLoot417] run tag @s add ItemLoot417
 
 execute as @s[x=-1673,y=64,z=354,distance=..4,tag=ItemLoot418] run tellraw @s {"text":"You've already claimed this loot!","italic":true,"color":"gray"}
 execute as @s[x=-1673,y=64,z=354,distance=..4,tag=!ItemLoot418] run scoreboard players add @s Money 2500
-execute as @s[x=-1673,y=64,z=354,distance=..4,tag=!ItemLoot418] run tellraw @s {"text":"You found $2500!","italic":true,"color":"gray"}
+execute as @s[x=-1673,y=64,z=354,distance=..4,tag=!ItemLoot418] run tellraw @s {"text":"You found ₽2500!","italic":true,"color":"gray"}
 execute as @s[x=-1673,y=64,z=354,distance=..4,tag=!ItemLoot418] run function johto:sound/playlocalsfx {sfx:"item"}
 execute as @s[x=-1673,y=64,z=354,distance=..4,tag=!ItemLoot418] run tag @s add ItemLoot418
 
 execute as @s[x=-1701,y=64,z=407,distance=..4,tag=ItemLoot419] run tellraw @s {"text":"You've already claimed this loot!","italic":true,"color":"gray"}
 execute as @s[x=-1701,y=64,z=407,distance=..4,tag=!ItemLoot419] run scoreboard players add @s Money 250
-execute as @s[x=-1701,y=64,z=407,distance=..4,tag=!ItemLoot419] run tellraw @s {"text":"You found $250!","italic":true,"color":"gray"}
+execute as @s[x=-1701,y=64,z=407,distance=..4,tag=!ItemLoot419] run tellraw @s {"text":"You found ₽250!","italic":true,"color":"gray"}
 execute as @s[x=-1701,y=64,z=407,distance=..4,tag=!ItemLoot419] run function johto:sound/playlocalsfx {sfx:"item"}
 execute as @s[x=-1701,y=64,z=407,distance=..4,tag=!ItemLoot419] run tag @s add ItemLoot419
 
 execute as @s[x=-1579,y=64,z=347,distance=..4,tag=ItemLoot420] run tellraw @s {"text":"You've already claimed this loot!","italic":true,"color":"gray"}
 execute as @s[x=-1579,y=64,z=347,distance=..4,tag=!ItemLoot420] run scoreboard players add @s Money 250
-execute as @s[x=-1579,y=64,z=347,distance=..4,tag=!ItemLoot420] run tellraw @s {"text":"You found $250!","italic":true,"color":"gray"}
+execute as @s[x=-1579,y=64,z=347,distance=..4,tag=!ItemLoot420] run tellraw @s {"text":"You found ₽250!","italic":true,"color":"gray"}
 execute as @s[x=-1579,y=64,z=347,distance=..4,tag=!ItemLoot420] run function johto:sound/playlocalsfx {sfx:"item"}
 execute as @s[x=-1579,y=64,z=347,distance=..4,tag=!ItemLoot420] run tag @s add ItemLoot420
 
 execute as @s[x=-1615,y=64,z=386,distance=..4,tag=ItemLoot421] run tellraw @s {"text":"You've already claimed this loot!","italic":true,"color":"gray"}
 execute as @s[x=-1615,y=64,z=386,distance=..4,tag=!ItemLoot421] run scoreboard players add @s Money 250
-execute as @s[x=-1615,y=64,z=386,distance=..4,tag=!ItemLoot421] run tellraw @s {"text":"You found $250!","italic":true,"color":"gray"}
+execute as @s[x=-1615,y=64,z=386,distance=..4,tag=!ItemLoot421] run tellraw @s {"text":"You found ₽250!","italic":true,"color":"gray"}
 execute as @s[x=-1615,y=64,z=386,distance=..4,tag=!ItemLoot421] run function johto:sound/playlocalsfx {sfx:"item"}
 execute as @s[x=-1615,y=64,z=386,distance=..4,tag=!ItemLoot421] run tag @s add ItemLoot421
 
 execute as @s[x=-2180,y=64,z=663,distance=..4,tag=ItemLoot422] run tellraw @s {"text":"You've already claimed this loot!","italic":true,"color":"gray"}
 execute as @s[x=-2180,y=64,z=663,distance=..4,tag=!ItemLoot422] run scoreboard players add @s Money 6000
-execute as @s[x=-2180,y=64,z=663,distance=..4,tag=!ItemLoot422] run tellraw @s {"text":"You found $6000!","italic":true,"color":"gray"}
+execute as @s[x=-2180,y=64,z=663,distance=..4,tag=!ItemLoot422] run tellraw @s {"text":"You found ₽6000!","italic":true,"color":"gray"}
 execute as @s[x=-2180,y=64,z=663,distance=..4,tag=!ItemLoot422] run function johto:sound/playlocalsfx {sfx:"item"}
 execute as @s[x=-2180,y=64,z=663,distance=..4,tag=!ItemLoot422] run tag @s add ItemLoot422
 
 execute as @s[x=-2118,y=64,z=711,distance=..4,tag=ItemLoot423] run tellraw @s {"text":"You've already claimed this loot!","italic":true,"color":"gray"}
 execute as @s[x=-2118,y=64,z=711,distance=..4,tag=!ItemLoot423] run scoreboard players add @s Money 6000
-execute as @s[x=-2118,y=64,z=711,distance=..4,tag=!ItemLoot423] run tellraw @s {"text":"You found $6000!","italic":true,"color":"gray"}
+execute as @s[x=-2118,y=64,z=711,distance=..4,tag=!ItemLoot423] run tellraw @s {"text":"You found ₽6000!","italic":true,"color":"gray"}
 execute as @s[x=-2118,y=64,z=711,distance=..4,tag=!ItemLoot423] run function johto:sound/playlocalsfx {sfx:"item"}
 execute as @s[x=-2118,y=64,z=711,distance=..4,tag=!ItemLoot423] run tag @s add ItemLoot423
 
 execute as @s[x=-2441,y=64,z=690,distance=..4,tag=ItemLoot424] run tellraw @s {"text":"You've already claimed this loot!","italic":true,"color":"gray"}
 execute as @s[x=-2441,y=64,z=690,distance=..4,tag=!ItemLoot424] run scoreboard players add @s Money 2500
-execute as @s[x=-2441,y=64,z=690,distance=..4,tag=!ItemLoot424] run tellraw @s {"text":"You found $2500!","italic":true,"color":"gray"}
+execute as @s[x=-2441,y=64,z=690,distance=..4,tag=!ItemLoot424] run tellraw @s {"text":"You found ₽2500!","italic":true,"color":"gray"}
 execute as @s[x=-2441,y=64,z=690,distance=..4,tag=!ItemLoot424] run function johto:sound/playlocalsfx {sfx:"item"}
 execute as @s[x=-2441,y=64,z=690,distance=..4,tag=!ItemLoot424] run tag @s add ItemLoot424
 
 execute as @s[x=-2651,y=64,z=763,distance=..4,tag=ItemLoot425] run tellraw @s {"text":"You've already claimed this loot!","italic":true,"color":"gray"}
 execute as @s[x=-2651,y=64,z=763,distance=..4,tag=!ItemLoot425] run scoreboard players add @s Money 5000
-execute as @s[x=-2651,y=64,z=763,distance=..4,tag=!ItemLoot425] run tellraw @s {"text":"You found $5000!","italic":true,"color":"gray"}
+execute as @s[x=-2651,y=64,z=763,distance=..4,tag=!ItemLoot425] run tellraw @s {"text":"You found ₽5000!","italic":true,"color":"gray"}
 execute as @s[x=-2651,y=64,z=763,distance=..4,tag=!ItemLoot425] run function johto:sound/playlocalsfx {sfx:"item"}
 execute as @s[x=-2651,y=64,z=763,distance=..4,tag=!ItemLoot425] run tag @s add ItemLoot425
 
 execute as @s[x=-2999,y=64,z=1005,distance=..4,tag=ItemLoot426] run tellraw @s {"text":"You've already claimed this loot!","italic":true,"color":"gray"}
 execute as @s[x=-2999,y=64,z=1005,distance=..4,tag=!ItemLoot426] run scoreboard players add @s Money 5000
-execute as @s[x=-2999,y=64,z=1005,distance=..4,tag=!ItemLoot426] run tellraw @s {"text":"You found $5000!","italic":true,"color":"gray"}
+execute as @s[x=-2999,y=64,z=1005,distance=..4,tag=!ItemLoot426] run tellraw @s {"text":"You found ₽5000!","italic":true,"color":"gray"}
 execute as @s[x=-2999,y=64,z=1005,distance=..4,tag=!ItemLoot426] run function johto:sound/playlocalsfx {sfx:"item"}
 execute as @s[x=-2999,y=64,z=1005,distance=..4,tag=!ItemLoot426] run tag @s add ItemLoot426
 
 execute as @s[x=-2676,y=64,z=-79,distance=..4,tag=ItemLoot427] run tellraw @s {"text":"You've already claimed this loot!","italic":true,"color":"gray"}
 execute as @s[x=-2676,y=64,z=-79,distance=..4,tag=!ItemLoot427] run scoreboard players add @s Money 4000
-execute as @s[x=-2676,y=64,z=-79,distance=..4,tag=!ItemLoot427] run tellraw @s {"text":"You found $4000!","italic":true,"color":"gray"}
+execute as @s[x=-2676,y=64,z=-79,distance=..4,tag=!ItemLoot427] run tellraw @s {"text":"You found ₽4000!","italic":true,"color":"gray"}
 execute as @s[x=-2676,y=64,z=-79,distance=..4,tag=!ItemLoot427] run function johto:sound/playlocalsfx {sfx:"item"}
 execute as @s[x=-2676,y=64,z=-79,distance=..4,tag=!ItemLoot427] run tag @s add ItemLoot427
 
 execute as @s[x=-2825,y=64,z=-80,distance=..4,tag=ItemLoot428] run tellraw @s {"text":"You've already claimed this loot!","italic":true,"color":"gray"}
 execute as @s[x=-2825,y=64,z=-80,distance=..4,tag=!ItemLoot428] run scoreboard players add @s Money 1000
-execute as @s[x=-2825,y=64,z=-80,distance=..4,tag=!ItemLoot428] run tellraw @s {"text":"You found $1000!","italic":true,"color":"gray"}
+execute as @s[x=-2825,y=64,z=-80,distance=..4,tag=!ItemLoot428] run tellraw @s {"text":"You found ₽1000!","italic":true,"color":"gray"}
 execute as @s[x=-2825,y=64,z=-80,distance=..4,tag=!ItemLoot428] run function johto:sound/playlocalsfx {sfx:"item"}
 execute as @s[x=-2825,y=64,z=-80,distance=..4,tag=!ItemLoot428] run tag @s add ItemLoot428
 
 execute as @s[x=-2679,y=64,z=-32,distance=..4,tag=ItemLoot429] run tellraw @s {"text":"You've already claimed this loot!","italic":true,"color":"gray"}
 execute as @s[x=-2679,y=64,z=-32,distance=..4,tag=!ItemLoot429] run scoreboard players add @s Money 1000
-execute as @s[x=-2679,y=64,z=-32,distance=..4,tag=!ItemLoot429] run tellraw @s {"text":"You found $1000!","italic":true,"color":"gray"}
+execute as @s[x=-2679,y=64,z=-32,distance=..4,tag=!ItemLoot429] run tellraw @s {"text":"You found ₽1000!","italic":true,"color":"gray"}
 execute as @s[x=-2679,y=64,z=-32,distance=..4,tag=!ItemLoot429] run function johto:sound/playlocalsfx {sfx:"item"}
 execute as @s[x=-2679,y=64,z=-32,distance=..4,tag=!ItemLoot429] run tag @s add ItemLoot429
 
 execute as @s[x=-2462,y=64,z=-491,distance=..4,tag=ItemLoot430] run tellraw @s {"text":"You've already claimed this loot!","italic":true,"color":"gray"}
 execute as @s[x=-2462,y=64,z=-491,distance=..4,tag=!ItemLoot430] run scoreboard players add @s Money 5000
-execute as @s[x=-2462,y=64,z=-491,distance=..4,tag=!ItemLoot430] run tellraw @s {"text":"You found $5000!","italic":true,"color":"gray"}
+execute as @s[x=-2462,y=64,z=-491,distance=..4,tag=!ItemLoot430] run tellraw @s {"text":"You found ₽5000!","italic":true,"color":"gray"}
 execute as @s[x=-2462,y=64,z=-491,distance=..4,tag=!ItemLoot430] run function johto:sound/playlocalsfx {sfx:"item"}
 execute as @s[x=-2462,y=64,z=-491,distance=..4,tag=!ItemLoot430] run tag @s add ItemLoot430
 
 execute as @s[x=-2418,y=64,z=-708,distance=..4,tag=ItemLoot431] run tellraw @s {"text":"You've already claimed this loot!","italic":true,"color":"gray"}
 execute as @s[x=-2418,y=64,z=-708,distance=..4,tag=!ItemLoot431] run scoreboard players add @s Money 1000
-execute as @s[x=-2418,y=64,z=-708,distance=..4,tag=!ItemLoot431] run tellraw @s {"text":"You found $1000!","italic":true,"color":"gray"}
+execute as @s[x=-2418,y=64,z=-708,distance=..4,tag=!ItemLoot431] run tellraw @s {"text":"You found ₽1000!","italic":true,"color":"gray"}
 execute as @s[x=-2418,y=64,z=-708,distance=..4,tag=!ItemLoot431] run function johto:sound/playlocalsfx {sfx:"item"}
 execute as @s[x=-2418,y=64,z=-708,distance=..4,tag=!ItemLoot431] run tag @s add ItemLoot431
 
 execute as @s[x=-2378,y=64,z=-703,distance=..4,tag=ItemLoot432] run tellraw @s {"text":"You've already claimed this loot!","italic":true,"color":"gray"}
 execute as @s[x=-2378,y=64,z=-703,distance=..4,tag=!ItemLoot432] run scoreboard players add @s Money 1000
-execute as @s[x=-2378,y=64,z=-703,distance=..4,tag=!ItemLoot432] run tellraw @s {"text":"You found $1000!","italic":true,"color":"gray"}
+execute as @s[x=-2378,y=64,z=-703,distance=..4,tag=!ItemLoot432] run tellraw @s {"text":"You found ₽1000!","italic":true,"color":"gray"}
 execute as @s[x=-2378,y=64,z=-703,distance=..4,tag=!ItemLoot432] run function johto:sound/playlocalsfx {sfx:"item"}
 execute as @s[x=-2378,y=64,z=-703,distance=..4,tag=!ItemLoot432] run tag @s add ItemLoot432
 
 execute as @s[x=-2423,y=64,z=-687,distance=..4,tag=ItemLoot433] run tellraw @s {"text":"You've already claimed this loot!","italic":true,"color":"gray"}
 execute as @s[x=-2423,y=64,z=-687,distance=..4,tag=!ItemLoot433] run scoreboard players add @s Money 4000
-execute as @s[x=-2423,y=64,z=-687,distance=..4,tag=!ItemLoot433] run tellraw @s {"text":"You found $4000!","italic":true,"color":"gray"}
+execute as @s[x=-2423,y=64,z=-687,distance=..4,tag=!ItemLoot433] run tellraw @s {"text":"You found ₽4000!","italic":true,"color":"gray"}
 execute as @s[x=-2423,y=64,z=-687,distance=..4,tag=!ItemLoot433] run function johto:sound/playlocalsfx {sfx:"item"}
 execute as @s[x=-2423,y=64,z=-687,distance=..4,tag=!ItemLoot433] run tag @s add ItemLoot433
 
 execute as @s[x=-1910,y=64,z=-905,distance=..4,tag=ItemLoot434] run tellraw @s {"text":"You've already claimed this loot!","italic":true,"color":"gray"}
 execute as @s[x=-1910,y=64,z=-905,distance=..4,tag=!ItemLoot434] run scoreboard players add @s Money 1500
-execute as @s[x=-1910,y=64,z=-905,distance=..4,tag=!ItemLoot434] run tellraw @s {"text":"You found $1500!","italic":true,"color":"gray"}
+execute as @s[x=-1910,y=64,z=-905,distance=..4,tag=!ItemLoot434] run tellraw @s {"text":"You found ₽1500!","italic":true,"color":"gray"}
 execute as @s[x=-1910,y=64,z=-905,distance=..4,tag=!ItemLoot434] run function johto:sound/playlocalsfx {sfx:"item"}
 execute as @s[x=-1910,y=64,z=-905,distance=..4,tag=!ItemLoot434] run tag @s add ItemLoot434
 
 execute as @s[x=-2065,y=35,z=-850,distance=..4,tag=ItemLoot435] run tellraw @s {"text":"You've already claimed this loot!","italic":true,"color":"gray"}
 execute as @s[x=-2065,y=35,z=-850,distance=..4,tag=!ItemLoot435] run scoreboard players add @s Money 1000
-execute as @s[x=-2065,y=35,z=-850,distance=..4,tag=!ItemLoot435] run tellraw @s {"text":"You found $1000!","italic":true,"color":"gray"}
+execute as @s[x=-2065,y=35,z=-850,distance=..4,tag=!ItemLoot435] run tellraw @s {"text":"You found ₽1000!","italic":true,"color":"gray"}
 execute as @s[x=-2065,y=35,z=-850,distance=..4,tag=!ItemLoot435] run function johto:sound/playlocalsfx {sfx:"item"}
 execute as @s[x=-2065,y=35,z=-850,distance=..4,tag=!ItemLoot435] run tag @s add ItemLoot435
 
 execute as @s[x=-2108,y=35,z=-856,distance=..4,tag=ItemLoot436] run tellraw @s {"text":"You've already claimed this loot!","italic":true,"color":"gray"}
 execute as @s[x=-2108,y=35,z=-856,distance=..4,tag=!ItemLoot436] run scoreboard players add @s Money 1000
-execute as @s[x=-2108,y=35,z=-856,distance=..4,tag=!ItemLoot436] run tellraw @s {"text":"You found $1000!","italic":true,"color":"gray"}
+execute as @s[x=-2108,y=35,z=-856,distance=..4,tag=!ItemLoot436] run tellraw @s {"text":"You found ₽1000!","italic":true,"color":"gray"}
 execute as @s[x=-2108,y=35,z=-856,distance=..4,tag=!ItemLoot436] run function johto:sound/playlocalsfx {sfx:"item"}
 execute as @s[x=-2108,y=35,z=-856,distance=..4,tag=!ItemLoot436] run tag @s add ItemLoot436
 
 execute as @s[x=-2065,y=29,z=-842,distance=..4,tag=ItemLoot437] run tellraw @s {"text":"You've already claimed this loot!","italic":true,"color":"gray"}
 execute as @s[x=-2065,y=29,z=-842,distance=..4,tag=!ItemLoot437] run scoreboard players add @s Money 4000
-execute as @s[x=-2065,y=29,z=-842,distance=..4,tag=!ItemLoot437] run tellraw @s {"text":"You found $4000!","italic":true,"color":"gray"}
+execute as @s[x=-2065,y=29,z=-842,distance=..4,tag=!ItemLoot437] run tellraw @s {"text":"You found ₽4000!","italic":true,"color":"gray"}
 execute as @s[x=-2065,y=29,z=-842,distance=..4,tag=!ItemLoot437] run function johto:sound/playlocalsfx {sfx:"item"}
 execute as @s[x=-2065,y=29,z=-842,distance=..4,tag=!ItemLoot437] run tag @s add ItemLoot437
 
 execute as @s[x=-1703,y=69,z=-872,distance=..4,tag=ItemLoot438] run tellraw @s {"text":"You've already claimed this loot!","italic":true,"color":"gray"}
 execute as @s[x=-1703,y=69,z=-872,distance=..4,tag=!ItemLoot438] run scoreboard players add @s Money 6000
-execute as @s[x=-1703,y=69,z=-872,distance=..4,tag=!ItemLoot438] run tellraw @s {"text":"You found $6000!","italic":true,"color":"gray"}
+execute as @s[x=-1703,y=69,z=-872,distance=..4,tag=!ItemLoot438] run tellraw @s {"text":"You found ₽6000!","italic":true,"color":"gray"}
 execute as @s[x=-1703,y=69,z=-872,distance=..4,tag=!ItemLoot438] run function johto:sound/playlocalsfx {sfx:"item"}
 execute as @s[x=-1703,y=69,z=-872,distance=..4,tag=!ItemLoot438] run tag @s add ItemLoot438
 
 execute as @s[x=-1676,y=64,z=-713,distance=..4,tag=ItemLoot439] run tellraw @s {"text":"You've already claimed this loot!","italic":true,"color":"gray"}
 execute as @s[x=-1676,y=64,z=-713,distance=..4,tag=!ItemLoot439] run scoreboard players add @s Money 1500
-execute as @s[x=-1676,y=64,z=-713,distance=..4,tag=!ItemLoot439] run tellraw @s {"text":"You found $1500!","italic":true,"color":"gray"}
+execute as @s[x=-1676,y=64,z=-713,distance=..4,tag=!ItemLoot439] run tellraw @s {"text":"You found ₽1500!","italic":true,"color":"gray"}
 execute as @s[x=-1676,y=64,z=-713,distance=..4,tag=!ItemLoot439] run function johto:sound/playlocalsfx {sfx:"item"}
 execute as @s[x=-1676,y=64,z=-713,distance=..4,tag=!ItemLoot439] run tag @s add ItemLoot439
 
 execute as @s[x=-1717,y=64,z=-674,distance=..4,tag=ItemLoot440] run tellraw @s {"text":"You've already claimed this loot!","italic":true,"color":"gray"}
 execute as @s[x=-1717,y=64,z=-674,distance=..4,tag=!ItemLoot440] run scoreboard players add @s Money 1500
-execute as @s[x=-1717,y=64,z=-674,distance=..4,tag=!ItemLoot440] run tellraw @s {"text":"You found $1500!","italic":true,"color":"gray"}
+execute as @s[x=-1717,y=64,z=-674,distance=..4,tag=!ItemLoot440] run tellraw @s {"text":"You found ₽1500!","italic":true,"color":"gray"}
 execute as @s[x=-1717,y=64,z=-674,distance=..4,tag=!ItemLoot440] run function johto:sound/playlocalsfx {sfx:"item"}
 execute as @s[x=-1717,y=64,z=-674,distance=..4,tag=!ItemLoot440] run tag @s add ItemLoot440
 
 execute as @s[x=-1715,y=64,z=-472,distance=..4,tag=ItemLoot441] run tellraw @s {"text":"You've already claimed this loot!","italic":true,"color":"gray"}
 execute as @s[x=-1715,y=64,z=-472,distance=..4,tag=!ItemLoot441] run scoreboard players add @s Money 1500
-execute as @s[x=-1715,y=64,z=-472,distance=..4,tag=!ItemLoot441] run tellraw @s {"text":"You found $1500!","italic":true,"color":"gray"}
+execute as @s[x=-1715,y=64,z=-472,distance=..4,tag=!ItemLoot441] run tellraw @s {"text":"You found ₽1500!","italic":true,"color":"gray"}
 execute as @s[x=-1715,y=64,z=-472,distance=..4,tag=!ItemLoot441] run function johto:sound/playlocalsfx {sfx:"item"}
 execute as @s[x=-1715,y=64,z=-472,distance=..4,tag=!ItemLoot441] run tag @s add ItemLoot441
 
 execute as @s[x=-2546,y=64,z=881,distance=..4,tag=ItemLoot442] run tellraw @s {"text":"You've already claimed this loot!","italic":true,"color":"gray"}
 execute as @s[x=-2546,y=64,z=881,distance=..4,tag=!ItemLoot442] run scoreboard players add @s Money 5000
-execute as @s[x=-2546,y=64,z=881,distance=..4,tag=!ItemLoot442] run tellraw @s {"text":"You found $5000!","italic":true,"color":"gray"}
+execute as @s[x=-2546,y=64,z=881,distance=..4,tag=!ItemLoot442] run tellraw @s {"text":"You found ₽5000!","italic":true,"color":"gray"}
 execute as @s[x=-2546,y=64,z=881,distance=..4,tag=!ItemLoot442] run function johto:sound/playlocalsfx {sfx:"item"}
 execute as @s[x=-2546,y=64,z=881,distance=..4,tag=!ItemLoot442] run tag @s add ItemLoot442
 
 execute as @s[x=-2598,y=75,z=884,distance=..4,tag=ItemLoot443] run tellraw @s {"text":"You've already claimed this loot!","italic":true,"color":"gray"}
 execute as @s[x=-2598,y=75,z=884,distance=..4,tag=!ItemLoot443] run scoreboard players add @s Money 4000
-execute as @s[x=-2598,y=75,z=884,distance=..4,tag=!ItemLoot443] run tellraw @s {"text":"You found $4000!","italic":true,"color":"gray"}
+execute as @s[x=-2598,y=75,z=884,distance=..4,tag=!ItemLoot443] run tellraw @s {"text":"You found ₽4000!","italic":true,"color":"gray"}
 execute as @s[x=-2598,y=75,z=884,distance=..4,tag=!ItemLoot443] run function johto:sound/playlocalsfx {sfx:"item"}
 execute as @s[x=-2598,y=75,z=884,distance=..4,tag=!ItemLoot443] run tag @s add ItemLoot443
 
 execute as @s[x=-2562,y=66,z=889,distance=..4,tag=ItemLoot444] run tellraw @s {"text":"You've already claimed this loot!","italic":true,"color":"gray"}
 execute as @s[x=-2562,y=66,z=889,distance=..4,tag=!ItemLoot444] run scoreboard players add @s Money 5000
-execute as @s[x=-2562,y=66,z=889,distance=..4,tag=!ItemLoot444] run tellraw @s {"text":"You found $5000!","italic":true,"color":"gray"}
+execute as @s[x=-2562,y=66,z=889,distance=..4,tag=!ItemLoot444] run tellraw @s {"text":"You found ₽5000!","italic":true,"color":"gray"}
 execute as @s[x=-2562,y=66,z=889,distance=..4,tag=!ItemLoot444] run function johto:sound/playlocalsfx {sfx:"item"}
 execute as @s[x=-2562,y=66,z=889,distance=..4,tag=!ItemLoot444] run tag @s add ItemLoot444
 

@@ -92,7 +92,7 @@
             "id": "pick50coins",
             "speaker": "npc",
             "lines": [
-                "You'd like to purchase 50 Coins for $1000?"
+                "You'd like to purchase 50 Coins for ₽1000?"
             ],
             "input": {
                 "type": "option",
@@ -121,7 +121,7 @@
             "id": "pick250coins",
             "speaker": "npc",
             "lines": [
-                "You'd like to purchase 250 Coins for $5000?"
+                "You'd like to purchase 250 Coins for ₽5000?"
             ],
             "input": {
                 "type": "option",
@@ -150,7 +150,7 @@
             "id": "pick500coins",
             "speaker": "npc",
             "lines": [
-                "You'd like to purchase 500 Coins for $10000?"
+                "You'd like to purchase 500 Coins for ₽10000?"
             ],
             "input": {
                 "type": "option",

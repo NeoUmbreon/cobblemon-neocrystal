@@ -52,7 +52,7 @@
                         "text": "Next",
                         "value": "next",
                         "action": [
-                            "v.message = 'Right now, it can be yours for just $300! Want one?';",
+                            "v.message = 'Right now, it can be yours for just ₽300! Want one?';",
                             "q.dialogue.next_page();"
                         ]
                     }
@@ -233,7 +233,7 @@
                         "text": "Next",
                         "value": "next",
                         "action": [
-                            "v.message = 'Same as before, it can be yours for just $300! Want one?';",
+                            "v.message = 'Same as before, it can be yours for just ₽300! Want one?';",
                             "q.dialogue.set_page('prompt');"
                         ]
                     }
