@@ -13,8 +13,8 @@ t.sound_data.lock_until > 0 ? {
     t.time >= t.sound_data.lock_until ? {
         're-resolve requested_track from state. ugly but im over it';
         loop(1, {
-            t.sound_data.battlemus > 0 ? {
-                t.sound_data.requested_track = q.run_script('resolve_battle_music', t.sound_data.battlemus);
+            t.sound_data.mus_battle > 0 ? {
+                t.sound_data.requested_track = q.run_script('resolve_battle_music', t.sound_data.mus_battle);
                 t.sound_data.requested_priority = 4;
                 break;
             };

@@ -1,6 +1,6 @@
 t.battle_result = c.arg_1;
 t.prefix = q.player.has_tag('DSSound') ? 'ds' : 'gb';
-q.player.data.sound.battlemus = 0;
+q.player.data.sound.mus_battle = 0;
 
 'lol';
 !q.player.has_tag('AllGyms') ? {

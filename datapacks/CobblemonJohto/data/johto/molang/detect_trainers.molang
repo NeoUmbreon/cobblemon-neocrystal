@@ -1,5 +1,5 @@
 !q.player.party.has_usable_pokemon || q.player.in_battle || q.player.is_in_dialogue ||
-q.player.data.sound.battlemus != 0 || q.player.main_held_item.item.is_of('blaze_rod') ? return 0;
+q.player.data.sound.mus_battle != 0 || q.player.main_held_item.item.is_of('blaze_rod') ? return 0;
 
 for_each(t.pokemon, q.player.party.pokemon, {
     t.pokemon.current_hp > 0 ? { t.usable_pokemon = t.usable_pokemon + 1 };
