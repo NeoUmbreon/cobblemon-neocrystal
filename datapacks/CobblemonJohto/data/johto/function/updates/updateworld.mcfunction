@@ -1,5 +1,5 @@
 #----- Increment this whenever a new in-world update needs to be done -----
-scoreboard players set #latest_version click 1
+scoreboard players set #latest_version click 2
 #--------------------------------------------------------------------------
 # Poll world version; exit if up-to-date
 execute unless score #world_version click < #latest_version click run return 0
@@ -22,3 +22,4 @@ schedule function johto:updates/updateworld 1t
 # 3. Add a new `tryupdate` call below with the corresponding version number
 #--------------------------------------------------------------------------
 function johto:updates/tryupdate {version:1}
+function johto:updates/tryupdate {version:2}
