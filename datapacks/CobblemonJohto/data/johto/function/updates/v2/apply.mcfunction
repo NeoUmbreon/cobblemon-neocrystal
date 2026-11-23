@@ -26,3 +26,13 @@ forceload remove -3199 -342
 npcspawnat 586 64 -670 ilexforest_headbutttutor
 npcspawnat -600 64.0625 169 blackthorn_startermovetutor
 npcspawnat -593 64.0625 169 blackthorn_dracometeortutor
+
+#-------------------------------------
+# Money handling scoreboards
+#-------------------------------------
+
+# Whiteout Money loss scoreboard objective
+scoreboard objectives add WhiteoutMoney dummy
+
+# Money balance check trigger
+scoreboard objectives add balance trigger
