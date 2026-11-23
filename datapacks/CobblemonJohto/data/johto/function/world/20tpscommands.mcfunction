@@ -52,17 +52,3 @@ execute as @a[scores={SurfingCD=30},tag=!Surfing] run runmolang "q.run_script('r
 tag @a[scores={SurfingCD=30},tag=!Surfing] add Surfing
 
 #-------------------------
-
-#Battle endings
-execute as @a[scores={BattleEnd=1..},tag=!Overwrite] run function johto:triggers/battles/battleend
-
-#Radio
-execute as @a[tag=!RadioOff,scores={MusicCooldown=0},tag=DSSound] at @s run function johto:sound/dsradioloop
-execute as @a[tag=!RadioOff,scores={MusicCooldown=0,MusicLoop=0},tag=!DSSound] at @s run function johto:sound/gbradiointro
-execute as @a[tag=!RadioOff,scores={MusicCooldown=0,MusicLoop=1..},tag=!DSSound] at @s run function johto:sound/gbradioloop
-
-#Removes a MusicCooldown score each tick if present
-scoreboard players remove @a[scores={MusicCooldown=1..}] MusicCooldown 1
-
-#Removes forceclick prevention tag
-tag @a[tag=Overwrite,scores={MusicCooldown=0}] remove Overwrite

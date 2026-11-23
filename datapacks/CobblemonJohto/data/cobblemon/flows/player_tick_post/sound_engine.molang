@@ -1,0 +1,74 @@
+t.time = q.system_time_millis;
+t.sound_data = q.player.data.sound;
+
+
+'is channel locked? (because we are already fading out)';
+t.sound_data.lock_until > 0 ? {
+    'shorten lock if necessary';
+    t.sound_data.fade_ms != 0 ? {
+        t.sound_data.lock_until = math.min(t.sound_data.lock_until, t.time + t.sound_data.fade_ms);
+        t.sound_data.fade_ms = 0;
+    };
+
+    t.time >= t.sound_data.lock_until ? {
+        're-resolve requested_track from state. ugly but im over it';
+        loop(1, {
+            t.sound_data.battlemus > 0 ? {
+                t.sound_data.requested_track = q.run_script('resolve_battle_music', t.sound_data.battlemus);
+                t.sound_data.requested_priority = 4;
+                break;
+            };
+            q.player.is_in_dialogue ? {
+                'preserve requested_track';
+                t.sound_data.requested_priority = 3;
+                break;
+            };
+            q.player.has_tag('RadioStationMusic') ? {
+                'TODO';
+                t.sound_data.requested_priority = 2; 'should probably be 0 if tag gets removed';
+                break;
+            };
+            q.player.has_tag('Surfing') ? {
+                t.sound_data.requested_track = (q.player.has_tag('DSSound') ? 'ds' : 'gb') + '/misc/surf';
+                t.sound_data.requested_priority = 1;
+                break;
+            };
+            q.player.has_tag('CyclingMusic') ? {
+                t.sound_data.requested_track = (q.player.has_tag('DSSound') ? 'ds' : 'gb') + '/misc/cycling';
+                t.sound_data.requested_priority = 0;
+                break;
+            };
+            'fall back to location';
+                t.sound_data.requested_track = t.sound_data.location_track;
+                t.sound_data.requested_priority = 0;
+        });
+
+        q.run_script('play_music', t.sound_data.requested_track, t.sound_data.requested_priority);
+    };
+} : {
+    'intro done, goto loop';
+    t.sound_data.intro_end > 0 && t.time >= t.sound_data.intro_end ? {
+        q.player.tell('&5LOOP Δ&7 ' + t.sound_data.current_track + '&r ' + (t.time - t.sound_data.intro_end - 25) + 'ms');
+        q.player.battle_music(t.sound_data.current_track);
+        t.sound_data.intro_end = 0;
+    };
+
+    t.sound_data.oneshot_end > 0 && t.time >= t.sound_data.oneshot_end ? {
+        q.player.battle_music('0'); 'instantly stop music';
+        t.sound_data.lock_until = t.time + t.sound_data.oneshot_delay;
+        return 0; 'saves an unnecessary trip into request handler';
+    };
+
+    'request handler, fade if applicable';
+    'LIMITATION: actual volume interpolation is hardcoded to 3s in stop_battle_music';
+    'if fade time becomes a parameter, rewrite this to decouple fade from e2e delay and interpolate the loop volume';
+    t.sound_data.requested_track != 0 || t.sound_data.fade_ms != 0 ? {
+        'if intro is about to progress into loop, defer so that the loop does not overwrite the fade';
+        (t.sound_data.intro_end == 0 || t.sound_data.intro_end > t.time + t.sound_data.fade_ms) &&
+        (t.sound_data.oneshot_end == 0 || t.sound_data.oneshot_end > t.time + t.sound_data.fade_ms) ? {
+            q.player.stop_battle_music;
+            t.sound_data.lock_until = q.is_blank(t.sound_data.current_track) ? t.time : t.time + t.sound_data.fade_ms;
+            t.sound_data.fade_ms = 0;
+        };
+    };
+};

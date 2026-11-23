@@ -1,0 +1,2 @@
+q.player.data.sound.battlemus = 0;
+q.run_script('fade_music', 1333);

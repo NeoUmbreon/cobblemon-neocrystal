@@ -1,0 +1,25 @@
+t.sound_data = q.player.data.sound;
+
+!q.is_blank(c.arg_1) ? {
+    t.track_data = q.run_script('resolve_track_data', c.arg_1);
+
+    t.track_data.intro_len > 0 ? {
+        q.player.tell('&3INTRO_LEN&7 ' + t.track_data.intro_len);
+        q.player.battle_music(c.arg_1+'intro');
+        t.sound_data.intro_end = q.system_time_millis + t.track_data.intro_len - 25; 'tick length jitter mitigation';
+    } : {
+        q.player.battle_music(c.arg_1);
+        t.sound_data.intro_end = 0;
+    };
+};
+
+t.sound_data.current_track = c.arg_1;
+t.sound_data.current_priority = c.arg_2;
+
+t.sound_data.requested_track = 0;
+t.sound_data.requested_priority = 0;
+t.sound_data.lock_until = 0;
+t.sound_data.fade_ms = 0;
+
+t.sound_data.oneshot_end = 0;
+t.sound_data.oneshot_delay = 0;

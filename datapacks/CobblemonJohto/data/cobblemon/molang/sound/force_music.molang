@@ -1,0 +1,3 @@
+'high prio + infinite lock, intended to be broken out of manually';
+q.run_script('play_music', c.arg_1, 9);
+q.player.data.sound.lock_until = -1;

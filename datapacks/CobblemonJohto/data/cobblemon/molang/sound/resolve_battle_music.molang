@@ -1,0 +1,4 @@
+'resolve battlemus number to track name';
+t.map = q.file.load('data/molang/sound_data/battlemus_' + (q.player.has_tag('DSSound') ? 'ds' : 'gb') + '.json');
+
+return q.get_variable(t.map, q.to_string(c.arg_1));

@@ -60,7 +60,6 @@ execute as @s[x=1597,y=87,z=-426,dx=3,dy=3] at @s run function johto:tools/tpwit
 
 #execute as @e[x=-801,y=64,z=-287,dy=3,type=armor_stand,scores={DialogueTrigger=0,TalkTime=0}] run execute at @s[x=-1174,y=64,z=-238,dx=2,dy=2] run fill -1196 63 -231 -1150 63 -186 minecraft:cyan_terracotta
 #execute as @e[x=-801,y=64,z=-287,dy=3,type=armor_stand,scores={DialogueTrigger=0,TalkTime=0}] run playsound door ambient @s[x=-1174,y=64,z=-238,dx=2,dy=2] ~ ~ ~ 100 1 1
-#execute as @e[x=-801,y=64,z=-287,dy=3,type=armor_stand,scores={DialogueTrigger=0,TalkTime=0}] run execute as @s[x=-1174,y=64,z=-238,dx=2,dy=2] run function johto:tools/forceclick
 #execute as @e[x=-801,y=64,z=-287,dy=3,type=armor_stand,scores={DialogueTrigger=0,TalkTime=0}] run tp @s[x=-1174,y=64,z=-238,dx=2,dy=2] 1599 87 -427
 
 execute as @s[x=-1174,y=64,z=-238,dx=2,dy=2] at @s run function johto:tools/tpwithsfx {xyz:"1599 87 -427",sfx:"exitbuilding"}

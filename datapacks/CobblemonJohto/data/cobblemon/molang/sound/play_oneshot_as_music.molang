@@ -1,0 +1,5 @@
+t.track_data = q.run_script('resolve_track_data', c.arg_1);
+
+q.run_script('play_music', c.arg_1, c.arg_2);
+q.player.data.sound.oneshot_end = q.system_time_millis + t.track_data.oneshot_len - 25;
+q.player.data.sound.oneshot_delay = c.arg_3;

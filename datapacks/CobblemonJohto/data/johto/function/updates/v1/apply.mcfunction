@@ -147,8 +147,6 @@ scoreboard objectives add BattleCD dummy
 
 # Music scoreboard objectives
 scoreboard objectives add RadioSelectTemp dummy
-scoreboard objectives add DialogueMusic dummy
-scoreboard objectives add MusicLoop dummy
 
 # Surfing scoreboard objective
 scoreboard objectives add SurfingCD dummy

@@ -1,0 +1,3 @@
+t.track = q.run_script('resolve_battle_music', c.arg_1);
+q.player.data.sound.battlemus = c.arg_1;
+q.run_script('request_music_change', t.track, 4, -1);

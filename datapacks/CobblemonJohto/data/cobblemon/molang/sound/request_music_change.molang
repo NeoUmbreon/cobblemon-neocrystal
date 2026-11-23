@@ -1,5 +1,12 @@
-q.player.data.sound.requested_priority <= c.arg_2 ? {
-    q.player.data.sound.requested_track = c.arg_1;
-    q.player.data.sound.requested_priority = c.arg_2;
-    q.player.data.sound.fade_ms = c.arg_3;
+t.sound_data = q.player.data.sound;
+
+c.arg_1 != t.sound_data.current_track &&
+c.arg_2 >= t.sound_data.current_priority &&
+c.arg_2 >= t.sound_data.requested_priority ? {
+    q.player.tell('&aPUSHED&7 ' + c.arg_1);
+    t.sound_data.requested_track = c.arg_1;
+    t.sound_data.requested_priority = c.arg_2;
+    t.sound_data.fade_ms = t.sound_data.fade_ms == 0 ? c.arg_3 : math.min(t.sound_data.fade_ms, c.arg_3);
+} : {
+    q.player.tell('&cDENIED&7 ' + c.arg_1);
 };

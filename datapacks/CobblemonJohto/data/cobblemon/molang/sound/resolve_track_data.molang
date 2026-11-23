@@ -1,0 +1,3 @@
+t.sbnk = q.file.load('data/molang/sound_data/sbnk_' + (q.player.has_tag('DSSound') ? 'ds' : 'gb') + '.json');
+
+return q.get_variable(t.sbnk, c.arg_1);
