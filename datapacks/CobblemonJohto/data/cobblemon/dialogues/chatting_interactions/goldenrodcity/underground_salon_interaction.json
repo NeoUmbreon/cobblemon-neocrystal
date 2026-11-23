@@ -42,7 +42,7 @@
             "id": "page2",
             "speaker": "npc",
             "lines": [
-                "I can make your Pokémon beautiful for just $500."
+                "I can make your Pokémon beautiful for just ₽500."
             ],
             "input": {
                 "type": "option",

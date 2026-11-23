@@ -52,6 +52,10 @@ scoreboard players enable @a info
 execute as @a[scores={Info=1..}] run function tools:infolist
 execute as @a[scores={info=1..}] run function tools:infolist
 
+#Runs Money balance command for non-ops
+scoreboard players enable @a balance
+execute as @a[scores={balance=1..}] run function johto:player/balance
+
 #-------------------------------------------------------------------------------------------------------------------------
 #Time-based commands
 

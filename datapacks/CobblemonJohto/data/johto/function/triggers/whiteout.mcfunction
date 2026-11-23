@@ -5,6 +5,9 @@ function johto:tools/forceclick
 #Early return
 execute if entity @s[tag=WhiteoutDisable] run return 0
 
+# Deduct money for whiteout
+runmolangscript johto:whiteout_money @s
+
 #Returns the player to their last-visited Pokemon Center
 effect give @s minecraft:blindness 3 1 true
 tellraw @s[scores={Whiteout=0}] {"text":"You scurried back home, protecting the exhausted and fainted Pokémon from further harm...","italic":true,"color":"gray"}

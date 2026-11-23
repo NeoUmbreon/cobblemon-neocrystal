@@ -54,7 +54,7 @@
             "id": "greeting2",
             "speaker": "npc",
             "lines": [
-                "You can try it for $300, and we have wonderful prizes!"
+                "You can try it for ₽300, and we have wonderful prizes!"
             ],
             "input": {
                 "type": "option",

@@ -1,0 +1,25 @@
+{
+  "providers": [
+    {
+      "type": "bitmap",
+      "file": "minecraft:font/pokedollar.png",
+      "ascent": 8,
+      "height": 8,
+      "chars": [
+        "\u20bd"
+      ]
+    },
+    {
+      "type": "reference",
+      "id": "minecraft:include/space"
+    },
+    {
+      "type": "reference",
+      "id": "minecraft:include/default"
+    },
+    {
+      "type": "reference",
+      "id": "minecraft:include/unifont"
+    }
+  ]
+}

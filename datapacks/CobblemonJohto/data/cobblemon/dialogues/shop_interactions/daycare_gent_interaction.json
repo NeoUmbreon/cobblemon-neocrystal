@@ -115,7 +115,7 @@
             "id": "page6",
             "speaker": "npc",
             "lines": [
-                "I'd give it to you for $1,500."
+                "I'd give it to you for ₽1,500."
             ],
             "input": {
                 "type": "option",
