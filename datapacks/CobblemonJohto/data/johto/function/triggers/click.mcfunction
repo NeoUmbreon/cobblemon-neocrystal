@@ -5,7 +5,7 @@ tag @s[scores={click=3..}] add Temp
 execute as @s[tag=Temp] run function johto:sound/switchmode
 tellraw @s[tag=Temp,tag=DSSound] {"text":"Toggling DS sound... Triple click the Radio again to switch back!"}
 tellraw @s[tag=Temp,tag=!DSSound] {"text":"Toggling GB sound... Triple click the Radio again to switch back!"}
-execute as @s[tag=Temp] at @s run function johto:world/musictitles
+scoreboard players set @s[tag=Temp] MusicTitles 0
 tag @s[tag=Temp] remove RadioOff
 scoreboard players set @s[tag=Temp] RadioSelect 0
 tag @s remove Temp

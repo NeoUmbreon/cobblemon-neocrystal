@@ -1,6 +1,6 @@
 t.sound_data = q.player.data.sound;
 
-!q.is_blank(c.arg_1) ? {
+!q.is_blank(c.arg_1) && !q.player.has_tag('RadioOff') ? {
     t.track_data = q.run_script('resolve_track_data', c.arg_1);
 
     t.track_data.intro_len > 0 ? {

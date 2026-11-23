@@ -224,4 +224,5 @@ execute if entity @s[x=-1531,y=0,z=372,dx=204,dy=61,dz=173] run return run funct
 execute if entity @s[x=1120,y=0,z=120,dx=245,dy=240,dz=280] run return run function johto:world/musictitles/small {text:"Whirl Islands", location:99}
 execute if entity @s[x=1309,y=0,z=-411,dx=52,dy=240,dz=60] run return run function johto:world/musictitles/small {text:"Cliff Edge Gate", location:101}
 
-return 0
+execute if entity @s[scores={MusicTitles=0}] run return run function johto:world/musictitles/small {text:"???", location:15}
+return fail

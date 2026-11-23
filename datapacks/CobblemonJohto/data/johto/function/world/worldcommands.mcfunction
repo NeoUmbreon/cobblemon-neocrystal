@@ -154,9 +154,6 @@ tag @a remove Evolved
 execute as @a[tag=LvUp] run function johto:sound/playlocalsfx {sfx:"levelup"}
 tag @a remove LvUp
 
-
-#Music rate: 86 ticks per 60 seconds
-
 #Runs the click trigger if player uses Carrot on a Stick
 execute as @a[scores={click=1..},tag=TempDelay,nbt={SelectedItem:{components:{"minecraft:custom_name":'{"extra":[{"color":"aqua","italic":false,"text":"Radio"}],"text":""}'}}}] run function johto:triggers/click
 tag @a[scores={click=1..},tag=!TempDelay,nbt={SelectedItem:{components:{"minecraft:custom_name":'{"extra":[{"color":"aqua","italic":false,"text":"Radio"}],"text":""}'}}}] add TempDelay
