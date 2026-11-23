@@ -1,9 +1,6 @@
 #Function that manages what specific NPCs say when you click on boxes surroung them.
 #Used to have the same NPC say different lines depending on the player's own tags.
 
-#Return if in battle
-execute if score @s BattleStart matches 1.. run return run advancement revoke @s only johto:click/npcs
-
 
 #Cobblemon Home integration, pre-Pokemon-League
 execute as @s[x=-683,y=64,z=-471,distance=..4,scores={IP=0}] run opendialogue pokemon_home_blocked @s
@@ -154,5 +151,3 @@ execute as @s[x=-1708,y=65,z=710,distance=..8,tag=FossilHave] run tag @s remove 
 
 
 advancement revoke @s only johto:click/npcs
-
-#

@@ -27,13 +27,8 @@ scoreboard players remove @a[scores={BattleCD=1..}] BattleCD 1
 execute if entity @a[x=476,y=46,z=-345,dx=52,dy=7,dz=51,limit=1] run function johto:triggers/undergroundpuzzle/puzzle
 execute if block 477 48 -307 minecraft:stone_button[powered=true] run function johto:triggers/undergroundpuzzle/reset
 
-#Runs gym leader rematches
 #Gym Leader Rematches
 execute as @p[x=-2781,y=64,z=421,distance=..100,tag=AllGyms] unless entity @a[x=-2794,y=63,z=410,dx=26,dy=5,dz=15] run function johto:world/gymrematches/trainers
-
-#tps leaders out if no player nearby can battle them
-execute as @p[x=-2781,y=64,z=421,distance=..100,tag=!AllGyms] unless entity @a[x=-2794,y=63,z=410,dx=26,dy=5,dz=15,scores={BattleStart=1..}] if entity @e[x=-2781,y=63,z=421,dy=3,type=cobblemon:npc] run particle cloud -2781 64 421 1 1 1 0.15 100
-execute as @p[x=-2781,y=64,z=421,distance=..100,tag=!AllGyms] unless entity @a[x=-2794,y=63,z=410,dx=26,dy=5,dz=15,scores={BattleStart=1..}] run tp @e[x=-2781,y=63,z=421,dy=3,type=cobblemon:npc] -800 -50000 -280
 
 #Runs Farfetch'd chasing function
 execute if entity @a[x=513,y=60,z=-793,dx=187,dy=10,dz=228] run function johto:world/farfetchd
