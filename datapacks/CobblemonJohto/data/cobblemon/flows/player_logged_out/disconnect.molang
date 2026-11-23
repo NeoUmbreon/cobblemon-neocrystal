@@ -18,18 +18,13 @@ c.player.has_tag('SafariState') ? {
 };
 
 c.player.in_battle ? {
-    t.players = q.array();
-    t.npcs = q.array();
-
     for_each(t.actor, c.player.battle.actors, {
-        t.actor.is_player ? { q.append(t.players, t.actor.player); };
-        t.actor.is_npc ? { q.append(t.npcs, t.actor.npc); };
-    });
-
-    for_each(t.player, t.players, {
-        q.run_command('scoreboard players set ' + t.player.username + ' BattleStart 0');
-        q.run_command('execute as ' + t.player.username + ' run function johto:tools/forceclick');
+        t.actor.is_player ? {
+            q.set_query('player', t.actor.player);
+            q.run_script('fade_battle_music');
+        };
     });
 };
 
+q.delete_variable(c.player.data, 'sound');
 c.player.save_data;

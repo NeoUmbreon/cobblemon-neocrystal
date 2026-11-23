@@ -3,7 +3,7 @@ c.battle.is_pvw == false ? return 0;
 for_each(t.player, c.player_winners, {
     q.set_query('player', t.player.player);
     t.music = c.was_wild_capture ? 4 : 5;
-    q.run_command('scoreboard players set ' + q.player.username + ' BattleEnd ' + t.music);
+    q.run_script('battle_end', t.music);
 });
 
 for_each(t.player, c.player_losers, {

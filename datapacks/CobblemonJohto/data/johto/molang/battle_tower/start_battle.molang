@@ -80,13 +80,13 @@ t.i = 0;
 loop(t.team_size, {
     t.friend = t.team.[t.i];
     t.friend.is_player ? {
-        t.side.1 = t.side.1 + t.friend.uuid + ' ';
+        q.set_query('player', t.friend);
+        t.side.1 = t.side.1 + q.player.uuid + ' ';
 
-        t.friend.teleport(t.player_pos.0, t.player_pos.1, t.player_pos.2.[t.i]);
-        t.friend.data.temp.battle_num = v.battle_num;
-        t.friend.party.heal;
-        q.run_command('scoreboard players set ' + t.friend.username + ' BattleStart ' + t.music_id);
-        q.run_command('execute as ' + t.friend.username + ' run function johto:tools/forceclick');
+        q.player.teleport(t.player_pos.0, t.player_pos.1, t.player_pos.2.[t.i]);
+        q.player.data.temp.battle_num = v.battle_num;
+        q.player.party.heal;
+        q.run_script('request_battle_music', t.music_id);
     } : {
         t.side.1 = t.side.1 + 'tbcs:' + t.friend.data.rct + ' ';
 

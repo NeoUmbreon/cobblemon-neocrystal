@@ -1,6 +1,4 @@
 tag @s remove Whiteout
-scoreboard players set @s BattleStart 0
-function johto:tools/forceclick
 
 #Early return
 execute if entity @s[tag=WhiteoutDisable] run return 0

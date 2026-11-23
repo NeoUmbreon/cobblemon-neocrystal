@@ -5,12 +5,16 @@ t.trainers = q.file.load('data/molang/trainers.json');
 q.set_query('class', q.get_variable(q.split_string(q.npc.class,'cobblemon:'), '1'));
 q.set_query('trainer_data', q.get_variable(t.trainers, q.class));
 
-'do player stuff';
-q.player.remove_tag('InDialogue');
-q.run_command('scoreboard players set ' + q.player.username + ' BattleStart ' + c.arg_1);
-q.run_command('execute as ' + q.player.username + ' run function johto:tools/forceclick');
-
 'start battle';
 'if challenge_mode_disabled, or challenge mode script fails, uses npc entity party';
 q.set_query('format', q.is_blank(q.trainer_data.doubles_id) ? 'singles' : 'doubles');
 q.config.challenge_mode_disabled || !q.run_script('johto:instantiate_rctapi_trainer') ? q.npc.start_battle(q.player, q.format);
+
+'do player stuff';
+q.player.data.battle.whiteout_on_disconnect = q.trainer_data.no_autobattle;
+q.player.data.battle.x = (q.player.x + q.npc.x) / 2;
+q.player.data.battle.y = q.npc.y;
+q.player.data.battle.z = (q.player.z + q.npc.z) / 2;
+q.player.data.battle.max_battle_distance = (q.is_blank(q.trainer_data.challenge_distance) ? q.config.default_challenge_distance : q.trainer_data.challenge_distance);
+q.player.remove_tag('InDialogue');
+q.run_script('request_battle_music', c.arg_1);

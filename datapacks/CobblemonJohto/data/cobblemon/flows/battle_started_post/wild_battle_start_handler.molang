@@ -2,7 +2,7 @@ c.battle.is_pvw == false ? return 0;
 
 for_each(t.actor, c.battle.actors, {
     t.actor.is_wild ? { t.pokemon = t.actor.pokemon };
-    t.actor.is_player ? { t.player = t.actor.player };
+    t.actor.is_player ? q.set_query('player', t.actor.player);
 });
 
 t.species = t.pokemon.species.name;
@@ -19,6 +19,4 @@ t.species == 'Raikou' ? { t.battle_start = 29 };
 t.species == 'Entei' ? { t.battle_start = 30 };
 t.species == 'Suicune' ? { t.battle_start = 31 };
 
-
-q.run_command('scoreboard players set ' + t.player.username + ' BattleStart ' + t.battle_start);
-q.run_command('execute as ' + t.player.username + ' run function johto:tools/forceclick');
+q.run_script('request_battle_music', t.battle_start);

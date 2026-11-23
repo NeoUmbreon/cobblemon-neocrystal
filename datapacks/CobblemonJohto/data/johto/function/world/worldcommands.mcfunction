@@ -119,10 +119,10 @@ execute as @a[scores={click=1..},nbt={SelectedItem:{components:{"minecraft:custo
 
 execute as @a[tag=BikeEquip] run clear @s minecraft:carrot_on_a_stick[custom_name='["",{"text":"Bicycle","italic":false,"color":"red"}]',lore=['["",{"text":"A folding bicycle that allows faster","italic":false}]','[{"text":"movement than the Running Shoes.","italic":false}]'],custom_model_data=5]
 execute as @a[tag=BikeEquip] run item replace entity @s armor.head with carrot_on_a_stick[custom_name='["",{"text":"Bicycle","italic":false,"color":"red"}]',lore=['["",{"text":"A folding bicycle that allows faster","italic":false}]','[{"text":"movement than the Running Shoes.","italic":false}]'],custom_model_data=5]
-execute as @a[tag=BikeEquip,tag=!Surfing,scores={BattleStart=0,RadioSelect=2}] unless entity @s[scores={MusicTitles=56},tag=DSSound] run function johto:tools/forceclick
 execute at @a[tag=BikeEquip] run function johto:sound/playglobalsfx {sfx:"equipbicycle",category:"player"}
-
 execute as @a[tag=BikeEquip] run tag @s add CyclingMusic
+execute as @a[tag=BikeEquip] run runmolang "q.run_script('request_music_change', (q.player.has_tag('DSSound') ? 'ds' : 'gb') + '/misc/cycling', 0, 2000)" @s
+scoreboard players set @a[tag=BikeEquip] click 0
 tag @a[tag=BikeEquip] remove BikeEquip
 
 
@@ -133,7 +133,7 @@ tag @a[nbt={Inventory:[{Slot:103b,components:{"minecraft:custom_name": '{"extra"
 execute as @a[tag=Cycling] unless entity @s[nbt={Inventory:[{Slot:103b,components:{"minecraft:custom_name":'{"extra":[{"color":"red","italic":false,"text":"Bicycle"}],"text":""}'}}]}] run tag @s remove Cycling
 
 #Stops music if players dequips cycle
-execute as @a[tag=CyclingMusic,tag=!Cycling,tag=!Surfing,scores={BattleStart=0,RadioSelect=2}] unless entity @s[scores={MusicTitles=56},tag=DSSound] run function johto:tools/forceclick
+execute as @a[tag=CyclingMusic,tag=!Cycling] run runmolang "q.run_script('request_music_change', 0, 0, 2000)" @s
 execute as @a[tag=CyclingMusic,tag=!Cycling] run tag @s remove CyclingMusic
 
 
@@ -276,7 +276,7 @@ spawnpoint @a[x=127,y=64,z=-582,distance=..5] 127 64 -582
 #Battle-related functions
 
 #Keep players inside radius
-execute as @a[scores={BattleStart=11..18}] run runmolangscript cobblemon:prevent_flee @s
+execute as @a run runmolangscript cobblemon:prevent_flee @s
 
 #Runs Whiteout function
 execute as @a[tag=Whiteout] run function johto:triggers/whiteout

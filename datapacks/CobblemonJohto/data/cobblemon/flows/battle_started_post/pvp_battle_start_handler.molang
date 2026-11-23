@@ -1,7 +1,6 @@
 c.battle.is_pvp == false ? return 0;
 
 for_each(t.player, c.players, {
-    t.player = t.player.player;
-    q.run_command('scoreboard players set ' + t.player.username + ' BattleStart 11');
-    q.run_command('execute as ' + t.player.username + ' run function johto:tools/forceclick');
+    q.set_query('player', t.player.player);
+    q.run_script('request_battle_music', 11)
 });

@@ -1,7 +1,7 @@
 #-----------------------------------------------------------------------------------------------------BATTLE------------------------------------------------------------------------------------------------------
 
 #Auto-battle detection
-execute as @a[scores={BattleStart=0,BattleCD=0},tag=!InDialogue] run runmolangscript johto:detect_trainers @s
+execute as @a[scores={BattleCD=0},tag=!InDialogue] run runmolangscript johto:detect_trainers @s
 
 #--------------------------------------------------------------------------------------------------GENERAL WORLD---------------------------------------------------------------------------------------------------
 
@@ -40,7 +40,7 @@ execute as @a[x=-2196,y=63,z=-547,dx=5,dy=7,dz=17,tag=!Cycling] at @s run tp @s 
 
 #Remove Surfing tag and refresh music if player dismounts or mount hasn't been in the water (SurfingCD reached 0)
 scoreboard players set @a[tag=Surfing,predicate=!johto:riding] SurfingCD 0
-execute as @a[scores={SurfingCD=0,BattleStart=0},tag=Surfing] run function johto:tools/forceclick
+execute as @a[scores={SurfingCD=0},tag=Surfing] run runmolang "q.run_script('request_music_change', 0, 1, 2000)" @s
 tag @a[scores={SurfingCD=0},tag=Surfing] remove Surfing
 
 #Detection hysteresis
@@ -48,7 +48,7 @@ scoreboard players remove @a[scores={SurfingCD=1..}] SurfingCD 1
 scoreboard players set @a[predicate=johto:surfing] SurfingCD 30
 
 #Add Surfing tag to newly surfing players and refresh music
-execute as @a[scores={SurfingCD=30,BattleStart=0},tag=!Surfing] run function johto:tools/forceclick
+execute as @a[scores={SurfingCD=30},tag=!Surfing] run runmolang "q.run_script('request_music_change', (q.player.has_tag('DSSound') ? 'ds' : 'gb') + '/misc/surf', 1, 2000)" @s
 tag @a[scores={SurfingCD=30},tag=!Surfing] add Surfing
 
 #-------------------------

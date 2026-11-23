@@ -27,5 +27,6 @@ v.trainer_id = v.trainer_data.doubles_id != 0 ? v.trainer_data.doubles_id : t.cl
 };
 
 q.run_script('johto:prebattle_dialogue');
+v.trainer_data.mus_prebattle != 0 ? q.run_script('request_battle_music', v.trainer_data.mus_prebattle);
 
 return 1;
