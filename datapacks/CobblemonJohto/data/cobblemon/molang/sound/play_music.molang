@@ -23,3 +23,5 @@ t.sound_data.fade_ms = 0;
 
 t.sound_data.oneshot_end = 0;
 t.sound_data.oneshot_delay = 0;
+
+return t.track_data;
