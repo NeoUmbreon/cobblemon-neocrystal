@@ -1,2 +1,2 @@
 scoreboard players set @s balance 0
-tellraw @s ["",{"text":"Current Balance: ","color":"gray"},{"text":"₽","color":"green"},{"score":{"name":"@s","objective":"Money"},"color":"green"}]
+tellraw @s [{"text":"Current Balances:\nMoney: ","color":"gray"},{"text":"₽","color":"green"},{"score":{"name":"@s","objective":"Money"},"color":"green"},"\nCoins: ",{"score":{"name":"@s","objective":"Coins"},"color":"gold"},"\nBattle Points: ",{"score":{"name":"@s","objective":"BattlePoints"},"color":"aqua"}]

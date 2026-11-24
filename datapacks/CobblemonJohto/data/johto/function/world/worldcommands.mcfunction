@@ -142,7 +142,7 @@ execute as @a[tag=CyclingMusic,tag=!Cycling] run tag @s remove CyclingMusic
 
 
 #Displays the player's Battle Points or Money if in a shop that uses them
-title @a[team=shops] actionbar ["",{"text":"Your Money Balance: $"},{"score":{"name":"*","objective":"Money"}}]
+title @a[team=shops] actionbar ["",{"text":"Your Money Balance: ₽"},{"score":{"name":"*","objective":"Money"}}]
 title @a[team=battletower] actionbar ["",{"text":"Your Battle Points: "},{"score":{"name":"*","objective":"BattlePoints"}}]
 
 #-------------------------------------------------------------------------------------------------------------------------
