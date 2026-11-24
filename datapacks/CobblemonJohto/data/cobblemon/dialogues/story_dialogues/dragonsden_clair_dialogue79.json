@@ -155,7 +155,7 @@
                         "text": "Next",
                         "value": "next",
                         "action": [
-                            "q.run_script('request_music_change', (q.player.has_tag('DSSound') ? 'ds' : 'gb') + '/npc/clair', 3, -1);",
+                            "q.run_script('request_dialogue_music', '/npc/clair');",
                             "q.dialogue.next_page;"
                         ]
                     }

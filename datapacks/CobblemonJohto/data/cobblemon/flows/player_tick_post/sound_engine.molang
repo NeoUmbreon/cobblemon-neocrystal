@@ -18,8 +18,8 @@ t.sound_data.lock_until > 0 ? {
                 t.sound_data.requested_priority = 4;
                 break;
             };
-            q.player.is_in_dialogue ? {
-                'preserve requested_track';
+            t.sound_data.dialogue_track != 0 ? {
+                t.sound_data.requested_track = t.sound_data.dialogue_track;
                 t.sound_data.requested_priority = 3;
                 break;
             };

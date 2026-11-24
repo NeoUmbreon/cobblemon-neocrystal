@@ -68,7 +68,7 @@
                         "text": "Next",
                         "value": "next",
                         "action": [
-                            "q.run_script('request_music_change', (q.player.has_tag('DSSound') ? 'ds' : 'gb') + '/npc/rival2', 3, 1333);",
+                            "q.run_script('request_dialogue_music', '/npc/rival2');",
                             "q.dialogue.next_page;"
                         ]
                     }

@@ -1,6 +1,6 @@
 {
     "initializationAction": [
-        "q.run_script('request_music_change', (q.player.has_tag('DSSound') ? 'ds' : 'gb') + '/npc/hurryalong', 3, -1);",
+        "q.run_script('request_dialogue_music', '/npc/hurryalong');",
         "q.player.add_tag('InDialogue');"
     ],
     "escapeAction": [],

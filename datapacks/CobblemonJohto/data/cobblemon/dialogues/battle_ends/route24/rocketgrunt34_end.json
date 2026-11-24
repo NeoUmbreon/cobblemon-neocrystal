@@ -125,7 +125,7 @@
                         "text": "Next",
                         "value": "next",
                         "action": [
-                            "q.run_script('request_music_change', 0, 3, 1333);",
+                            "q.run_script('request_dialogue_music', 0);",
                             "q.dialogue.next_page;"
                         ]
                     }

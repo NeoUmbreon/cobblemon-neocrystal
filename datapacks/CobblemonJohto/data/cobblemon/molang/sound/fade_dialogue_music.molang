@@ -1,2 +1,2 @@
-q.player.data.sound.requested_track = q.player.data.sound.location_track;
+q.player.data.sound.dialogue_track = 0;
 q.run_script('fade_music', 1333);
