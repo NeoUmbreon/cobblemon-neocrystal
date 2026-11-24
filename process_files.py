@@ -78,6 +78,22 @@ def load_excel_teams(valid_items, valid_moves, excel_file):
         teams.setdefault(trainer, {"party": {}})
         teams[trainer]["name"] = " ".join([str(row["Trainer Class"]),str(row["Name"])]) if not pd.isna(row["Trainer Class"]) else str(row["Name"])
 
+        if "Bag" in row and not pd.isna(row["Bag"]):
+                    bag = parse_bag_items(row["Bag"])
+                    if bag:
+                        teams[trainer]["bag"] = bag
+
+        if "AI Type" in row and not pd.isna(row["AI Type"]):
+            ai = {"type": str(row["AI Type"]).strip().lower()}
+
+            if "AI Data" in row and not pd.isna(row["AI Data"]):
+                try:
+                    ai["data"] = json.loads(row["AI Data"])
+                except json.JSONDecodeError:
+                    print(f"Error: Couldn't load AI Data for {trainer}")
+
+            teams[trainer]["ai"] = ai
+
         pokemon = {}
 
         pokemon["species"] = (
@@ -214,6 +230,43 @@ def load_validation_lists(excel_file):
     #print("Sample moves:", list(moves)[:10])
 
     return items, moves
+
+def parse_bag_items(bag_str: str) -> list[dict]:
+    """Parse Bag column into RCTApi item bag format."""
+    bag = []
+
+    for entry in str(bag_str).split(","):
+        entry = entry.strip()
+        if not entry:
+            continue
+        if ":" not in entry:
+            raise ValueError(f"Invalid bag entry (expected 'item:quantity'): '{entry}'")
+
+        item_part, qty_part = entry.rsplit(":", 1)
+        item = (
+            item_part.strip()
+            .lower()
+            .replace(" ", "_")
+            .replace("-", "_")
+        )
+
+        if ":" not in item:
+            item = f"cobblemon:{item}"
+
+        try:
+            quantity = int(qty_part.strip())
+        except ValueError:
+            raise ValueError(f"Invalid bag item quantity in '{entry}'")
+
+        if quantity <= 0:
+            raise ValueError(f"Bag item quantity must be positive in '{entry}'")
+
+        bag.append({
+            "item": item,
+            "quantity": quantity
+        })
+    
+    return {str(i): item for i, item in enumerate(bag)}
 
 def index_files_by_name(root: Path, suffix: str = "") -> dict:
     """Map each file's name (minus `suffix`) to the folder holding it"""

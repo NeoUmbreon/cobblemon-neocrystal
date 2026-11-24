@@ -56,7 +56,11 @@ math.clamp(q.length(t.trainer.party), 1, 6) != q.length(t.rct_trainer.team) ? {
 };
 
 'write data to per-player file';
-!q.is_blank(t.trainer.ai) ? { t.rct_trainer.ai = t.trainer.ai };
+!q.is_blank(t.trainer.ai.type) ? { t.rct_trainer.ai = t.trainer.ai };
+q.length(t.trainer.bag) != 0 ? {
+    t.rct_trainer.bag = q.array;
+    for_each(t.raw_bag, t.trainer.bag, { q.append(t.rct_trainer.bag, t.raw_bag); });
+};
 t.rct_trainer.name = q.is_blank(t.trainer.name) ? q.npc.name : t.trainer.name;
 q.file.save('data/molang/players/' + q.player.uuid + '.json', t.rct_trainer);
 q.run_command('tbcs reload tbcs:' + q.player.uuid);
