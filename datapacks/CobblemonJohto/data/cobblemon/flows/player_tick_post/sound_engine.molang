@@ -49,7 +49,7 @@ t.sound_data.lock_until > 0 ? {
     'intro done, goto loop';
     t.sound_data.intro_end > 0 && t.time >= t.sound_data.intro_end ? {
         q.player.tell('&5LOOP Δ&7 ' + t.sound_data.current_track + '&r ' + (t.time - t.sound_data.intro_end - 25) + 'ms');
-        q.player.battle_music(t.sound_data.current_track);
+        !q.player.has_tag('RadioOff') ? q.player.battle_music(t.sound_data.current_track);
         t.sound_data.intro_end = 0;
     };
 
