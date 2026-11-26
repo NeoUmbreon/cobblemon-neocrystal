@@ -11,7 +11,7 @@ execute unless score @s RadioSelect matches 0 run runmolang "q.run_script('cobbl
 
 # Kill (refresh or cold start)
 execute if score @s RadioSelect matches 0 run stopsound @s music
-execute if score @s RadioSelect matches 0 run runmolang "q.player.data.sound.current_track = 0" @s
+execute if score @s RadioSelect matches 0 run runmolang "q.run_script('cobblemon:fade_music', 0)" @s
 
 # Store
 scoreboard players operation @s RadioSelect = @s RadioSelectTemp
