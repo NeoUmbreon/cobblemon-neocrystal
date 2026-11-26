@@ -7,7 +7,7 @@ tellraw @s[tag=Temp,tag=DSSound] {"text":"Toggling DS sound... Triple click the 
 tellraw @s[tag=Temp,tag=!DSSound] {"text":"Toggling GB sound... Triple click the Radio again to switch back!"}
 scoreboard players set @s[tag=Temp] MusicTitles 0
 tag @s[tag=Temp] remove RadioOff
-scoreboard players set @s[tag=Temp] RadioSelect 0
+scoreboard players set @s[tag=Temp] RadioSelect -1
 tag @s remove Temp
 
 
@@ -15,13 +15,15 @@ tag @s remove Temp
 tag @s[tag=!RadioOff,scores={click=2}] add Temp
 tellraw @s[tag=Temp] {"text":"Music toggled off... Double click the Radio again to turn on!"}
 tag @s[tag=Temp] add RadioOff
-execute as @s[tag=Temp] run function johto:tools/forceclick
+scoreboard players set @s[tag=Temp] click 0
+stopsound @s[tag=Temp] music
 tag @s remove Temp
 
 
 #Two clicks, turns radio on
 tag @s[tag=RadioOff,scores={click=2}] add Temp
 tellraw @s[tag=Temp] {"text":"Music toggled on! Double click the Radio again to turn off!"}
+scoreboard players set @s[tag=Temp] MusicTitles 0
 tag @s[tag=Temp] remove RadioOff
 scoreboard players set @s[tag=Temp] RadioSelect 0
 tag @s remove Temp
@@ -32,4 +34,5 @@ scoreboard players set @s[scores={click=1}] RadioSelect 0
 
 
 #Forceclick
-execute if score @s RadioSelect matches 0 run function johto:world/switchradiostation
+scoreboard players set @s click 0
+execute unless score @s RadioSelect matches 1.. run function johto:world/switchradiostation
