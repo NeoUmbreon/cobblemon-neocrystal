@@ -578,8 +578,7 @@
                         "action": [
                             "!v.is_kenya ? q.pokemon.remove_held_item;",
                             "v.is_kenya ? q.player.party.remove_by_id(q.pokemon.id);",
-                            "q.run_command('execute as ' + q.player.username + ' if entity @s[tag=!DSSound] run function johto:sound/overwriterecord {track:\"gb/sfx_local/gettm\",duration:70}');",
-                            "q.run_command('execute as ' + q.player.username + ' if entity @s[tag=DSSound] run function johto:sound/overwriterecord {track:\"ds/sfx_local/gettm\",duration:70}');",
+                            "q.run_script('play_oneshot_as_music', (q.player.has_tag('DSSound') ? 'ds' : 'gb') + '/sfx_local/gettm');",
                             "q.run_command('execute as ' + q.player.username + ' run givetm rest 3');",
                             "q.player.data.loot.tms.rest = 1; q.player.save_data;",
                             "q.dialogue.next_page;"

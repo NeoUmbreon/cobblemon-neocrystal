@@ -64,8 +64,7 @@ t.sound_data.lock_until > 0 ? {
     'if fade time becomes a parameter, rewrite this to decouple fade from e2e delay and interpolate the loop volume';
     t.sound_data.requested_track != 0 || t.sound_data.fade_ms != 0 ? {
         'if intro is about to progress into loop, defer so that the loop does not overwrite the fade';
-        (t.sound_data.intro_end == 0 || t.sound_data.intro_end > t.time + t.sound_data.fade_ms) &&
-        (t.sound_data.oneshot_end == 0 || t.sound_data.oneshot_end > t.time + t.sound_data.fade_ms) ? {
+        t.sound_data.intro_end == 0 || t.sound_data.intro_end > t.time + t.sound_data.fade_ms ? {
             q.player.stop_battle_music;
             t.sound_data.lock_until = q.is_blank(t.sound_data.current_track) ? t.time : t.time + t.sound_data.fade_ms;
             t.sound_data.fade_ms = 0;

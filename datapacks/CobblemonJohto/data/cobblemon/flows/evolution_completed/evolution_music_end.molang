@@ -1,3 +1,2 @@
-t.owner = c.pokemon.owner;
-t.owner.remove_tag('Evolving');
-t.owner.add_tag('Evolved');
+q.set_query('player', c.pokemon.owner);
+q.run_script('play_oneshot_as_music', (q.player.has_tag('DSSound') ? 'ds' : 'gb') + '/sfx_local/caughtmon');

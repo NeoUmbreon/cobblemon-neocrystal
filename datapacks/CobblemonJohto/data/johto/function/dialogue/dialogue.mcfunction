@@ -25,8 +25,7 @@ scoreboard players add @s[scores={DialogueTrigger=1..}] TalkTime 1
 
 execute as @s[scores={DialogueTrigger=98,TalkTime=1}] run scoreboard players set @s IP 1
 execute as @s[scores={DialogueTrigger=98,TalkTime=1}] run advancement grant @s only johto:badges/champion
-execute as @s[scores={DialogueTrigger=98,TalkTime=1},tag=!DSSound] run function johto:sound/overwriterecord {track:"gb/misc/ending",duration:-1}
-execute as @s[scores={DialogueTrigger=98,TalkTime=1},tag=DSSound] run function johto:sound/overwriterecord {track:"ds/misc/ending",duration:-1}
+execute as @s[scores={DialogueTrigger=98,TalkTime=1}] run runmolang "q.run_script('force_music', (q.player.has_tag('DSSound') ? 'ds' : 'gb') + '/misc/ending')" @s
 
 tellraw @s[scores={DialogueTrigger=98,TalkTime=5}] {"text":"Congratulations, you have completed the Indigo League!"}
 tellraw @s[scores={DialogueTrigger=98,TalkTime=15}] {"text":"You can now access the Kanto region!"}
@@ -45,6 +44,7 @@ execute as @s[scores={DialogueTrigger=98,TalkTime=65}] run givemark @s 4 cobblem
 execute as @s[scores={DialogueTrigger=98,TalkTime=65}] run givemark @s 5 cobblemon:ribbon_champion
 execute as @s[scores={DialogueTrigger=98,TalkTime=65}] run givemark @s 6 cobblemon:ribbon_champion
 
+execute as @s[scores={DialogueTrigger=98,TalkTime=65..}] run runmolang "q.run_script('fade_music', 2000)" @s
 execute as @s[scores={DialogueTrigger=98,TalkTime=65..}] run tp @s -721 69 -493
 
 #runs legendary reset function, in the player's home should they get an item back with a full inventory
@@ -161,8 +161,7 @@ tag @s[scores={DialogueTrigger=200,TalkTime=4..}] add Dialogue200
 #Magnet Train
 #Dialogue207..208
 execute as @s[scores={DialogueTrigger=207..208,TalkTime=1}] run tellraw @s {"text":"Now boarding the Magnet Train!","italic":true,"color":"gray"}
-execute as @s[scores={DialogueTrigger=207..208,TalkTime=1},tag=!DSSound] run function johto:sound/overwriterecord {track:"gb/misc/magnettrain",duration:-1}
-execute as @s[scores={DialogueTrigger=207..208,TalkTime=1},tag=DSSound] run function johto:sound/overwriterecord {track:"ds/misc/magnettrain",duration:-1}
+execute as @s[scores={DialogueTrigger=207..208,TalkTime=1}] run runmolang "q.run_script('force_music', (q.player.has_tag('DSSound') ? 'ds' : 'gb') + '/misc/magnettrain')" @s
 execute as @s[scores={DialogueTrigger=207..208,TalkTime=1}] run effect give @s minecraft:blindness 8 1 true
 
 #----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -171,6 +170,7 @@ execute as @s[scores={DialogueTrigger=207..208,TalkTime=1}] run effect give @s m
 execute as @s[scores={DialogueTrigger=207,TalkTime=9}] run tp @s -2673 73 410 0 ~
 
 execute as @s[scores={DialogueTrigger=207,TalkTime=10..}] positioned -2672.5 74.5 410.5 run function johto:sound/playglobalsfx {sfx:"trainarrived",category:"block"}
+execute as @s[scores={DialogueTrigger=207,TalkTime=10..}] run runmolang "q.run_script('fade_music', 1333)" @s
 tag @s[scores={DialogueTrigger=207,TalkTime=10..}] add Dialogue207
 
 #----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -179,6 +179,7 @@ tag @s[scores={DialogueTrigger=207,TalkTime=10..}] add Dialogue207
 execute as @s[scores={DialogueTrigger=208,TalkTime=9}] run tp @s 526 73 -337 0 ~
 
 execute as @s[scores={DialogueTrigger=208,TalkTime=10..}] positioned 526.5 74.5 -336.5 run function johto:sound/playglobalsfx {sfx:"trainarrived",category:"block"}
+execute as @s[scores={DialogueTrigger=208,TalkTime=10..}] run runmolang "q.run_script('fade_music', 1333)" @s
 tag @s[scores={DialogueTrigger=208,TalkTime=10..}] add Dialogue208
 
 #----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------

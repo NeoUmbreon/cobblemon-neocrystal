@@ -1,9 +1,12 @@
-c.player.has_tag('DSSound') ? {
-    t.prefix = 'ds/';
-    t.duration = 79;
-} : {
-    t.prefix = 'gb/';
-    t.duration = 61;
-};
+q.set_query('player', c.player);
 
-q.run_command('execute as ' + c.player.username + ' run function johto:sound/overwriterecord {track:"' + t.prefix + 'sfx_local/caughtmon",duration:' + t.duration +'}');
+'using `play_sound_on_server` to prevent end-of-battle from fading the sfx';
+'and scheduling the follow-up track for a proper transition';
+'this is shameful code but was the only way i could think to do this that achieves correct timing';
+q.player.data.sound.current_priority = -1;
+q.player.battle_music('0');
+t.prefix = q.player.has_tag('DSSound') ? 'ds' : 'gb';
+q.player.play_sound_on_server(t.prefix + '/sfx_local/caughtmon', 'music');
+t.track_data = q.run_script('resolve_track_data', t.prefix + '/sfx_local/caughtmon');
+t.expr = 'q.player.data.sound.current_priority < 0 ? q.run_script(\'play_oneshot_as_music\', \'' + t.prefix + '/victory/wildpokemon\')';
+q.run_molang(t.expr, t.track_data.oneshot_len / 1000);

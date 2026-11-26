@@ -1,3 +1,2 @@
-'high prio + infinite lock, intended to be broken out of manually';
+'high prio, intended to be broken out of by directly setting `fade_ms`';
 q.run_script('play_music', c.arg_1, 9);
-q.player.data.sound.lock_until = -1;

@@ -94,8 +94,7 @@
                         "text": "Next",
                         "value": "next",
                         "action": [
-                            "q.run_command('execute as ' + q.player.username + ' if entity @s[tag=!DSSound] run function johto:sound/overwriterecord {track:\"gb/sfx_local/getbadge\",duration:99}');",
-                            "q.run_command('execute as ' + q.player.username + ' if entity @s[tag=DSSound] run function johto:sound/overwriterecord {track:\"ds/sfx_local/getbadge\",duration:124}');",
+                            "q.run_script('play_oneshot_as_music', (q.player.has_tag('DSSound') ? 'ds' : 'gb') + '/sfx_local/getbadge');",
                             "q.run_command('execute as ' + q.player.username + ' run advancement grant @s only johto:badges/kanto/badge6');",
                             "q.dialogue.next_page;"
                         ]
@@ -154,8 +153,7 @@
                         "text": "Next",
                         "value": "next",
                         "action": [
-                            "q.run_command('execute as ' + q.player.username + ' if entity @s[tag=!DSSound] run function johto:sound/overwriterecord {track:\"gb/sfx_local/gettm\",duration:70}');",
-                            "q.run_command('execute as ' + q.player.username + ' if entity @s[tag=DSSound] run function johto:sound/overwriterecord {track:\"ds/sfx_local/gettm\",duration:70}');",
+                            "q.run_script('play_oneshot_as_music', (q.player.has_tag('DSSound') ? 'ds' : 'gb') + '/sfx_local/gettm');",
                             "q.run_command('execute as ' + q.player.username + ' run givetm skillswap 5');",
                             "q.dialogue.next_page;"
                         ]

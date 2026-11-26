@@ -34,16 +34,16 @@ t.battle_result == 2 || t.battle_result == 3 ? {
 };
 
 t.battle_result == 4 ? {
-    return q.run_script('play_oneshot_as_music', t.prefix + '/victory/wildpokemon', 4, 1000);
+    return 0;
 };
 
 t.battle_result == 5 ? {
-    return q.run_script('play_oneshot_as_music', t.prefix + '/victory/wildpokemonshort', 4, 1000);
+    return q.run_script('play_oneshot_as_music', t.prefix + '/victory/wildpokemonshort', 0);
 };
 
 'pvp';
 t.battle_result == 6 ? {
-    return q.run_script('play_oneshot_as_music', t.prefix + '/victory/trainer', 4, 1000);
+    return q.run_script('play_oneshot_as_music', t.prefix + '/victory/trainer', 0);
 };
 
 t.battle_result == 7 ? {

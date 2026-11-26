@@ -1,3 +1,2 @@
-t.owner = c.pokemon.owner;
-t.owner.add_tag('Evolving');
-q.run_command('scoreboard players set ' + t.owner.username + ' MusicCooldown -1');
+q.set_query('player', c.pokemon.owner);
+q.run_script('play_oneshot_as_music', (q.player.has_tag('DSSound') ? 'ds' : 'gb') + '/misc/evolution');

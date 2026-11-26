@@ -109,8 +109,7 @@
                         "text": "Next",
                         "value": "next",
                         "action": [
-                            "q.run_command('execute as ' + q.player.username + ' if entity @s[tag=!DSSound] run function johto:sound/overwriterecord {track:\"gb/sfx_local/gettm\",duration:70}');",
-                            "q.run_command('execute as ' + q.player.username + ' if entity @s[tag=DSSound] run function johto:sound/overwriterecord {track:\"ds/sfx_local/gettm\",duration:70}');",
+                            "q.run_script('play_oneshot_as_music', (q.player.has_tag('DSSound') ? 'ds' : 'gb') + '/sfx_local/gettm');",
                             "q.run_command('execute as ' + q.player.username + ' run givetm surf 3');",
                             "q.dialogue.next_page;"
                         ]
