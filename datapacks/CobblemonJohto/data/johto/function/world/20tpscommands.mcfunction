@@ -34,6 +34,11 @@ execute as @a[x=-2196,y=63,z=-547,dx=5,dy=7,dz=17,tag=!Cycling] run opendialogue
 execute as @a[x=-2196,y=63,z=-547,dx=5,dy=7,dz=17,tag=!Cycling] at @s run tp @s ~-5 ~ ~
 
 #------------------------------------------------------------------------------------------------------MUSIC-------------------------------------------------------------------------------------------------------
+# Tracks player around map checking for new areas or music
+execute as @a[scores={TalkTime=0}] at @s run function johto:world/musictitles
+
+# Detects if player has switched the slot of their radio, and refreshes their sound if so
+execute as @a[tag=!RadioOff] at @s run function johto:world/switchradiostation
 
 #Surfing
 #-------------------------

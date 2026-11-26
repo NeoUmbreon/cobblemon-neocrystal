@@ -60,10 +60,6 @@ tag @e[x=-799,y=64,z=-284,dy=3,type=armor_stand,scores={DayTime=..1000},tag=Dail
 #-------------------------------------------------------------------------------------------------------------------------
 #Runs HMs/Important Items
 
-#MusicTitles function, tracks player around map checking for new areas or music
-execute as @a[scores={TalkTime=0}] at @s run function johto:world/musictitles
-
-
 #Fly Map Refresh
 execute as @a[x=1169,y=252,z=619,distance=..40] run function johto:hms/flymap
 
@@ -152,9 +148,6 @@ tag @a remove LvUp
 #Runs the click trigger if player uses Carrot on a Stick
 execute as @a[scores={click=1..},tag=TempDelay,nbt={SelectedItem:{components:{"minecraft:custom_name":'{"extra":[{"color":"aqua","italic":false,"text":"Radio"}],"text":""}'}}}] run function johto:triggers/click
 tag @a[scores={click=1..},tag=!TempDelay,nbt={SelectedItem:{components:{"minecraft:custom_name":'{"extra":[{"color":"aqua","italic":false,"text":"Radio"}],"text":""}'}}}] add TempDelay
-
-#Detects if player has switched the slot of their radio, and refreshes their sound if so
-execute as @a[tag=!RadioOff] at @s run function johto:world/switchradiostation
 
 #-------------------------------------------------------------------------------------------------------------------------
 #Unlocks Fly spots by visiting respective Pokemon Centers, sets spawnpoint if player dies
