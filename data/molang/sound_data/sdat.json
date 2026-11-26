@@ -1,218 +1,77 @@
 {
-  "gb/areas/burnedtower": {
-    "intro_len": 8458
-  },
-  "gb/areas/dragonsden": {
-    "intro_len": 10869
-  },
-  "gb/areas/ecruteakdancetheater": {
-    "intro_len": 253
-  },
-  "gb/areas/elmpokemonlab": {
-    "intro_len": 6347
-  },
-  "gb/areas/gamecorner": {
-    "intro_len": 940
-  },
-  "gb/areas/icepath": {
-    "intro_len": 12878
-  },
-  "gb/areas/nationalpark": {
-    "intro_len": 324
-  },
-  "gb/areas/radiotoweroccupied": {
-    "intro_len": 1834
-  },
-  "gb/areas/rocktunnel": {
-    "intro_len": 9813
-  },
-  "gb/areas/ruinsofalph": {
-    "intro_len": 1425
-  },
-  "gb/areas/safarizonegate": {
-    "intro_len": 3500
-  },
-  "gb/areas/safarizone": {
-    "intro_len": 3834
-  },
-  "gb/areas/sprouttower": {
-    "intro_len": 4438
-  },
-  "gb/areas/ssaqua": {
-    "intro_len": 6064
-  },
-  "gb/areas/teamrockethq": {
-    "intro_len": 7251
-  },
-  "gb/areas/viridianforest": {
-    "intro_len": 15188
-  },
-  "gb/battle/champion": {
-    "intro_len": 22166
-  },
-  "gb/battle/gymleaderjohto": {
-    "intro_len": 12691
-  },
-  "gb/battle/gymleaderkanto": {
-    "intro_len": 21092
-  },
-  "gb/battle/raikouenteisuicune": {
-    "intro_len": 12694
-  },
-  "gb/battle/rival": {
-    "intro_len": 12829
-  },
-  "gb/battle/teamrocket": {
-    "intro_len": 48203
-  },
-  "gb/battle/trainerjohto": {
-    "intro_len": 12850
-  },
-  "gb/battle/trainerkanto": {
-    "intro_len": 11473
-  },
-  "gb/battle/wildpokemonjohtoday": {
-    "intro_len": 13078
-  },
-  "gb/battle/wildpokemonjohtonight": {
-    "intro_len": 13447
-  },
-  "gb/battle/wildpokemonkanto": {
-    "intro_len": 2830
-  },
-  "gb/misc/anadventurebegins": {
-    "intro_len": 9038
-  },
-  "gb/misc/bugcatchingcontest": {
-    "intro_len": 4542
-  },
-  "gb/misc/cycling": {
-    "intro_len": 3533
-  },
-  "gb/misc/gameboyprinter": {
-    "intro_len": 6447
-  },
-  "gb/misc/halloffame": {
-    "intro_len": 5645
-  },
-  "gb/misc/theend": {
-    "intro_len": 1708
-  },
-  "gb/npc/clair": {
-    "intro_len": 3436
-  },
-  "gb/npc/eusine": {
-    "intro_len": 874
-  },
-  "gb/npc/hurryalong2": {
-    "intro_len": 3635
-  },
-  "gb/npc/hurryalong": {
-    "intro_len": 693
-  },
-  "gb/npc/professoroak": {
-    "intro_len": 15204
-  },
-  "gb/npc/rival2": {
-    "intro_len": 1425
-  },
-  "gb/npc/rival": {
-    "intro_len": 4940
-  },
-  "gb/radio/buenaspassword": {
-    "intro_len": 874
-  },
-  "gb/radio/pokeflute": {
-    "intro_len": 12825
-  },
-  "gb/radio/pokemonmarch": {
-    "intro_len": 1827
-  },
-  "gb/radio/profoakspokemontalk": {
-    "intro_len": 2077
-  },
-  "gb/routes/11": {
-    "intro_len": 3736
-  },
-  "gb/routes/1": {
-    "intro_len": 9260
-  },
-  "gb/routes/26": {
-    "intro_len": 4758
-  },
-  "gb/routes/29": {
-    "intro_len": 235
-  },
-  "gb/routes/30": {
-    "intro_len": 4756
-  },
-  "gb/routes/34": {
-    "intro_len": 3636
-  },
-  "gb/routes/38": {
-    "intro_len": 3634
-  },
-  "gb/routes/3": {
-    "intro_len": 5293
-  },
-  "gb/routes/42": {
-    "intro_len": 27141
-  },
-  "gb/routes/47": {
-    "intro_len": 1203
-  },
-  "gb/settlements/azaleatown": {
-    "intro_len": 4287
-  },
-  "gb/settlements/celadoncity": {
-    "intro_len": 1841
-  },
-  "gb/settlements/cherrygrovecity": {
-    "intro_len": 1925
-  },
-  "gb/settlements/goldenrodcity": {
-    "intro_len": 17699
-  },
-  "gb/settlements/lavendertown": {
-    "intro_len": 8054
-  },
-  "gb/settlements/newbarktown": {
-    "intro_len": 603
-  },
-  "gb/settlements/pewtercity": {
-    "intro_len": 7904
-  },
-  "gb/settlements/vermilioncity": {
-    "intro_len": 4437
-  },
-  "gb/settlements/violetcity": {
-    "intro_len": 10046
-  },
-  "gb/trainerseyesmeet/boy1": {
-    "intro_len": 3350
-  },
-  "gb/trainerseyesmeet/boy2": {
-    "intro_len": 2932
-  },
-  "gb/trainerseyesmeet/girl1": {
-    "intro_len": 3234
-  },
-  "gb/trainerseyesmeet/girl2": {
-    "intro_len": 1676
-  },
-  "gb/trainerseyesmeet/kimonogirl": {
-    "intro_len": 3084
-  },
-  "gb/trainerseyesmeet/sage": {
-    "intro_len": 12893
-  },
-  "gb/trainerseyesmeet/suspiciousfigure1": {
-    "intro_len": 928
-  },
-  "gb/trainerseyesmeet/suspiciousfigure2": {
-    "intro_len": 2082
-  },
-  "gb/trainerseyesmeet/teamrocket": {
-    "intro_len": 1744
-  }
+  "common/areas/sinjohruins": { "intro_len": 938 },
+  "common/radio/route101": { "intro_len": 285 },
+  "common/radio/route201": { "intro_len": 4000 },
+  "gb/areas/burnedtower": { "intro_len": 8458 },
+  "gb/areas/dragonsden": { "intro_len": 10869 },
+  "gb/areas/ecruteakdancetheater": { "intro_len": 253 },
+  "gb/areas/elmpokemonlab": { "intro_len": 6347 },
+  "gb/areas/gamecorner": { "intro_len": 940 },
+  "gb/areas/icepath": { "intro_len": 12878 },
+  "gb/areas/nationalpark": { "intro_len": 324 },
+  "gb/areas/radiotoweroccupied": { "intro_len": 1834 },
+  "gb/areas/rocktunnel": { "intro_len": 9813 },
+  "gb/areas/ruinsofalph": { "intro_len": 1425 },
+  "gb/areas/safarizonegate": { "intro_len": 3500 },
+  "gb/areas/safarizone": { "intro_len": 3834 },
+  "gb/areas/sprouttower": { "intro_len": 4438 },
+  "gb/areas/ssaqua": { "intro_len": 6064 },
+  "gb/areas/teamrockethq": { "intro_len": 7251 },
+  "gb/areas/viridianforest": { "intro_len": 15188 },
+  "gb/battle/champion": { "intro_len": 22166 },
+  "gb/battle/gymleaderjohto": { "intro_len": 12691 },
+  "gb/battle/gymleaderkanto": { "intro_len": 21092 },
+  "gb/battle/raikouenteisuicune": { "intro_len": 12694 },
+  "gb/battle/rival": { "intro_len": 12829 },
+  "gb/battle/teamrocket": { "intro_len": 48203 },
+  "gb/battle/trainerjohto": { "intro_len": 12850 },
+  "gb/battle/trainerkanto": { "intro_len": 11473 },
+  "gb/battle/wildpokemonjohtoday": { "intro_len": 13078 },
+  "gb/battle/wildpokemonjohtonight": { "intro_len": 13447 },
+  "gb/battle/wildpokemonkanto": { "intro_len": 2830 },
+  "gb/misc/anadventurebegins": { "intro_len": 9038 },
+  "gb/misc/bugcatchingcontest": { "intro_len": 4542 },
+  "gb/misc/cycling": { "intro_len": 3533 },
+  "gb/misc/gameboyprinter": { "intro_len": 6447 },
+  "gb/misc/halloffame": { "intro_len": 5645 },
+  "gb/misc/theend": { "intro_len": 1708 },
+  "gb/npc/clair": { "intro_len": 3436 },
+  "gb/npc/eusine": { "intro_len": 874 },
+  "gb/npc/hurryalong2": { "intro_len": 3635 },
+  "gb/npc/hurryalong": { "intro_len": 693 },
+  "gb/npc/professoroak": { "intro_len": 15204 },
+  "gb/npc/rival2": { "intro_len": 1425 },
+  "gb/npc/rival": { "intro_len": 4940 },
+  "gb/radio/buenaspassword": { "intro_len": 874 },
+  "gb/radio/pokeflute": { "intro_len": 12825 },
+  "gb/radio/pokemonmarch": { "intro_len": 1827 },
+  "gb/radio/profoakspokemontalk": { "intro_len": 2077 },
+  "gb/routes/11": { "intro_len": 3736 },
+  "gb/routes/1": { "intro_len": 9260 },
+  "gb/routes/26": { "intro_len": 4758 },
+  "gb/routes/29": { "intro_len": 235 },
+  "gb/routes/30": { "intro_len": 4756 },
+  "gb/routes/34": { "intro_len": 3636 },
+  "gb/routes/38": { "intro_len": 3634 },
+  "gb/routes/3": { "intro_len": 5293 },
+  "gb/routes/42": { "intro_len": 27141 },
+  "gb/routes/47": { "intro_len": 1203 },
+  "gb/settlements/azaleatown": { "intro_len": 4287 },
+  "gb/settlements/celadoncity": { "intro_len": 1841 },
+  "gb/settlements/cherrygrovecity": { "intro_len": 1925 },
+  "gb/settlements/goldenrodcity": { "intro_len": 17699 },
+  "gb/settlements/lavendertown": { "intro_len": 8054 },
+  "gb/settlements/newbarktown": { "intro_len": 603 },
+  "gb/settlements/pewtercity": { "intro_len": 7904 },
+  "gb/settlements/vermilioncity": { "intro_len": 4437 },
+  "gb/settlements/violetcity": { "intro_len": 10046 },
+  "gb/trainerseyesmeet/boy1": { "intro_len": 3350 },
+  "gb/trainerseyesmeet/boy2": { "intro_len": 2932 },
+  "gb/trainerseyesmeet/girl1": { "intro_len": 3234 },
+  "gb/trainerseyesmeet/girl2": { "intro_len": 1676 },
+  "gb/trainerseyesmeet/kimonogirl": { "intro_len": 3084 },
+  "gb/trainerseyesmeet/sage": { "intro_len": 12893 },
+  "gb/trainerseyesmeet/suspiciousfigure1": { "intro_len": 928 },
+  "gb/trainerseyesmeet/suspiciousfigure2": { "intro_len": 2082 },
+  "gb/trainerseyesmeet/teamrocket": { "intro_len": 1744 }
 }
